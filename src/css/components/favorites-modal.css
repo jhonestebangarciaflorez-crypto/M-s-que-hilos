@@ -1,0 +1,240 @@
+/* ==========================================
+   MODAL DE FAVORITOS (OVERLAY Y TARJETA)
+   ========================================== */
+
+/* Capa de fondo oscuro borroso */
+.favorites-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  
+  /* Estado oculto por defecto */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Clase que activará JavaScript para mostrarlo */
+.favorites-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Ventana blanca/crema central */
+.favorites-modal-card {
+  background-color: #fdfbf7; /* Tono beige/crema suave de la marca */
+  width: 90%;
+  max-width: 620px;
+  max-height: 85vh;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Encabezado del Modal */
+.favorites-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ede8e0;
+}
+
+.sub-caption {
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  color: #a87b68;
+  font-weight: 600;
+  display: block;
+}
+
+.modal-title {
+  font-family: serif;
+  font-size: 1.8rem;
+  color: #2c2b29;
+  margin-top: 0.2rem;
+  font-weight: 500;
+}
+
+/* Botón de cierre (X) en la esquina */
+.close-modal-btn {
+  background: #f2ebd9;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  color: #555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.close-modal-btn:hover {
+  background: #e5dac4;
+  color: #111;
+}
+
+/* Contenedor de la lista dinámica */
+.favorites-list-container {
+  overflow-y: auto;
+  max-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-right: 0.5rem;
+}
+
+/* ==========================================
+   ESTILOS DE CADA ITEM DENTRO DE FAVORITOS
+   ========================================== */
+
+.favorite-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f0eae1;
+}
+
+.favorite-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.favorite-item-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.favorite-item-info {
+  flex: 1;
+}
+
+.favorite-item-category {
+  font-size: 0.65rem;
+  letter-spacing: 1.2px;
+  color: #a87b68;
+  font-weight: 600;
+  display: block;
+  text-transform: uppercase;
+}
+
+.favorite-item-title {
+  font-family: serif;
+  font-size: 1.05rem;
+  color: #2c2b29;
+  margin: 0.2rem 0;
+  font-weight: 500;
+}
+
+.favorite-item-price {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4a4a4a;
+}
+
+.favorite-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* Botón Añadir al carrito del modal */
+.btn-add-cart-modal {
+  background: transparent;
+  border: 1px solid #333333;
+  padding: 0.45rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: #333333;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-add-cart-modal:hover {
+  background: #333333;
+  color: #ffffff;
+}
+
+/* Botón Caneca de basura */
+.btn-remove-favorite {
+  background: transparent;
+  border: none;
+  color: #888888;
+  cursor: pointer;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.btn-remove-favorite:hover {
+  color: #d9534f;
+}
+
+/* Mensaje cuando la lista está vacía */
+.empty-favorites-msg {
+  text-align: center;
+  color: #888888;
+  font-size: 0.9rem;
+  padding: 2rem 0;
+}
+
+
+
+/* Asegurar que el botón del header sirva de ancla para posicionar el badge */
+#favorites-toggle-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo del Badge / Círculo contador */
+#favorites-badge {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  background-color: #c48b71; /* Tono terracota/rosado del diseño de Figma */
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  line-height: 1;
+  
+  /* Oculto por defecto cuando vale 0 */
+  display: none; 
+}
+
+/* ==========================================
+   ESTADO ACTIVO DEL CORAZÓN EN EL CATÁLOGO
+   ========================================== */
+
+.wishlist-btn.active svg {
+  fill: #d9534f;
+  stroke: #d9534f;
+}

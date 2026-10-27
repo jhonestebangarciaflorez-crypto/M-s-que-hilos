@@ -1,0 +1,37 @@
+*, *::before, *::after {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+font-family: var(--font-sans);
+color: var(--ink);
+background-color: var(--cream);
+line-height: 1.6;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+}
+
+img {
+max-width: 100%;
+height: auto;
+display: block;
+}
+
+a {
+text-decoration: none;
+color: inherit;
+}
+
+ul, ol {
+list-style: none;
+}
+
+button, input, textarea {
+font: inherit;
+}
+
+
+

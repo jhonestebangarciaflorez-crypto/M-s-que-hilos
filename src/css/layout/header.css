@@ -1,0 +1,387 @@
+.main-header {
+  background-color: var(--cream);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo con ícono 'm' y textos */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  background-color: var(--terracotta);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.brand-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  margin-top: 2px;
+}
+
+/* Navegación central */
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+.main-nav a {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: var(--terracotta);
+}
+
+.main-nav a.active {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* Línea indicadora bajo el enlace activo (como en Figma) */
+.main-nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--ink);
+  border-radius: 2px;
+}
+
+/* Íconos de la derecha */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.action-btn:hover {
+  color: var(--terracotta);
+  transform: translateY(-1px);
+}
+
+/* Asegurar que el contenedor padre del header o navbar tenga position: relative */
+.header-actions-container {
+  position: relative;
+}
+
+/* Estado base del desplegable de búsqueda */
+.search-overlay {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) scale(0.95);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease-in-out;
+  z-index: 100;
+}
+
+/* Clase activa para mostrar la barra */
+.search-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) scale(1);
+}
+
+/* Contenedor visual de la barra (tarjeta blanca con bordes redondeados) */
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #ffffff;
+  border: 1px solid #e2ded9;
+  border-radius: 12px;
+  padding: 8px 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  width: 480px; /* Ajusta según la medida de tu diseño */
+  max-width: 90vw;
+}
+
+/* Estilos del input */
+.search-input-wrapper input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #333333;
+  background: transparent;
+}
+
+/* Botón "Buscar" */
+.search-submit-btn {
+  background-color: #725348; /* Color café del diseño */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-submit-btn:hover {
+  background-color: #5a4138;
+}
+
+/* Botón cerrar (X) */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #888888;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: #333333;
+}
+
+/* ==========================================
+   1. OVERLAY Y VENTANA MODAL (MIS FAVORITOS)
+   ========================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4); /* Oscurece el fondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  
+  /* Oculto por defecto */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Clase activa que JavaScript añadirá para mostrar el modal */
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  background-color: #FAF8F5; /* Tono beige/crema claro de la imagen */
+  width: 90%;
+  max-width: 680px;
+  max-height: 85vh;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Cabecera del Modal */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.sub-caption {
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  color: #a87b68;
+  font-weight: 600;
+}
+
+.modal-title {
+  font-family: serif; /* O la tipografía Serif de tu proyecto */
+  font-size: 1.8rem;
+  color: #2b2b2b;
+  margin-top: 0.2rem;
+}
+
+.close-btn {
+  background: #f0eae1;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.close-btn:hover {
+  background: #e2d7c7;
+}
+
+/* ==========================================
+   2. LISTA DE PRODUCTOS FAVORITOS
+   ========================================== */
+.wishlist-items-container {
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.wishlist-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #e8e2d8;
+}
+
+.wishlist-item:last-child {
+  border-bottom: none;
+}
+
+.item-img {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-category {
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  color: #a87b68;
+  font-weight: 700;
+  display: block;
+}
+
+.item-title {
+  font-family: serif;
+  font-size: 1.1rem;
+  color: #2c2c2c;
+  margin: 0.2rem 0;
+}
+
+.item-price {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #4a4a4a;
+}
+
+.item-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.add-to-cart-btn {
+  background: transparent;
+  border: 1px solid #333;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  padding: 0.3rem;
+  transition: color 0.2s;
+}
+
+.remove-btn:hover {
+  color: #d9534f;
+}
+
+/* Mensaje cuando la lista está vacía */
+.empty-wishlist-msg {
+  text-align: center;
+  color: #777;
+  padding: 2rem 0;
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   3. ESTADO DEL BOTÓN CORAZÓN (CATÁLOGO)
+   ========================================== */
+.favorite-toggle-btn.active svg {
+  fill: #d9534f;
+  stroke: #d9534f;
+}
+

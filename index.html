@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Más que hilos | Crochet Hecho a Mano</title>
+
+    <!-- Enlaces de estilos -->
+    <link rel="stylesheet" href="src/css/base/variables.css">
+    <link rel="stylesheet" href="src/css/layout/header.css">
+    <link rel="stylesheet" href="src/css/components/buttons.css">
+    <link rel="stylesheet" href="src/css/layout/grid.css">
+    <link rel="stylesheet" href="src/css/components/cards.css">
+    <link rel="stylesheet" href="src/css/layout/footer.css">
+    <link rel="stylesheet" href="src/css/base/reset.css">
+    <link rel="stylesheet" href="src/css/components/favorites-modal.css">
+    <link rel="stylesheet" href="src/css/components/cart-drawer.css">
+    </head>
+    <body>
+
+    <!-- Encabezado / Navegacion -->
+    <header class="main-header">
+        <div class="header-container">
+        
+        <!-- Logo con ícono circular y subtítulo -->
+        <a href="index.html" class="logo">
+            <div class="logo-icon">m</div>
+            <div class="logo-text">
+            <span class="brand-name">Más que hilos</span>
+            <span class="brand-subtitle">ESTUDIO DE CROCHET</span>
+            </div>
+        </a>
+
+        <!-- Navegacion -->
+        <nav class="main-nav">
+            <ul>
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="pages/catalogo.html">Catálogo</a></li>
+            <li><a href="pages/nosotros.html">Sobre nosotros</a></li>
+            <li><a href="pages/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- Acciones de Usuario -->
+        <div class="header-actions">
+            <button class="action-btn" title="Buscar" id="search-toggle-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </button>
+            <!-- Caja desplegable del buscador -->
+            <div id="search-overlay" class="search-overlay">
+            <div class="search-input-wrapper">
+                <!-- Icono interno de lupa -->
+                <svg class="search-input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+
+                <input type="text" id="search-input" placeholder="Buscar piezas, colecciones..." />
+
+                <button type="submit" class="search-submit-btn">Buscar</button>
+
+                <!-- Botón para cerrar -->
+                <button type="button" id="search-close-btn" class="close-btn" aria-label="Cerrar búsqueda">
+                &times;
+                </button>
+            </div>
+            </div>
+            
+            <button class="action-btn" title="Favoritos" id="favorites-toggle-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                <span id="favorites-badge" class="badge">0</span>
+            </button>
+
+
+            <button class="action-btn" title="Carrito" id="cart-toggle-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span id="cart-badge" class="badge">0</span>
+            </button>
+
+            <a href="pages/cuenta.html" class="action-btn" title="Mi Cuenta">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </a>
+        </div>
+
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main id="main-content">
+        <!-- Seccion Hero Principal -->
+        <section class="hero">
+        <div class="hero-container">
+            
+            <!-- Lado Izquierdo: Textos y Botones -->
+            <div class="hero-text-content">
+            <div class="hero-subtitle-wrapper">
+                <span class="subtitle-line"></span>
+                <span class="hero-subtitle">PIEZAS CON ALMA · HECHAS A MANO</span>
+            </div>
+
+            <h1 class="hero-title">
+                Tejidos únicos para abrazar <em class="highlight">lo cotidiano.</em>
+            </h1>
+
+            <p class="hero-description">
+                Creamos piezas de crochet 100% a mano, puntada a puntada, para llenar tus días de calidez, color y un poquito de magia.
+            </p>
+
+            <div class="hero-actions">
+                <a href="pages/catalogo.html" class="btn-hero-primary">
+                Explorar Catálogo <span>&rarr;</span>
+                </a>
+                <a href="pages/nosotros.html" class="btn-hero-secondary">
+                Conoce nuestra historia <span>&#8599;</span>
+                </a>
+            </div>
+            </div>
+
+            <!-- Lado Derecho -->
+            <div class="hero-image-wrapper">
+            <div class="hero-image-card">
+                <img src="src/assets/img/hero-crochet.jpg" alt="Tejidos artesanales en crochet">
+            </div>
+            </div>
+
+        </div>
+        </section>
+            <!-- Sección Categorias -->
+        <section class="categories-section">
+        <div class="categories-container">
+            
+            <!-- Encabezado de la Seccion -->
+            <div class="categories-header">
+            <div class="header-left">
+                <div class="subtitle-wrapper">
+                <span class="subtitle-line"></span>
+                <span class="section-subtitle">ENCUENTRA TU FAVORITO</span>
+                </div>
+                <h2 class="section-title">Un universo tejido para ti</h2>
+            </div>
+
+            <a href="pages/catalogo.html" class="link-see-all">
+                Ver todas las categorías <span>&rarr;</span>
+            </a>
+            </div>
+
+            <!-- Categorias -->
+            <div class="categories-grid">
+            
+            <!-- Categoria 1 -->
+            <a href="pages/catalogo.html?cat=amigurumis" class="category-card card-bg-sand">
+                <div class="category-image-wrapper">
+                <img src="src/assets/img/cat-amigurumis.jpg" alt="Amigurumis de crochet">
+                </div>
+                <div class="category-info">
+                <div class="text-group">
+                    <h3>Amigurumis</h3>
+                    <span class="piece-count">28 PIEZAS</span>
+                </div>
+                <span class="arrow-circle">&rarr;</span>
+                </div>
+            </a>
+
+            <!-- Categoria 2 -->
+            <a href="pages/catalogo.html?cat=ropa" class="category-card card-bg-lavender">
+                <div class="category-image-wrapper">
+                <img src="src/assets/img/cat-ropa.jpg" alt="Ropa y tops de crochet">
+                </div>
+                <div class="category-info">
+                <div class="text-group">
+                    <h3>Ropa y tops</h3>
+                    <span class="piece-count">16 PIEZAS</span>
+                </div>
+                <span class="arrow-circle">&rarr;</span>
+                </div>
+            </a>
+
+            <!-- Categoria 3 -->
+            <a href="pages/catalogo.html?cat=accesorios" class="category-card card-bg-oat">
+                <div class="category-image-wrapper">
+                <img src="src/assets/img/cat-accesorios.jpg" alt="Accesorios de crochet">
+                </div>
+                <div class="category-info">
+                <div class="text-group">
+                    <h3>Accesorios</h3>
+                    <span class="piece-count">34 PIEZAS</span>
+                </div>
+                <span class="arrow-circle">&rarr;</span>
+                </div>
+            </a>
+
+            <!-- Categoria 4 -->
+            <a href="pages/catalogo.html?cat=hogar" class="category-card card-bg-rose">
+                <div class="category-image-wrapper">
+                <img src="src/assets/img/cat-hogar.jpg" alt="Hogar y decoración en crochet">
+                </div>
+                <div class="category-info">
+                <div class="text-group">
+                    <h3>Hogar y decoración</h3>
+                    <span class="piece-count">21 PIEZAS</span>
+                </div>
+                <span class="arrow-circle">&rarr;</span>
+                </div>
+            </a>
+
+            </div>
+
+        </div>
+        </section>
+        <!-- Sección: Pequeños tesoros artesanales -->
+        <section class="featured-products">
+        <div class="featured-container">
+            
+            <!-- Encabezado -->
+            <div class="featured-header">
+            <div class="subtitle-wrapper centered">
+                <span class="subtitle-line"></span>
+                <span class="section-subtitle">LOS MÁS QUERIDOS</span>
+                <span class="subtitle-line"></span>
+            </div>
+            <h2 class="section-title">Pequeños tesoros artesanales</h2>
+            <p class="featured-description">Piezas elegidas por nuestra comunidad, creadas en series muy limiteds.</p>
+            </div>
+
+            <!-- Productos -->
+            <div class="products-grid">
+
+            <!-- Producto 1 -->
+            <article class="product-card"
+                    data-id="conejita-margarita" 
+                    data-title="Conejita Margarita" 
+                    data-category="amigurumis" 
+                    data-price="38,00 €" 
+                    data-img="../src/assets/img/producto-conejita.jpg">
+                <div class="product-image-wrapper">
+                <img src="src/assets/img/producto-conejita.jpg" alt="Conejita Margarita">
+                <span class="badge-product">MÁS VENDIDO</span>
+                <button class="btn-add-cart" aria-label="Añadir a la cesta">
+                    Añadir a la cesta
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                </button>
+                </div>
+                <div class="product-info">
+                <span class="product-category">AMIGURUMIS</span>
+                <h3 class="product-name"><a href="pages/detalle.html">Conejita Margarita</a></h3>
+                <div class="product-meta">
+                    <span class="product-price">38,00 €</span>
+                    <span class="product-rating">★ 4.9</span>
+                </div>
+                </div>
+            </article>
+
+            <!-- Producto 2 -->
+            <article class="product-card"
+                    data-id="osito-canela" 
+                    data-title="Osito Canela" 
+                    data-category="amigurumis" 
+                    data-price="42,00 €" 
+                    data-img="../src/assets/img/producto-osito.jpg">
+                <div class="product-image-wrapper">
+                <img src="src/assets/img/producto-osito.jpg" alt="Osito Canel">
+                <button class="btn-add-cart" aria-label="Añadir a la cesta">
+                    Añadir a la cesta
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                </button>
+                </div>
+                <div class="product-info">
+                <span class="product-category">AMIGURUMIS</span>
+                <h3 class="product-name"><a href="pages/detalle.html">Osito Canela</a></h3>
+                <div class="product-meta">
+                    <span class="product-price">42,00 €</span>
+                    <span class="product-rating">★ 5.0</span>
+                </div>
+                </div>
+            </article>
+
+            <!-- Producto 3 -->
+            <article class="product-card"
+                    data-id="corazon-floral" 
+                    data-title="Corazón Floral" 
+                    data-category="DECORACIÓN" 
+                    data-price="68,00 €" 
+                    data-img="../src/assets/img/producto-manta.jpg">
+                <div class="product-image-wrapper">
+                <img src="src/assets/img/producto-manta.jpg" alt="Manta Nube">
+                <button class="btn-add-cart" aria-label="Añadir a la cesta">
+                    Añadir a la cesta
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                </button>
+                </div>
+                <div class="product-info">
+                <span class="product-category">DECORACIÓN</span>
+                <h3 class="product-name"><a href="pages/detalle.html">Corazón Floral</a></h3>
+                <div class="product-meta">
+                    <span class="product-price">68,00 €</span>
+                    <span class="product-rating">★ 4.8</span>
+                </div>
+                </div>
+            </article>
+
+            <!-- Producto 4 -->
+            <article class="product-card"
+                    data-id="kit-pastel" 
+                    data-title="Kit Pastel" 
+                    data-category="ACCESORIOS" 
+                    data-price="29,00 €" 
+                    data-img="../src/assets/img/producto-kit.jpg">
+                <div class="product-image-wrapper">
+                <img src="src/assets/img/producto-kit.jpg" alt="Kit Pastel">
+                <span class="badge-product">EDICIÓN LIMITADA</span>
+                <button class="btn-add-cart" aria-label="Añadir a la cesta">
+                    Añadir a la cesta
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                </button>
+                </div>
+                <div class="product-info">
+                <span class="product-category">ACCESORIOS</span>
+                <h3 class="product-name"><a href="pages/detalle.html">Kit Pastel</a></h3>
+                <div class="product-meta">
+                    <span class="product-price">29,00 €</span>
+                    <span class="product-rating">★ 4.9</span>
+                </div>
+                </div>
+            </article>
+
+            </div>
+
+            <!-- Botón Ver Todo -->
+            <div class="featured-footer-action">
+            <a href="pages/catalogo.html" class="btn-outline-catalog">
+                Ver todo el catálogo <span>&rarr;</span>
+            </a>
+            </div>
+
+        </div>
+        </section>
+        <!-- Sección Manifesto -->
+        <section class="manifest-section">
+        <div class="manifest-container">
+            
+            <!-- Columna Izquierda -->
+            <div class="manifest-image-wrapper">
+            <div class="manifest-image-card">
+                <img src="src/assets/img/manifest-crochet.jpg" alt="Proceso artesanal de tejido en crochet">
+            </div>
+            </div>
+
+            <!-- Columna Derecha -->
+            <div class="manifest-content">
+            <div class="subtitle-wrapper">
+                <span class="subtitle-line"></span>
+                <span class="section-subtitle">NUESTRA FORMA DE HACER</span>
+            </div>
+
+            <h2 class="manifest-title">
+                Menos prisa. <br>
+                <em class="highlight">Más significado.</em>
+            </h2>
+
+            <p class="manifest-paragraph">
+                En Más que hilos creemos en los objetos que cuentan historias. Cada pieza nace en nuestro pequeño taller, entre ovillos, bocetos y muchas tazas de té.
+            </p>
+
+            <p class="manifest-paragraph">
+                Elegimos materiales amables y trabajamos a un ritmo consciente. Así creamos algo que no solo es bonito: es único, duradero y guarda un pedacito de quien lo hizo.
+            </p>
+
+            <a href="pages/nosotros.html" class="manifest-link">
+                Descubre quién está detrás <span>&rarr;</span>
+            </a>
+            </div>
+
+        </div>
+        </section>
+
+        <!-- Sección: Cuidamos las pequeñas cosas -->
+        <section class="features-section">
+        <div class="features-container">
+            
+            <!-- Encabezado -->
+            <div class="features-header">
+            <div class="subtitle-wrapper">
+                <span class="subtitle-line"></span>
+                <span class="section-subtitle">NUESTRA FORMA DE HACER</span>
+            </div>
+            <h2 class="section-title">Cuidamos las pequeñas cosas</h2>
+            </div>
+
+            <!-- 4 Tarjetas de Valores -->
+            <div class="features-grid">
+            
+            <!-- Tarjeta 1 -->
+            <div class="feature-card">
+                <div class="feature-icon-circle">
+                <!-- Ícono de Manos con Corazón -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                </div>
+                <div class="feature-content">
+                <h3>100% hecho a mano</h3>
+                <p>Tejemos cada pieza despacio, una a una, como si fuera para casa.</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="feature-card">
+                <div class="feature-icon-circle">
+                <!-- Ícono de Envío/Camión -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13" rx="2"/>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
+                    <circle cx="5.5" cy="18.5" r="2.5"/>
+                    <circle cx="18.5" cy="18.5" r="2.5"/>
+                </svg>
+                </div>
+                <div class="feature-content">
+                <h3>Viaja bien cuidada</h3>
+                <p>La envolvemos con cuidado para que llegue bonita y lista para regalar.</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="feature-card">
+                <div class="feature-icon-circle">
+                <!-- Ícono de Hoja/Fibras Naturales -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 20A9 9 0 0 1 2 11 9 9 0 0 1 11 2a9 9 0 0 1 9 9 9 9 0 0 1-9 9z"/>
+                    <path d="M2 21c5-5 9-10 9-19"/>
+                </svg>
+                </div>
+                <div class="feature-content">
+                <h3>Hilos que apetece tocar</h3>
+                <p>Escogemos fibras suaves y agradables, pensando en el uso de cada pieza.</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta 4 -->
+            <div class="feature-card">
+                <div class="feature-icon-circle">
+                <!-- Ícono de Destellos/Personalización -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3l1.912 5.813a2 2 0 001.275 1.275L21 12l-5.813 1.912a2 2 0 00-1.275 1.275L12 21l-1.912-5.813a2 2 0 00-1.275-1.275L3 12l5.813-1.912a2 2 0 001.275-1.275L12 3z"/>
+                </svg>
+                </div>
+                <div class="feature-content">
+                <h3>Lo hacemos muy tuyo</h3>
+                <p>Si imaginas otro color o detalle, lo hablamos y buscamos juntas.</p>
+                </div>
+            </div>
+
+            </div>
+
+        </div>
+        </section>
+        <!-- Sección: Cartas desde el taller -->
+        <section class="newsletter-section">
+        <div class="newsletter-container">
+            
+            <!-- Subtítulo y Título -->
+            <div class="subtitle-wrapper centered">
+            <span class="subtitle-line"></span>
+            <span class="section-subtitle">CARTAS DESDE EL TALLER</span>
+            <span class="subtitle-line"></span>
+            </div>
+
+            <h2 class="newsletter-title">Un poquito de calma en tu bandeja de entrada</h2>
+
+            <p class="newsletter-lead">Novedades, inspiración y un 10% de descuento en tu primera pieza.</p>
+
+            <!-- Formulario de Suscripción -->
+            <form class="newsletter-form" onsubmit="event.preventDefault();">
+            <div class="input-pill-wrapper">
+                <input type="email" placeholder="Tu correo electrónico" required class="newsletter-input">
+                <button type="submit" class="btn-newsletter-submit">Quiero unirme <span>&rarr;</span></button>
+            </div>
+            </form>
+
+            <p class="newsletter-disclaimer">Sin ruido ni spam. Solo cosas bonitas, de vez en cuando.</p>
+
+        </div>
+        </section>
+    </main>
+        <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+        
+        <!-- Logo y Eslogan -->
+        <div class="footer-col brand-col">
+            <a href="index.html" class="logo logo-light">
+            <div class="logo-icon">m</div>
+            <div class="logo-text">
+                <span class="brand-name">Más que hilos</span>
+                <span class="brand-subtitle">ESTUDIO DE CROCHET</span>
+            </div>
+            </a>
+            <p class="footer-slogan">
+            Piezas hechas a mano para acompañarte, regalar y guardar para siempre.
+            </p>
+        </div>
+
+        <!-- Atencion y Cuidados (Centro) -->
+        <div class="footer-col center-col">
+            <span class="footer-subtitle">ATENCIÓN Y CUIDADOS</span>
+            <h3 class="footer-title">Te ayudamos</h3>
+            
+            <div class="footer-links-grid">
+            <a href="#" class="footer-link">Envíos y devoluciones</a>
+            <a href="#" class="footer-link">Cuidados de la pieza</a>
+            <a href="#" class="footer-link">Pedidos personalizados</a>
+            <a href="#" class="footer-link">Preguntas frecuentes</a>
+            </div>
+        </div>
+
+        <!-- Contacto Directo (Derecha) -->
+        <div class="footer-col contact-col">
+            <span class="footer-subtitle">CONTACTO DIRECTO</span>
+            <h3 class="footer-title">¿Hablamos?</h3>
+
+            <div class="contact-item">
+            <span class="contact-label">WHATSAPP</span>
+            <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="contact-value">+34 910 000 000</a>
+            </div>
+
+            <div class="contact-item">
+            <span class="contact-label">CORREO</span>
+            <a href="mailto:hola@masquehilos.es" class="contact-value">hola@masquehilos.es</a>
+            </div>
+
+            <!-- Redes sociales en círculos -->
+            <div class="footer-socials">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle" title="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-circle" title="TikTok">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+            </a>
+            </div>
+        </div>
+
+        </div>
+
+        <!-- Parte Inferior -->
+        <div class="footer-bottom-wrapper">
+        <div class="footer-bottom-container">
+            <p class="copyright">&copy; 2026 Más que hilos. Hecho con calma en Colombia.</p>
+            <div class="footer-legal-links">
+            <a href="#">Privacidad</a>
+            <a href="#">Cookies</a>
+            <a href="#">Legal</a>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Mis Favoritos -->
+    <div id="favorites-modal" class="favorites-modal-overlay">
+    <div class="favorites-modal-card">
+        
+        <!-- Encabezado del modal -->
+        <div class="favorites-modal-header">
+        <div class="header-titles">
+            <span class="sub-caption">— TU SELECCIÓN</span>
+            <h2 class="modal-title">Mis favoritos</h2>
+        </div>
+        <button type="button" id="close-favorites-btn" class="close-modal-btn" aria-label="Cerrar favoritos">&times;</button>
+        </div>
+
+        <!-- Contenedor dinámico (Vacío intencionalmente para llenarlo con JavaScript) -->
+        <div id="favorites-list-container" class="favorites-list-container">
+        <p class="empty-favorites-msg">No tienes productos en tus favoritos.</p>
+        </div>
+
+    </div>
+    </div>
+
+
+
+
+    <!-- Off-canvas / Panel Lateral del Carrito -->
+    <div id="cart-drawer-overlay" class="cart-drawer-overlay">
+    <div class="cart-drawer-card">
+        
+        <!-- Encabezado del Carrito -->
+        <div class="cart-drawer-header">
+        <div class="header-titles">
+            <span class="sub-caption">— TU SELECCIÓN</span>
+            <h2 class="cart-title" id="cart-title-text">Tu Carrito (0 ítems)</h2>
+        </div>
+        <button type="button" id="close-cart-btn" class="close-modal-btn" aria-label="Cerrar carrito">&times;</button>
+        </div>
+
+        <!-- Lista Dinámica de Productos en el Carrito (Con Scroll bar) -->
+        <div id="cart-list-container" class="cart-list-container">
+        <p class="empty-cart-msg">Tu carrito está vacío.</p>
+        </div>
+
+        <!-- Pie del Carrito: Totales y Botón de Checkout -->
+        <div class="cart-drawer-footer">
+        <div class="cart-summary-row">
+            <span class="summary-label">Subtotal</span>
+            <span class="summary-value" id="cart-subtotal-price">0,00 €</span>
+        </div>
+        
+        <div class="cart-summary-row shipping-row">
+            <span class="summary-label">Envío estimado</span>
+            <span class="summary-value highlight-shipping">Gratis</span>
+        </div>
+
+        <p class="cart-tax-note">Los impuestos están incluidos. El envío se confirma al finalizar.</p>
+
+        <button type="button" class="btn-checkout">
+            Finalizar compra <span>&rarr;</span>
+        </button>
+        </div>
+
+    </div>
+    </div>
+
+    <script src="src/js/app.js" type="module"></script>
+
+
+</body>
+</html>
+
