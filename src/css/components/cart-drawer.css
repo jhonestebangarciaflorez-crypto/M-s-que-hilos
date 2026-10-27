@@ -1,0 +1,276 @@
+/* ==========================================
+   PANEL DESPLEGABLE DEL CARRITO (OFF-CANVAS)
+   ========================================== */
+
+/* Fondo oscuro borroso */
+.cart-drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end; /* Alinea el panel a la derecha */
+  
+  /* Transición de opacidad */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Estado activo para abrir el overlay */
+.cart-drawer-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Tarjeta del Panel deslizable */
+.cart-drawer-card {
+  background-color: #fdfbf7; /* Tono crema beige claro */
+  width: 100%;
+  max-width: 460px; /* Ancho lateral del panel */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+  
+  /* Animación de deslizamiento desde la derecha */
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.cart-drawer-overlay.active .cart-drawer-card {
+  transform: translateX(0);
+}
+
+/* Encabezado del Carrito */
+.cart-drawer-header {
+  padding: 2rem 2rem 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #ede8e0;
+}
+
+.cart-title {
+  font-family: serif;
+  font-size: 1.6rem;
+  color: #2c2b29;
+  margin-top: 0.2rem;
+  font-weight: 500;
+}
+
+/* Lista del Carrito con Scrollbar */
+.cart-list-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Personalización elegante de la barra de desplazamiento */
+.cart-list-container::-webkit-scrollbar {
+  width: 5px;
+}
+.cart-list-container::-webkit-scrollbar-thumb {
+  background: #d8cfc4;
+  border-radius: 10px;
+}
+
+/* ITEM DEL CARRITO */
+.cart-item {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f0eae1;
+  position: relative;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item-img {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.cart-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item-category {
+  font-size: 0.65rem;
+  letter-spacing: 1.2px;
+  color: #a87b68;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.cart-item-title {
+  font-family: serif;
+  font-size: 1.05rem;
+  color: #2c2b29;
+  margin: 0.2rem 0;
+  font-weight: 500;
+}
+
+.cart-item-price {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4a4a4a;
+  margin-bottom: 0.6rem;
+}
+
+/* Control de Cantidad (- 1 +) */
+.quantity-controls {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #e0d8cd;
+  border-radius: 6px;
+  background-color: #ffffff;
+  width: fit-content;
+}
+
+.qty-btn {
+  background: transparent;
+  border: none;
+  width: 28px;
+  height: 28px;
+  font-size: 0.9rem;
+  color: #555555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s;
+}
+
+.qty-btn:hover {
+  background-color: #f2ebd9;
+}
+
+.qty-number {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0 0.5rem;
+  color: #2c2b29;
+}
+
+/* Botón de eliminar (basurita) posicionado arriba a la derecha del ítem */
+.btn-remove-cart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: #999999;
+  cursor: pointer;
+  padding: 0.2rem;
+  transition: color 0.2s ease;
+}
+
+.btn-remove-cart:hover {
+  color: #d9534f;
+}
+
+.empty-cart-msg {
+  text-align: center;
+  color: #888888;
+  font-size: 0.9rem;
+  margin: auto 0;
+}
+
+/* PIE DEL PANEL (TOTALES Y CHECKOUT) */
+.cart-drawer-footer {
+  padding: 1.5rem 2rem 2rem 2rem;
+  background-color: #f5efe6; /* Fondo con contraste ligero según Figma */
+  border-top: 1px solid #ede8e0;
+}
+
+.cart-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.summary-label {
+  font-size: 0.9rem;
+  color: #2c2b29;
+}
+
+.summary-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c2b29;
+}
+
+.highlight-shipping {
+  font-size: 0.85rem;
+  color: #555555;
+  font-weight: 500;
+}
+
+.cart-tax-note {
+  font-size: 0.7rem;
+  color: #777777;
+  margin-top: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+/* Botón Finalizar Compra */
+.btn-checkout {
+  width: 100%;
+  background-color: #6e5246; /* Color café arcilla de Figma */
+  color: #ffffff;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-checkout:hover {
+  background-color: #594137;
+}
+
+/* INSIGNIA / BADGE DEL CARRITO EN EL HEADER */
+#cart-toggle-btn {
+  position: relative;
+}
+
+#cart-badge {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  background-color: #c48b71;
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  line-height: 1;
+  display: none;
+}
+

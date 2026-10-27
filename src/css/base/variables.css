@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:wght@400;600;700&display=swap');
+
+:root {
+  /* Fuentes */
+--font-sans: 'DM Sans', sans-serif;
+--font-serif: 'Fraunces', serif;
+
+  /* Paleta de Colores de Figma */
+--ink: #332d2a;
+--muted: #7c726b;
+--cream: #fbf8f2;
+--paper: #fffdf9;
+--sand: #efe6d8;
+--oat: #e9ded1;
+--cocoa: #705449;
+--rose: #ead4d1;
+--lavender: #e8e1eb;
+--terracotta: #b96f55;
+--line: rgba(51, 45, 42, 0.12);
+--shadow: 0 20px 55px rgba(79, 62, 47, 0.10);
+}
+

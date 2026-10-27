@@ -1,0 +1,977 @@
+/* Sección Categorías */
+.categories-section {
+  padding: 5rem 2rem;
+  background-color: var(--cream);
+}
+
+.categories-container {
+  max-width: 1200px; /* Reducimos ligeramente el ancho máximo para tarjetas más compactas */
+  margin: 0 auto;
+}
+
+/* Encabezado */
+.categories-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.subtitle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--cocoa);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.link-see-all {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.link-see-all:hover {
+  color: var(--terracotta);
+  border-color: var(--terracotta);
+}
+
+/* Grilla de 4 columnas */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem; /* Menor espacio entre tarjetas */
+}
+
+/* Tarjeta de Categoría: Arco/Bóveda directo en el contenedor de color */
+.category-card {
+  border-radius: 140px 140px 24px 24px; /* Arco redondeado en la parte superior */
+  padding: 1.25rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+
+
+
+/* Colores de fondo de las tarjetas desde Figma */
+.card-bg-sand { background-color: var(--sand); }
+.card-bg-lavender { background-color: var(--lavender); }
+.card-bg-oat { background-color: var(--oat); }
+.card-bg-rose { background-color: var(--rose); }
+
+
+
+
+/* Marco de la Imagen: Círculo/Óvalo completo dentro de la tarjeta */
+.category-image-wrapper {
+  width: 100%;
+  height: 220px;
+  border-radius: 50%; /* Foto completamente circular/ovalada */
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.category-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Información de la tarjeta */
+.category-info {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0.25rem 0.5rem 0.5rem 0.5rem;
+}
+
+.category-info h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+}
+
+.piece-count {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  display: block;
+}
+
+.arrow-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  font-size: 0.95rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.category-card:hover .arrow-circle {
+  background-color: var(--ink);
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+/* Adaptación móvil */
+@media (max-width: 1024px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/*A continuacion la parte de pequenos desoros*/
+
+
+/* ==========================================
+   SECCIÓN: PEQUEÑOS TESOROS ARTESANALES
+========================================== */
+.featured-products {
+  padding: 6rem 2rem; /* Espaciado generoso superior e inferior */
+  background-color: var(--cream);
+}
+
+.featured-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Encabezado */
+.featured-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.subtitle-wrapper.centered {
+  justify-content: center;
+}
+
+.featured-description {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+/* Grilla de productos */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Imagen en forma de ARCO/DOMO */
+.product-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border-radius: 160px 160px 20px 20px; /* Forma exacta de arco superior */
+  overflow: hidden;
+  background-color: var(--sand);
+  margin-bottom: 1rem;
+}
+
+.product-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image-wrapper img {
+  transform: scale(1.04);
+}
+
+/* Badge flotante */
+.badge-product {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: #ffffff;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  letter-spacing: 0.08em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Botón flotante 'Añadir a la cesta' (Oculto hasta hover) */
+.btn-add-cart {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: var(--ink);
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease, color 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+/* Al pasar el mouse por la tarjeta, aparece el botón */
+.product-card:hover .btn-add-cart {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Al pasar el mouse DIRECTAMENTE sobre el botón, se pone marrón */
+.btn-add-cart:hover {
+  background-color: var(--cocoa);
+  color: #ffffff;
+}
+
+/* Información del producto */
+.product-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-category {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--terracotta);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.25rem;
+}
+
+.product-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.product-name a {
+  color: var(--ink);
+  transition: color 0.2s ease;
+}
+
+.product-name a:hover {
+  color: var(--terracotta);
+}
+
+.product-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-price {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.product-rating {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cocoa);
+}
+
+/* Botón inferior centrado */
+.featured-footer-action {
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+.btn-outline-catalog {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--ink);
+  background-color: transparent;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.85rem 2rem;
+  border-radius: 10px;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-outline-catalog:hover {
+  background-color: var(--cocoa);
+  color: #ffffff;
+  border-color: var(--cocoa);
+}
+
+/* Adaptación Móvil */
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ==========================================
+   SECCIÓN: CUIDAMOS LAS PEQUEÑAS COSAS
+========================================== */
+.features-section {
+  padding: 6rem 2rem;
+  background-color: var(--cream); /* Fondo crema original */
+}
+
+.features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.features-header {
+  margin-bottom: 3rem;
+}
+
+/* Grilla de 4 Tarjetas horizontales */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+/* Tarjeta individual */
+.feature-card {
+  background-color: var(--sand);
+  border-radius: 20px;
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+/* Círculo para el ícono SVG */
+.feature-icon-circle {
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  border-radius: 50%;
+  background-color: rgba(210, 195, 180, 0.45); /* Círculo ligeramente más oscuro para resaltar el ícono */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cocoa);
+}
+
+/* Texto de la tarjeta */
+.feature-content h3 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+  line-height: 1.25;
+}
+
+.feature-content p {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* Adaptación para tablets y móviles */
+@media (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================
+   SECCIÓN: NEWSLETTER / CARTAS DESDE EL TALLER
+========================================== */
+.newsletter-section {
+  background-color: var(--rose); /* Tono rosa pastel suave de Figma */
+  padding: 6rem 2rem;
+  margin-top: 3rem; /* Espaciado generoso con la sección anterior */
+  text-align: center;
+}
+
+.newsletter-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.newsletter-title {
+  font-family: var(--font-serif);
+  font-size: 2.75rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter-lead {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 2.25rem;
+}
+
+/* Formulario con píldora blanca agrupada */
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.input-pill-wrapper {
+  background-color: #ffffff;
+  padding: 6px 6px 6px 1.5rem;
+  border-radius: 999px; /* Forma de píldora redondeada */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 580px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.newsletter-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--ink);
+  flex-grow: 1;
+}
+
+.newsletter-input::placeholder {
+  color: var(--muted);
+  opacity: 0.8;
+}
+
+/* Botón Café interior */
+.btn-newsletter-submit {
+  background-color: var(--cocoa); /* Tono café de la marca */
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem 1.75rem;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.btn-newsletter-submit:hover {
+  background-color: var(--ink);
+  transform: translateY(-1px);
+}
+
+/* Texto pequeño inferior */
+.newsletter-disclaimer {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* Adaptación móvil */
+@media (max-width: 600px) {
+  .newsletter-title {
+    font-size: 2rem;
+  }
+
+  .input-pill-wrapper {
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .newsletter-input {
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn-newsletter-submit {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/* ==========================================
+    SECCIÓN: ARTÍCULOS MÁS VENDIDOS (CATÁLOGO)
+========================================== */
+.best-sellers-section {
+  padding: 5rem 2rem;
+  background-color: var(--cream);
+}
+
+.best-sellers-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Encabezado */
+.best-sellers-section .section-header {
+  margin-bottom: 3rem;
+}
+
+.best-sellers-section .section-description {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+/* Grilla de 3 columnas de igual tamaño */
+.best-sellers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.best-seller-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Imagen con forma de ARCO (Igual tamaño las 3) */
+.arch-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 380px; /* Altura fija uniforme */
+  border-radius: 180px 180px 20px 20px; /* Arco superior simétrico */
+  overflow: hidden;
+  background-color: var(--sand);
+  margin-bottom: 1.25rem;
+}
+
+.arch-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Efecto Hover: Zoom sutil a la imagen */
+.best-seller-card:hover .arch-image-wrapper img {
+  transform: scale(1.05);
+}
+
+/* Información del Producto */
+.product-info-compact {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info-compact .product-category {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--terracotta);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.product-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-title-row .product-name {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.product-title-row .product-name a {
+  color: var(--ink);
+  transition: color 0.2s ease;
+}
+
+.product-title-row .product-name a:hover {
+  color: var(--terracotta);
+}
+
+.product-title-row .product-price {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* Adaptación Móvil */
+@media (max-width: 900px) {
+  .best-sellers-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .arch-image-wrapper {
+    height: 320px;
+  }
+}
+
+
+
+
+
+/* ==========================================
+   SECCIÓN: TODO EL CATÁLOGO CON FILTROS (-20%)
+========================================== */
+.catalog-grid-section {
+  background-color: var(--sand);
+  padding: 3.5rem 1.5rem 4.5rem 1.5rem;
+}
+
+.catalog-grid-container {
+  max-width: 980px;
+  margin-left: 0; /* Alinea todo el bloque a la izquierda */
+  padding-left: 2rem; /* Ajusta el espacio respecto al borde izquierdo de la pantalla */
+}
+
+
+/* Toolbar de Filtros */
+.catalog-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.filter-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  padding: 0.5rem 0.95rem;
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--cocoa);
+  color: var(--ink);
+}
+
+/* Botón Activo en Café */
+.filter-btn.active {
+  background-color: var(--cocoa);
+  color: #ffffff;
+  border-color: var(--cocoa);
+}
+
+.item-count {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* Línea divisoria */
+.catalog-divider {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem; /* Al aumentar el hueco, las 4 cartas se encogen a lo ancho */
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 280px; /* Redúcelo (por ejemplo 160px o 180px) para afinar el ancho */
+  width: 100%;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+.product-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--cream);
+  margin-bottom: 0.6rem;
+}
+
+.product-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image-wrapper img {
+  transform: scale(1.05);
+}
+
+/* Etiquetas Pill */
+.product-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #ffffff;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 0.52rem;
+  font-weight: 700;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  z-index: 2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Botón Favorito (Corazón) */
+.wishlist-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: none;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.wishlist-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.wishlist-btn:hover {
+  background-color: var(--terracotta);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Botón Flotante "Añadir a la cesta" */
+.add-to-cart-overlay {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  background-color: rgba(90, 70, 56, 0.92);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 0.7rem;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+  z-index: 3;
+}
+
+.product-card:hover .add-to-cart-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.add-to-cart-overlay:hover {
+  background-color: var(--ink);
+}
+
+/* INFORMACIÓN APILADA EN COLUMNA (Vertical) */
+.product-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.product-meta .product-category {
+  font-family: var(--font-sans);
+  font-size: 0.52rem;
+  font-weight: 700;
+  color: var(--terracotta);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.product-meta .product-name {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.product-meta .product-name a {
+  color: var(--ink);
+  transition: color 0.2s ease;
+}
+
+.product-meta .product-name a:hover {
+  color: var(--terracotta);
+}
+
+.product-meta .price {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.product-meta .rating {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #b58d3d;
+}
+
+/* Adaptación Responsiva */
+@media (max-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
+
+
