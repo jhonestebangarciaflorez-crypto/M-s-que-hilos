@@ -1,0 +1,129 @@
+/* ==========================================
+   MENÚ DESPLEGABLE DE USUARIO (DROPDOWN)
+   ========================================== */
+
+/* Asegura que el contenedor de acciones en el header sirva de ancla */
+.header-actions {
+  position: relative;
+}
+
+/* Tarjeta flotante del Menú de Usuario */
+.user-dropdown-card {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 320px;
+  background-color: #fdfbf7; /* Fondo beige crema de Figma */
+  border-radius: 18px;
+  padding: 1.8rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0eae1;
+  z-index: 990;
+
+  /* Estado oculto por defecto con animación de opacidad y desplazamiento */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+
+/* Clase activa que agregará JavaScript al hacer clic */
+.user-dropdown-card.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ENCABEZADO DEL MENÚ DE USUARIO */
+.user-dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Círculo suave para el avatar */
+.user-avatar-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #f2ebd9; /* Tono beige rosado de la imagen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a87b68;
+  flex-shrink: 0;
+}
+
+.user-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-title {
+  font-family: serif;
+  font-size: 1.15rem;
+  color: #2c2b29;
+  font-weight: 600;
+  margin: 0;
+}
+
+.user-subtitle {
+  font-size: 0.72rem;
+  color: #888888;
+  margin-top: 0.2rem;
+}
+
+/* Línea divisora sutil */
+.user-dropdown-divider {
+  border: none;
+  border-top: 1px solid #ede8e0;
+  margin: 1.2rem 0 0.8rem 0;
+}
+
+/* LISTA DE NAVEGACIÓN Y ENLACES */
+.user-dropdown-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.user-menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.4rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  color: #4a4a4a;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.user-menu-link:hover {
+  background-color: #f5efe6;
+  color: #2c2b29;
+}
+
+/* Enlace destacado de Iniciar Sesión / Registrarse */
+.user-menu-link.highlight-link {
+  color: #a87b68; /* Tono terracota destacado */
+  font-weight: 600;
+}
+
+.user-menu-link.highlight-link .arrow {
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.user-menu-link.highlight-link:hover .arrow {
+  transform: translateX(3px);
+}
+
+.user-menu-link .chevron {
+  color: #2c2b29;
+  font-size: 1rem;
+  font-weight: 300;
+}

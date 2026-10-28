@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../src/css/base/reset.css">
     <link rel="stylesheet" href="../src/css/components/favorites-modal.css">
     <link rel="stylesheet" href="../src/css/components/cart-drawer.css">
+    <link rel="stylesheet" href="../src/css/components/user-dropdown.css">
     </head>
     <body>
 
@@ -77,18 +78,214 @@
             <span id="cart-badge" class="badge">0</span>
             </button>
 
-            <a href="cuenta.html" class="action-btn" title="Mi Cuenta">
+            <button type="button" class="action-btn" title="Mi Cuenta" id="user-toggle-btn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </a>
+            </button>
         </div>
 
         </div>
+
+        <!-- Menú Desplegable de Espacio Personal -->
+        <div id="user-dropdown-menu" class="user-dropdown-card">
+        
+        <!-- Encabezado del usuario -->
+        <div class="user-dropdown-header">
+            <div class="user-avatar-circle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="user-header-text">
+            <h3 class="user-title" id="user-greeting-title">Tu espacio personal</h3>
+            <p class="user-subtitle" id="user-greeting-subtitle">Todo lo tuyo, en un solo lugar</p>
+            </div>
+        </div>
+
+        <hr class="user-dropdown-divider">
+
+        <!-- Lista de Opciones (Cambiable dinámicamente con JS) -->
+        <nav class="user-dropdown-nav">
+            <ul id="user-menu-options">
+            <!-- Opción Destacada: Iniciar Sesión / Registrarse -->
+            <li>
+                <a href="../pages/cuenta.html" class="user-menu-link highlight-link">
+                <span>Iniciar Sesión / Registrarse</span>
+                <span class="arrow">&rarr;</span>
+                </a>
+            </li>
+
+            <!-- Opciones Estándar -->
+            <li>
+                <a href="../pages/cuenta.html?tab=pedidos" class="user-menu-link">
+                <span>Mis Pedidos</span>
+                <span class="chevron">&rsaquo;</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../pages/cuenta.html?tab=direcciones" class="user-menu-link">
+                <span>Direcciones de Envío</span>
+                <span class="chevron">&rsaquo;</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../pages/cuenta.html?tab=configuracion" class="user-menu-link">
+                <span>Configuración de Cuenta</span>
+                <span class="chevron">&rsaquo;</span>
+                </a>
+            </li>
+            </ul>
+        </nav>
+
+        </div>
+
     </header>
 
-    <!-- Contenido Principal -->
+
+<!-- Contenido Principal -->
     <main id="main-content">
 
+        <!-- Sección Historia / Sobre Nosotros -->
+        <section class="about-hero">
+            <div class="about-hero-container">
+                
+                <!-- Encabezado con Títulos a la izquierda y Texto alineado a la derecha -->
+                <div class="about-hero-header">
+                    <div class="about-hero-titles">
+                        <div class="about-subtitle-wrapper">
+                            <span class="subtitle-line"></span>
+                            <span class="about-subtitle">NUESTRA HISTORIA</span>
+                        </div>
+                        <h1 class="about-title">
+                            Hilos, tiempo y<br>
+                            <span class="highlight">mucho corazón.</span>
+                        </h1>
+                    </div>
+
+                    <div class="about-hero-description">
+                        <p>
+                            Más que hilos nació de una idea sencilla: recuperar el valor de las cosas hechas despacio y convertir cada puntada en un objeto cotidiano lleno de significado.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Imagen Grande con Forma de Arco -->
+                <div class="about-hero-image-wrapper">
+                    <div class="about-hero-image-card">
+                        <img src="../src/assets/img/nosotros-hero.jpg" alt="Madejas de hilo y agujas de crochet hechas a mano">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Sección Proceso / Paso a Paso -->
+        <section class="process-section">
+            <div class="process-container">
+                
+                <!-- Encabezado de la Sección -->
+                <div class="process-header">
+                    <div class="subtitle-wrapper">
+                        <span class="subtitle-line"></span>
+                        <span class="process-subtitle">DEL OVILLO A TUS MANOS</span>
+                    </div>
+                    <h2 class="process-title">Nuestro proceso, sin<br>atajos</h2>
+                </div>
+
+                <!-- Línea Divisora Superior -->
+                <div class="process-divider"></div>
+
+                <!-- Grid de Pasos -->
+                <div class="process-grid">
+                    
+                    <!-- Paso 01 -->
+                    <div class="process-step">
+                        <span class="step-number">01</span>
+                        <h3 class="step-title">Elegimos</h3>
+                        <p class="step-description">
+                            Seleccionamos fibras suaves, resistentes y agradables al tacto.
+                        </p>
+                    </div>
+
+                    <!-- Paso 02 -->
+                    <div class="process-step">
+                        <span class="step-number">02</span>
+                        <h3 class="step-title">Imaginamos</h3>
+                        <p class="step-description">
+                            Dibujamos formas, combinamos tonos y ajustamos cada detalle.
+                        </p>
+                    </div>
+
+                    <!-- Paso 03 -->
+                    <div class="process-step">
+                        <span class="step-number">03</span>
+                        <h3 class="step-title">Tejemos</h3>
+                        <p class="step-description">
+                            Cada pieza crece puntada a puntada en nuestro pequeño taller.
+                        </p>
+                    </div>
+
+                    <!-- Paso 04 -->
+                    <div class="process-step">
+                        <span class="step-number">04</span>
+                        <h3 class="step-title">Cuidamos</h3>
+                        <p class="step-description">
+                            Revisamos, empaquetamos y preparamos tu pedido con mucho mimo.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- Sección Manifiesto / Lo que nos mueve -->
+        <section class="values-section">
+            <div class="values-container">
+                
+                <!-- Columna Izquierda: Imagen en Arco -->
+                <div class="values-image-wrapper">
+                    <div class="values-image-card">
+                        <img src="../src/assets/img/nosotros-valores.jpg" alt="Piezas de crochet hechas a mano y muestras">
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Contenido de Texto y Botón -->
+                <div class="values-content">
+                    <div class="subtitle-wrapper">
+                        <span class="subtitle-line"></span>
+                        <span class="values-subtitle">LO QUE NOS MUEVE</span>
+                    </div>
+
+                    <h2 class="values-title">
+                        Crear menos.<br>
+                        Crear mejor.
+                    </h2>
+
+                    <p class="values-description">
+                        Trabajamos en series limitadas para respetar el proceso, los materiales y a las personas detrás de cada pieza. No buscamos la perfección industrial: celebramos las pequeñas variaciones que hacen que cada objeto sea verdaderamente único.
+                    </p>
+
+                    <a href="../pages/contacto.html" class="btn-values-primary">
+                        Hablemos de tu idea <span>&rarr;</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
     </main>
+
+
+
+
+
+
+
+
+
+
+
+
         <!-- Fotter -->
     <footer class="main-footer">
         <div class="footer-container">
