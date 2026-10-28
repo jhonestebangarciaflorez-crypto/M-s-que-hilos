@@ -534,3 +534,159 @@ document.addEventListener('DOMContentLoaded', () => {
   // Renderizado inicial al cargar la página
   renderCartUI();
 });
+
+
+
+
+// ==========================================
+// MENÚ DESPLEGABLE DE USUARIO
+// ==========================================
+const userToggleBtn = document.getElementById('user-toggle-btn');
+const userDropdownMenu = document.getElementById('user-dropdown-menu');
+const userGreetingTitle = document.getElementById('user-greeting-title');
+const userGreetingSubtitle = document.getElementById('user-greeting-subtitle');
+const userMenuOptions = document.getElementById('user-menu-options');
+
+// 1. Alternar visibilidad del menú
+if (userToggleBtn && userDropdownMenu) {
+  userToggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Evita que el clic se propague al documento
+    userDropdownMenu.classList.toggle('active');
+  });
+
+  // Cerrar el menú si el usuario hace clic fuera de él
+  document.addEventListener('click', (e) => {
+    if (!userDropdownMenu.contains(e.target) && !userToggleBtn.contains(e.target)) {
+      userDropdownMenu.classList.remove('active');
+    }
+  });
+}
+
+// 2. Función para actualizar la vista según el estado de la sesión
+function updateProfileMenuUI() {
+  // Comprobar si hay un usuario en localStorage
+  const activeUser = JSON.parse(localStorage.getItem('user_session_crochet'));
+
+  if (activeUser && activeUser.isLoggedIn) {
+    // ESTADO: USUARIO LOGUEADO
+    if (userGreetingTitle) userGreetingTitle.textContent = `¡Hola, ${activeUser.name}!`;
+    if (userGreetingSubtitle) userGreetingSubtitle.textContent = activeUser.email;
+
+    const isInPages = window.location.pathname.includes('/pages/');
+    const basePath = isInPages ? '' : 'pages/';
+
+    if (userMenuOptions) {
+      userMenuOptions.innerHTML = `
+        <li>
+          <a href="${basePath}cuenta.html?tab=pedidos" class="user-menu-link">
+            <span>Mis Pedidos</span>
+            <span class="chevron">&rsaquo;</span>
+          </a>
+        </li>
+        <li>
+          <a href="${basePath}cuenta.html?tab=direcciones" class="user-menu-link">
+            <span>Direcciones de Envío</span>
+            <span class="chevron">&rsaquo;</span>
+          </a>
+        </li>
+        <li>
+          <a href="${basePath}cuenta.html?tab=configuracion" class="user-menu-link">
+            <span>Configuración de Cuenta</span>
+            <span class="chevron">&rsaquo;</span>
+          </a>
+        </li>
+        <hr class="user-dropdown-divider">
+        <li>
+          <button type="button" id="logout-btn" class="user-menu-link highlight-link" style="width:100%; border:none; background:none; cursor:pointer; text-align:left;">
+            <span>Cerrar Sesión</span>
+            <span class="arrow">&rarr;</span>
+          </button>
+        </li>
+      `;
+
+      // Evento para cerrar sesión
+      document.getElementById('logout-btn')?.addEventListener('click', () => {
+        localStorage.removeItem('user_session_crochet');
+        updateProfileMenuUI();
+      });
+    }
+  } else {
+    // ESTADO: INVITADO
+    if (userGreetingTitle) userGreetingTitle.textContent = 'Tu espacio personal';
+    if (userGreetingSubtitle) userGreetingSubtitle.textContent = 'Todo lo tuyo, en un solo lugar';
+  }
+}
+
+// Ejecutar revisión de usuario al cargar
+updateProfileMenuUI();
+
+
+
+// Funcionalidad para el Acordeón de Preguntas Frecuentes (FAQ)
+document.addEventListener('DOMContentLoaded', () => {
+    const faqTriggers = document.querySelectorAll('.faq-trigger');
+
+    faqTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const faqItem = trigger.parentElement;
+            const faqContent = faqItem.querySelector('.faq-content');
+            const isActive = faqItem.classList.contains('active');
+
+            // Cierra las demás preguntas para mantener limpio el acordeón (opcional)
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+                    item.querySelector('.faq-content').style.maxHeight = null;
+                }
+            });
+
+            // Alterna el estado de la pregunta clickeada
+            if (isActive) {
+                faqItem.classList.remove('active');
+                trigger.setAttribute('aria-expanded', 'false');
+                faqContent.style.maxHeight = null;
+            } else {
+                faqItem.classList.add('active');
+                trigger.setAttribute('aria-expanded', 'true');
+                // Asigna dinámicamente el scrollHeight para animación fluida
+                faqContent.style.maxHeight = faqContent.scrollHeight + "px";
+            }
+        });
+    });
+});
+
+
+
+
+
+
+// ==========================================
+// CONMUTADOR DE PESTAÑAS (LOGIN / REGISTRO)
+// ==========================================
+const tabLoginBtn = document.getElementById('tab-login-btn');
+const tabRegisterBtn = document.getElementById('tab-register-btn');
+const loginForm = document.getElementById('login-form');
+const registerForm = document.getElementById('register-form');
+
+if (tabLoginBtn && tabRegisterBtn && loginForm && registerForm) {
+  // Clic en pestaña Registrarme
+  tabRegisterBtn.addEventListener('click', () => {
+    tabLoginBtn.classList.remove('active');
+    tabRegisterBtn.classList.add('active');
+
+    loginForm.classList.add('hidden-form');
+    registerForm.classList.remove('hidden-form');
+  });
+
+  // Clic en pestaña Iniciar sesión
+  tabLoginBtn.addEventListener('click', () => {
+    tabRegisterBtn.classList.remove('active');
+    tabLoginBtn.classList.add('active');
+
+    registerForm.classList.add('hidden-form');
+    loginForm.classList.remove('hidden-form');
+  });
+}
+
+

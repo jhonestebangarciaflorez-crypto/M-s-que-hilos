@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../src/css/base/reset.css">
     <link rel="stylesheet" href="../src/css/components/favorites-modal.css">
     <link rel="stylesheet" href="../src/css/components/cart-drawer.css">
+    <link rel="stylesheet" href="../src/css/components/user-dropdown.css">
     </head>
     <body>
 
@@ -76,12 +77,65 @@
             <span id="cart-badge" class="badge">0</span>
             </button>
 
-            <a href="cuenta.html" class="action-btn" title="Mi Cuenta">
+            <button type="button" class="action-btn" title="Mi Cuenta" id="user-toggle-btn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </a>
+            </button>
         </div>
 
         </div>
+        <!-- Menú Desplegable de Espacio Personal -->
+        <div id="user-dropdown-menu" class="user-dropdown-card">
+        
+        <!-- Encabezado del usuario -->
+        <div class="user-dropdown-header">
+            <div class="user-avatar-circle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="user-header-text">
+            <h3 class="user-title" id="user-greeting-title">Tu espacio personal</h3>
+            <p class="user-subtitle" id="user-greeting-subtitle">Todo lo tuyo, en un solo lugar</p>
+            </div>
+        </div>
+
+        <hr class="user-dropdown-divider">
+
+        <!-- Lista de Opciones (Cambiable dinámicamente con JS) -->
+        <nav class="user-dropdown-nav">
+            <ul id="user-menu-options">
+            <!-- Opción Destacada: Iniciar Sesión / Registrarse -->
+            <li>
+                <a href="../pages/cuenta.html" class="user-menu-link highlight-link">
+                <span>Iniciar Sesión / Registrarse</span>
+                <span class="arrow">&rarr;</span>
+                </a>
+            </li>
+
+            <!-- Opciones Estándar -->
+            <li>
+                <a href="../pages/cuenta.html?tab=pedidos" class="user-menu-link">
+                <span>Mis Pedidos</span>
+                <span class="chevron">&rsaquo;</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../pages/cuenta.html?tab=direcciones" class="user-menu-link">
+                <span>Direcciones de Envío</span>
+                <span class="chevron">&rsaquo;</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../pages/cuenta.html?tab=configuracion" class="user-menu-link">
+                <span>Configuración de Cuenta</span>
+                <span class="chevron">&rsaquo;</span>
+                </a>
+            </li>
+            </ul>
+        </nav>
+
+        </div>
+
     </header>
 
     <!-- Contenido Principal del Catalogo -->

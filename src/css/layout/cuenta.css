@@ -1,0 +1,411 @@
+/* ==========================================
+   PÁGINA DE CUENTA (INICIAR SESIÓN / REGISTRO)
+   ========================================== */
+
+/* Fondo general de la página */
+.account-body {
+  background-color: #fdfbf7;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: #2c2b29;
+}
+
+/* Estructura dividida 50% - 50% */
+.account-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   1. COLUMNA IZQUIERDA: HERO CON IMAGEN
+   ========================================== */
+.account-hero-side {
+  flex: 1;
+  position: relative;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.55)
+    ),
+    url('../../../src/assets/img/inicio-registro.jpg'); /* O la imagen de lana/tejidos que prefieras */
+  background-size: cover;
+  background-position: center;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Textos sobre la imagen */
+.sub-caption-light {
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  color: #e2d7c7;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.hero-side-content {
+  max-width: 480px;
+  margin-bottom: 2rem;
+}
+
+/* ==========================================
+   CORRECCIÓN DE TAMAÑOS DE TÍTULOS
+   ========================================== */
+
+/* 1. Título sobre la imagen (Columna Izquierda) */
+.hero-side-title {
+  font-family: serif;
+  font-size: 3.5rem; /* Aumentado para mayor impacto visual */
+  color: #ffffff;
+  line-height: 1.1;
+  font-weight: 400;
+  margin: 0.6rem 0 1rem 0;
+  letter-spacing: -0.5px;
+}
+
+/* Estilo para el texto en cursiva/destacado */
+.highlight-side {
+  font-style: italic;
+  color: #e5b39b; /* Tono melocotón cálido de Figma */
+  font-weight: 400;
+}
+
+/* 2. Título principal del Formulario (Columna Derecha) */
+.form-title {
+  font-family: serif;
+  font-size: 3.5rem; /* Tamaño proporcional para "Bienvenida de nuevo" */
+  color: #2c2b29;
+  margin: 0.5rem 0 0.5rem 0;
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.5px;
+}
+
+/* Ajuste responsive para pantallas medianas/móviles */
+@media (max-width: 1200px) {
+  .hero-side-title {
+    font-size: 2.8rem;
+  }
+  .form-title {
+    font-size: 2.5rem;
+  }
+}
+
+
+.hero-side-description {
+  color: #e0ded9;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   2. COLUMNA DERECHA: FORMULARIO Y PESTAÑAS
+   ========================================== */
+.account-form-side {
+  flex: 1;
+  background-color: #fdfbf7;
+  padding: 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* BOTÓN DE CIERRE (X ESTILO FIGMA) */
+.close-screen-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  background-color: #f3ebd9; /* Beige cálido suave de Figma */
+  border: none;
+  width: 44px; /* Mayor área para simular la proporción visual */
+  height: 44px;
+  border-radius: 50%;
+  color: #6e5246; /* Tono café arcilla del ícono original */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* Pequeña sombra sutil */
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.25s ease;
+  z-index: 10;
+}
+
+/* Efectos al pasar el cursor */
+.close-screen-btn:hover {
+  background-color: #e5dac4; /* Transición natural a un beige más tierra */
+  color: #433129; /* Oscurece el trazo del ícono */
+  transform: scale(1.05); /* Lenta respuesta elástica */
+}
+
+/* Ajustes internos para que el SVG sea perfectamente fino */
+.close-screen-btn svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  stroke-width: 2.2px; /* Grosor refinado para el trazo de la cruz */
+}
+
+/* Wrapper del formulario centralizado */
+.form-wrapper {
+  width: 100%;
+  max-width: 420px;
+}
+
+.form-header {
+  margin-bottom: 2rem;
+}
+
+
+
+.form-subtitle {
+  font-size: 0.85rem;
+  color: #777777;
+  margin: 0;
+}
+
+/* PESTAÑAS (INICIAR SESIÓN / REGISTRARME) */
+.auth-tabs {
+  display: flex;
+  border-bottom: 1px solid #e8e2d8;
+  margin-bottom: 2rem;
+}
+
+.tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 0.8rem 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #888888;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.tab-btn.active {
+  color: #2c2b29;
+  font-weight: 600;
+}
+
+/* Línea indicadora inferior bajo la pestaña activa */
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #a87b68; /* Tono terracota */
+}
+
+/* CAMPOS Y INPUTS */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #4a4a4a;
+}
+
+.form-input {
+  background-color: #f7f3eb; /* Fondo cremoso de las cajas en Figma */
+  border: 1px solid transparent;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: #2c2b29;
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.form-input:focus {
+  background-color: #ffffff;
+  border-color: #a87b68;
+}
+
+.form-input::placeholder {
+  color: #aaaaaa;
+}
+
+/* Olvidaste tu contraseña */
+.forgot-password-wrapper {
+  text-align: right;
+  margin-top: 0.3rem;
+}
+
+.forgot-password-link {
+  font-size: 0.75rem;
+  color: #a87b68;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.forgot-password-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* BOTÓN PRINCIPAL DE ACCESO */
+.btn-account-primary {
+  background-color: #6e5246; /* Color café arcilla de Figma */
+  color: #ffffff;
+  border: none;
+  padding: 0.95rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-account-primary:hover {
+  background-color: #594137;
+}
+
+/* Leyenda Legal */
+.legal-disclaimer {
+  text-align: center;
+  font-size: 0.72rem;
+  color: #888888;
+  margin-top: 2rem;
+  line-height: 1.4;
+}
+
+/* Responsividad para pantallas pequeñas/móviles */
+@media (max-width: 900px) {
+  .account-container {
+    flex-direction: column;
+  }
+  .account-hero-side {
+    min-height: 300px;
+    padding: 2rem;
+  }
+  .account-form-side {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+
+/* ==========================================
+   AJUSTES Y CORRECCIONES PARA CUENTA.HTML
+   ========================================== */
+
+/* 1. ESTILOS DEL LOGO SOBRE IMAGEN */
+.account-hero-side .logo-white {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+
+.account-hero-side .logo-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #a87b68;
+  font-family: serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.account-hero-side .logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-hero-side .brand-title {
+  font-family: serif;
+  font-size: 1.25rem;
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.account-hero-side .brand-subtitle {
+  font-size: 0.6rem;
+  letter-spacing: 1.2px;
+  color: #e2d7c7;
+  font-weight: 500;
+}
+
+/* 2. SUB-CAPTIONS (GUION + TEXTO) */
+.sub-caption,
+.sub-caption-light {
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.sub-caption {
+  color: #a87b68; /* Tono terracota/rosa de Figma */
+}
+
+.sub-caption-light {
+  color: #e2d7c7;
+}
+
+/* 3. TÍTULOS Y FUENTES */
+
+
+/* 4. BOTÓN DE CIERRE (X) */
+.close-screen-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2.5rem;
+  background-color: #f2ebd9;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  color: #4a4a4a;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding-bottom: 2px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.close-screen-btn:hover {
+  background-color: #e5dac4;
+  transform: scale(1.05);
+}
+
+
+/* Ocultar formulario inactivo */
+.auth-form.hidden-form {
+  display: none;
+}

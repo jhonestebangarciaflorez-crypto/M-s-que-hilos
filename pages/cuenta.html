@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta — Más que hilos</title>
+
+    <!-- Hojas de estilos del proyecto -->
+    <link rel="stylesheet" href="../src/css/base/reset.css">
+    <link rel="stylesheet" href="../src/css/base/variables.css">
+    <link rel="stylesheet" href="../src/css/components/buttons.css">
+    <link rel="stylesheet" href="../src/css/layout/cuenta.css">
+    <link rel="stylesheet" href="../src/css/layout/header.css">
+</head>
+    <body class="account-body">
+
+    <main class="account-container">
+        
+        <!-- COLUMNA IZQUIERDA: IMAGEN DE FONDO CON TEXTOS SUPERPUESTOS -->
+        <div class="account-hero-side">
+        <!-- Logo blanco superior -->
+        <a href="../index.html" class="logo logo-light">
+            <div class="logo-icon">m</div>
+            <div class="logo-text">
+            <span class="brand-title">Más que hilos</span>
+            <span class="brand-subtitle">ESTUDIO DE CROCHET</span>
+            </div>
+        </a>
+
+
+        <!-- Contenido de texto superpuesto en la imagen -->
+        <div class="hero-side-content">
+            <span class="sub-caption-light">— TU RINCÓN PERSONAL</span>
+            <h1 class="hero-side-title">
+            Todo lo que eliges, <em class="highlight-side">siempre a mano.</em>
+            </h1>
+            <p class="hero-side-description">
+            Guarda tus favoritos, sigue tus pedidos y recupera tus direcciones cuando vuelvas.
+            </p>
+        </div>
+        </div>
+
+        <!-- COLUMNA DERECHA: FORMULARIO Y PESTAÑAS -->
+        <div class="account-form-side">
+        
+        <!-- Botón de cerrar (X) para regresar al Inicio -->
+        <a href="../index.html" class="close-screen-btn" aria-label="Cerrar y volver al inicio">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+        </a>
+
+        <div class="form-wrapper">
+            <!-- Encabezado del Formulario -->
+            <div class="form-header">
+            <span class="sub-caption">— QUÉ ALEGRÍA VERTE</span>
+            <h2 class="form-title">Bienvenida de nuevo</h2>
+            <p class="form-subtitle">Entra para continuar donde lo dejaste.</p>
+            </div>
+
+            <!-- Pestañas para alternar entre Iniciar Sesión y Registrarse -->
+            <div class="auth-tabs">
+            <button type="button" class="tab-btn active" id="tab-login-btn">Iniciar sesión</button>
+            <button type="button" class="tab-btn" id="tab-register-btn">Registrarme</button>
+            </div>
+
+            <!-- Formulario de Iniciar Sesión -->
+            <form id="login-form" class="auth-form">
+            
+            <div class="form-group">
+                <label for="login-email" class="form-label">Correo electrónico</label>
+                <input 
+                type="email" 
+                id="login-email" 
+                class="form-input" 
+                placeholder="nombre@correo.com" 
+                required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="login-password" class="form-label">Contraseña</label>
+                <input 
+                type="password" 
+                id="login-password" 
+                class="form-input" 
+                placeholder="Mínimo 6 caracteres" 
+                required
+                >
+                <div class="forgot-password-wrapper">
+                <a href="#" class="forgot-password-link">He olvidado mi contraseña</a>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-account-primary">
+                Entrar a mi cuenta <span>&rarr;</span>
+            </button>
+
+            </form>
+
+                <!-- Formulario de Registro (Nuevo) -->
+            <form id="register-form" class="auth-form hidden-form">
+                <div class="form-group">
+                    <label for="register-name" class="form-label">Nombre completo</label>
+                    <input type="text" id="register-name" class="form-input" placeholder="Tu nombre y apellido" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="register-email" class="form-label">Correo electrónico</label>
+                    <input type="email" id="register-email" class="form-input" placeholder="nombre@correo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="register-password" class="form-label">Contraseña</label>
+                    <input type="password" id="register-password" class="form-input" placeholder="Mínimo 6 caracteres" required>
+                </div>
+
+                <button type="submit" class="btn-account-primary">
+                    Crear mi cuenta <span>&rarr;</span>
+                </button>
+            </form>
+
+            <!-- Leyenda legal al final -->
+            <p class="legal-disclaimer">
+            Al continuar aceptas nuestra política de privacidad y condiciones de uso.
+            </p>
+
+        </div>
+        </div>
+
+    </main>
+
+    <script src="../src/js/app.js" type="module"></script>
+</body>
+</html>
