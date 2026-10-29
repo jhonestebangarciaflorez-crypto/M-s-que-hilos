@@ -38,10 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
   // Referencias a los elementos del buscador en el header
   const toggleBtn = document.getElementById('search-toggle-btn');
@@ -108,7 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (itemCountText) {
-      itemCountText.textContent = `${visibleCount} ${visibleCount === 1 ? 'pieza' : 'piezas'}`;
+      // Traducción dinámica del contador
+      const isEnglish = document.documentElement.lang === 'en';
+      const textPiece = visibleCount === 1 ? (isEnglish ? 'piece' : 'pieza') : (isEnglish ? 'pieces' : 'piezas');
+      itemCountText.textContent = `${visibleCount} ${textPiece}`;
     }
 
     if (searchTerm !== '' && catalogGridSection) {
@@ -156,8 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Selección de elementos del DOM
@@ -208,8 +205,9 @@ document.addEventListener('DOMContentLoaded', () => {
       favoritesListContainer.innerHTML = '';
 
       if (favorites.length === 0) {
+        // Traducción dinámica del estado vacío
         favoritesListContainer.innerHTML = `
-          <p class="empty-favorites-msg">No tienes productos en tus favoritos.</p>
+          <p class="empty-favorites-msg" data-i18n="modal_fav_empty">${window.traducirTexto ? window.traducirTexto('modal_fav_empty') : 'No tienes productos en tus favoritos.'}</p>
         `;
       } else {
         favorites.forEach((product) => {
@@ -224,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
 
               <div class="favorite-item-actions">
-                <button type="button" class="btn-add-cart-modal">Añadir al carrito</button>
+                <button type="button" class="btn-add-cart-modal" data-i18n="btn_add_cart">${window.traducirTexto ? window.traducirTexto('btn_add_cart') : 'Añadir al carrito'}</button>
                 <button type="button" class="btn-remove-favorite" aria-label="Eliminar de favoritos" data-id="${product.id}">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="3 6 5 6 21 6"></polyline>
@@ -312,8 +310,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderFavoritesUI();
 });
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Selección de elementos del DOM del Carrito
   const cartToggleBtn = document.getElementById('cart-toggle-btn');
@@ -344,7 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Helper para convertir el texto del precio (ej: "38,00 €") a número
+  // Helper para convertir el texto del precio a número
   function parsePrice(priceString) {
     if (typeof priceString === 'number') return priceString;
     const cleanStr = priceString.replace('COP', '').replace(',', '.').trim();
@@ -362,10 +358,12 @@ document.addEventListener('DOMContentLoaded', () => {
       cartBadge.style.display = totalItemsCount > 0 ? 'flex' : 'none';
     }
 
-    // Actualizar título de la cabecera del carrito
+    // Actualizar título de la cabecera del carrito de forma dinámica
     if (cartTitleText) {
-      const itemText = totalItemsCount === 1 ? '1 ítem' : `${totalItemsCount} ítems`;
-      cartTitleText.textContent = `Tu Carrito (${itemText})`;
+      const isEnglish = document.documentElement.lang === 'en';
+      const itemText = totalItemsCount === 1 ? (isEnglish ? '1 item' : '1 ítem') : (isEnglish ? `${totalItemsCount} items` : `${totalItemsCount} ítems`);
+      const baseTitle = window.traducirTexto ? window.traducirTexto('modal_cart_title') : 'Tu Carrito';
+      cartTitleText.textContent = `${baseTitle} (${itemText})`;
     }
 
     // Limpiar contenedor de lista
@@ -373,8 +371,9 @@ document.addEventListener('DOMContentLoaded', () => {
       cartListContainer.innerHTML = '';
 
       if (cart.length === 0) {
+        // Traducción dinámica del estado vacío
         cartListContainer.innerHTML = `
-          <p class="empty-cart-msg">Tu carrito está vacío.</p>
+          <p class="empty-cart-msg" data-i18n="modal_cart_empty">${window.traducirTexto ? window.traducirTexto('modal_cart_empty') : 'Tu carrito está vacío.'}</p>
         `;
       } else {
         cart.forEach((product) => {
@@ -436,10 +435,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 5. Función para añadir un producto al Carrito
-// 5. Función para añadir un producto al Carrito (con blindaje contra null)
+  // 5. Función para añadir un producto al Carrito (con blindaje contra null)
   function addToCart(productData) {
-    // Si falta algún dato crítico, abortar la inserción para no corromper el carrito
     if (!productData || !productData.id || productData.id === 'null' || productData.title === 'null') {
       console.warn('Intento de agregar un producto inválido prevenido:', productData);
       return;
@@ -486,14 +483,12 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', (e) => {
       const card = e.currentTarget.closest('.product-card');
       if (card) {
-        // 1. Intentar leer desde los atributos data-*
         let id = card.getAttribute('data-id');
         let title = card.getAttribute('data-title');
         let category = card.getAttribute('data-category');
         let price = card.getAttribute('data-price');
         let img = card.getAttribute('data-img');
 
-        // 2. Si no están en los atributos data-*, extraerlos directamente del DOM como respaldo
         if (!title) {
           title = card.querySelector('.product-name')?.textContent.trim() || 'Producto';
         }
@@ -535,9 +530,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderCartUI();
 });
 
-
-
-
 // ==========================================
 // MENÚ DESPLEGABLE DE USUARIO
 // ==========================================
@@ -550,7 +542,7 @@ const userMenuOptions = document.getElementById('user-menu-options');
 // 1. Alternar visibilidad del menú
 if (userToggleBtn && userDropdownMenu) {
   userToggleBtn.addEventListener('click', (e) => {
-    e.stopPropagation(); // Evita que el clic se propague al documento
+    e.stopPropagation(); 
     userDropdownMenu.classList.toggle('active');
   });
 
@@ -562,7 +554,7 @@ if (userToggleBtn && userDropdownMenu) {
   });
 }
 
-// 2. Función para actualizar la vista según el estado de la sesión
+// 2. Función para actualizar la vista según el estado de la sesión (Con traducciones dinámicas)
 function updateProfileMenuUI() {
   const activeUser = JSON.parse(localStorage.getItem('user_session_crochet'));
   const userGreetingTitle = document.getElementById('user-greeting-title');
@@ -574,8 +566,8 @@ function updateProfileMenuUI() {
     const basePath = isInPages ? '' : 'pages/';
 
     // 1. Saludo y subtítulo exactos de Figma
-    if (userGreetingTitle) userGreetingTitle.textContent = `Hola, ${activeUser.name || 'Cliente'}`;
-    if (userGreetingSubtitle) userGreetingSubtitle.textContent = `Cliente desde ${activeUser.createdYear || '2026'}`;
+    if (userGreetingTitle) userGreetingTitle.innerHTML = `<span data-i18n="dash_hi">${window.traducirTexto ? window.traducirTexto('dash_hi') : 'Hola,'}</span> ${activeUser.name || 'Cliente'}`;
+    if (userGreetingSubtitle) userGreetingSubtitle.innerHTML = `<span data-i18n="dash_since_text">${window.traducirTexto ? window.traducirTexto('dash_since_text') : 'Cliente desde'}</span> ${activeUser.createdYear || '2026'}`;
 
     // 2. Lista de opciones con íconos vectoriales
     if (userMenuOptions) {
@@ -584,7 +576,7 @@ function updateProfileMenuUI() {
           <a href="${basePath}dashboard.html?tab=perfil" class="user-menu-link highlight-link">
             <div class="menu-link-content">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              <span>Mi Perfil</span>
+              <span data-i18n="dash_nav_profile">${window.traducirTexto ? window.traducirTexto('dash_nav_profile') : 'Mi Perfil'}</span>
             </div>
             <span class="chevron">&rsaquo;</span>
           </a>
@@ -593,7 +585,7 @@ function updateProfileMenuUI() {
           <a href="${basePath}dashboard.html?tab=pedidos" class="user-menu-link">
             <div class="menu-link-content">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-              <span>Mis Pedidos</span>
+              <span data-i18n="dash_nav_orders">${window.traducirTexto ? window.traducirTexto('dash_nav_orders') : 'Mis Pedidos'}</span>
             </div>
             <span class="chevron">&rsaquo;</span>
           </a>
@@ -602,7 +594,7 @@ function updateProfileMenuUI() {
           <a href="${basePath}dashboard.html?tab=direcciones" class="user-menu-link">
             <div class="menu-link-content">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6v14l6-3 6 3 6-3v-14l-6 3-6-3-6 3z"/><path d="M7 3v14"/><path d="M13 6v14"/></svg>
-              <span>Direcciones de Envío</span>
+              <span data-i18n="dash_nav_address">${window.traducirTexto ? window.traducirTexto('dash_nav_address') : 'Direcciones de Envío'}</span>
             </div>
             <span class="chevron">&rsaquo;</span>
           </a>
@@ -611,7 +603,7 @@ function updateProfileMenuUI() {
           <a href="${basePath}dashboard.html?tab=configuracion" class="user-menu-link">
             <div class="menu-link-content">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-              <span>Configuración de Cuenta</span>
+              <span data-i18n="dash_nav_settings">${window.traducirTexto ? window.traducirTexto('dash_nav_settings') : 'Configuración de Cuenta'}</span>
             </div>
             <span class="chevron">&rsaquo;</span>
           </a>
@@ -621,7 +613,7 @@ function updateProfileMenuUI() {
           <button type="button" id="logout-btn" class="user-menu-link logout-link">
             <div class="menu-link-content">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-              <span>Cerrar Sesión</span>
+              <span data-i18n="dash_nav_logout">${window.traducirTexto ? window.traducirTexto('dash_nav_logout') : 'Cerrar Sesión'}</span>
             </div>
           </button>
         </li>
@@ -635,15 +627,13 @@ function updateProfileMenuUI() {
     }
   } else {
     // ESTADO: INVITADO
-    if (userGreetingTitle) userGreetingTitle.textContent = 'Tu espacio personal';
-    if (userGreetingSubtitle) userGreetingSubtitle.textContent = 'Todo lo tuyo, en un solo lugar';
+    if (userGreetingTitle) userGreetingTitle.textContent = window.traducirTexto ? window.traducirTexto('user_title') : 'Tu espacio personal';
+    if (userGreetingSubtitle) userGreetingSubtitle.textContent = window.traducirTexto ? window.traducirTexto('user_subtitle') : 'Todo lo tuyo, en un solo lugar';
   }
 }
 
 // Ejecutar revisión de usuario al cargar
 updateProfileMenuUI();
-
-
 
 // Funcionalidad para el Acordeón de Preguntas Frecuentes (FAQ)
 document.addEventListener('DOMContentLoaded', () => {
@@ -655,7 +645,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const faqContent = faqItem.querySelector('.faq-content');
             const isActive = faqItem.classList.contains('active');
 
-            // Cierra las demás preguntas para mantener limpio el acordeón (opcional)
+            // Cierra las demás preguntas
             document.querySelectorAll('.faq-item').forEach(item => {
                 if (item !== faqItem) {
                     item.classList.remove('active');
@@ -664,7 +654,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // Alterna el estado de la pregunta clickeada
+            // Alterna el estado
             if (isActive) {
                 faqItem.classList.remove('active');
                 trigger.setAttribute('aria-expanded', 'false');
@@ -672,17 +662,11 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 faqItem.classList.add('active');
                 trigger.setAttribute('aria-expanded', 'true');
-                // Asigna dinámicamente el scrollHeight para animación fluida
                 faqContent.style.maxHeight = faqContent.scrollHeight + "px";
             }
         });
     });
 });
-
-
-
-
-
 
 // ==========================================
 // CONMUTADOR DE PESTAÑAS (LOGIN / REGISTRO)
@@ -711,5 +695,3 @@ if (tabLoginBtn && tabRegisterBtn && loginForm && registerForm) {
     loginForm.classList.remove('hidden-form');
   });
 }
-
-

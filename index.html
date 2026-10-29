@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Más que hilos | Crochet Hecho a Mano</title>
+    <title data-i18n="head_title">Más que hilos | Crochet Hecho a Mano</title>
     <link rel="icon" type="image/png" href="src/assets/img/logo-gustavo.png">
 
     <!-- Enlaces de estilos -->
@@ -17,15 +17,13 @@
     <link rel="stylesheet" href="src/css/components/favorites-modal.css">
     <link rel="stylesheet" href="src/css/components/cart-drawer.css">
     <link rel="stylesheet" href="src/css/components/user-dropdown.css">
-
-    </head>
-    <body>
+</head>
+<body>
 
     <!-- Encabezado / Navegacion -->
     <header class="main-header">
         <div class="header-container">
         
-
         <!-- Logo con ícono circular e imagen -->
         <a href="index.html" class="logo">
             <div class="logo-icon">
@@ -33,22 +31,27 @@
             </div>
             <div class="logo-text">
                 <span class="brand-name">Más que hilos</span>
-                <span class="brand-subtitle">ESTUDIO DE CROCHET</span>
+                <span class="brand-subtitle" data-i18n="brand_subtitle">ESTUDIO DE CROCHET</span>
             </div>
         </a>
 
         <!-- Navegacion -->
         <nav class="main-nav">
             <ul>
-            <li><a href="index.html" class="active">Inicio</a></li>
-            <li><a href="pages/catalogo.html">Catálogo</a></li>
-            <li><a href="pages/nosotros.html">Sobre nosotros</a></li>
-            <li><a href="pages/contacto.html">Contacto</a></li>
+            <li><a href="index.html" class="active" data-i18n="nav_home">Inicio</a></li>
+            <li><a href="pages/catalogo.html" data-i18n="nav_catalog">Catálogo</a></li>
+            <li><a href="pages/nosotros.html" data-i18n="nav_about">Sobre nosotros</a></li>
+            <li><a href="pages/contacto.html" data-i18n="nav_contact">Contacto</a></li>
             </ul>
         </nav>
 
         <!-- Acciones de Usuario -->
         <div class="header-actions">
+
+            <!-- Botones de cambiar idioma -->
+            <button class="action-btn" onclick="cambiarIdioma('es')" title="Español" style="font-size: 0.85rem; font-weight: bold;">ES</button>
+            <button class="action-btn" onclick="cambiarIdioma('en')" title="English" style="font-size: 0.85rem; font-weight: bold;">EN</button>
+
             <button class="action-btn" title="Buscar" id="search-toggle-btn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </button>
@@ -61,9 +64,9 @@
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
 
-                <input type="text" id="search-input" placeholder="Buscar piezas, colecciones..." />
+                <input type="text" id="search-input" data-i18n="search_placeholder" placeholder="Buscar piezas, colecciones..." />
 
-                <button type="submit" class="search-submit-btn">Buscar</button>
+                <button type="submit" class="search-submit-btn" data-i18n="search_btn">Buscar</button>
 
                 <!-- Botón para cerrar -->
                 <button type="button" id="search-close-btn" class="close-btn" aria-label="Cerrar búsqueda">
@@ -98,8 +101,8 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                 </div>
                 <div class="user-header-text">
-                <h3 class="user-title" id="user-greeting-title">Tu espacio personal</h3>
-                <p class="user-subtitle" id="user-greeting-subtitle">Todo lo tuyo, en un solo lugar</p>
+                <h3 class="user-title" id="user-greeting-title" data-i18n="user_title">Tu espacio personal</h3>
+                <p class="user-subtitle" id="user-greeting-subtitle" data-i18n="user_subtitle">Todo lo tuyo, en un solo lugar</p>
                 </div>
             </div>
 
@@ -111,7 +114,7 @@
                 <!-- Opción Destacada: Iniciar Sesión / Registrarse -->
                 <li>
                     <a href="../pages/cuenta.html" class="user-menu-link highlight-link">
-                    <span>Iniciar Sesión / Registrarse</span>
+                    <span data-i18n="user_login">Iniciar Sesión / Registrarse</span>
                     <span class="arrow">&rarr;</span>
                     </a>
                 </li>
@@ -119,21 +122,21 @@
                 <!-- Opciones Estándar -->
                 <li>
                     <a href="../pages/cuenta.html?tab=pedidos" class="user-menu-link">
-                    <span>Mis Pedidos</span>
+                    <span data-i18n="user_orders">Mis Pedidos</span>
                     <span class="chevron">&rsaquo;</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="../pages/cuenta.html?tab=direcciones" class="user-menu-link">
-                    <span>Direcciones de Envío</span>
+                    <span data-i18n="user_addresses">Direcciones de Envío</span>
                     <span class="chevron">&rsaquo;</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="../pages/cuenta.html?tab=configuracion" class="user-menu-link">
-                    <span>Configuración de Cuenta</span>
+                    <span data-i18n="user_settings">Configuración de Cuenta</span>
                     <span class="chevron">&rsaquo;</span>
                     </a>
                 </li>
@@ -153,23 +156,23 @@
             <div class="hero-text-content">
             <div class="hero-subtitle-wrapper">
                 <span class="subtitle-line"></span>
-                <span class="hero-subtitle">PIEZAS CON ALMA · HECHAS A MANO</span>
+                <span class="hero-subtitle" data-i18n="hero_subtitle">PIEZAS CON ALMA · HECHAS A MANO</span>
             </div>
 
-            <h1 class="hero-title">
+            <h1 class="hero-title" data-i18n="hero_title">
                 Tejidos únicos para abrazar <em class="highlight">lo cotidiano.</em>
             </h1>
 
-            <p class="hero-description">
+            <p class="hero-description" data-i18n="hero_desc">
                 Creamos piezas de crochet 100% a mano, puntada a puntada, para llenar tus días de calidez, color y un poquito de magia.
             </p>
 
             <div class="hero-actions">
                 <a href="pages/catalogo.html" class="btn-hero-primary">
-                Explorar Catálogo <span>&rarr;</span>
+                <span data-i18n="hero_btn1">Explorar Catálogo</span> <span>&rarr;</span>
                 </a>
                 <a href="pages/nosotros.html" class="btn-hero-secondary">
-                Conoce nuestra historia <span>&#8599;</span>
+                <span data-i18n="hero_btn2">Conoce nuestra historia</span> <span>&#8599;</span>
                 </a>
             </div>
             </div>
@@ -192,13 +195,13 @@
             <div class="header-left">
                 <div class="subtitle-wrapper">
                 <span class="subtitle-line"></span>
-                <span class="section-subtitle">ENCUENTRA TU FAVORITO</span>
+                <span class="section-subtitle" data-i18n="cat_subtitle">ENCUENTRA TU FAVORITO</span>
                 </div>
-                <h2 class="section-title">Un universo tejido para ti</h2>
+                <h2 class="section-title" data-i18n="cat_title">Un universo tejido para ti</h2>
             </div>
 
             <a href="pages/catalogo.html" class="link-see-all">
-                Ver todas las categorías <span>&rarr;</span>
+                <span data-i18n="cat_link">Ver todas las categorías</span> <span>&rarr;</span>
             </a>
             </div>
 
@@ -212,8 +215,8 @@
                 </div>
                 <div class="category-info">
                 <div class="text-group">
-                    <h3>Amigurumis</h3>
-                    <span class="piece-count">28 PIEZAS</span>
+                    <h3 data-i18n="cat_amigurumis">Amigurumis</h3>
+                    <span class="piece-count" data-i18n="cat_amigurumis_qty">28 PIEZAS</span>
                 </div>
                 <span class="arrow-circle">&rarr;</span>
                 </div>
@@ -226,8 +229,8 @@
                 </div>
                 <div class="category-info">
                 <div class="text-group">
-                    <h3>Ropa y tops</h3>
-                    <span class="piece-count">16 PIEZAS</span>
+                    <h3 data-i18n="cat_clothes">Ropa y tops</h3>
+                    <span class="piece-count" data-i18n="cat_clothes_qty">16 PIEZAS</span>
                 </div>
                 <span class="arrow-circle">&rarr;</span>
                 </div>
@@ -240,8 +243,8 @@
                 </div>
                 <div class="category-info">
                 <div class="text-group">
-                    <h3>Accesorios</h3>
-                    <span class="piece-count">34 PIEZAS</span>
+                    <h3 data-i18n="cat_accessories">Accesorios</h3>
+                    <span class="piece-count" data-i18n="cat_accessories_qty">34 PIEZAS</span>
                 </div>
                 <span class="arrow-circle">&rarr;</span>
                 </div>
@@ -254,8 +257,8 @@
                 </div>
                 <div class="category-info">
                 <div class="text-group">
-                    <h3>Hogar y decoración</h3>
-                    <span class="piece-count">21 PIEZAS</span>
+                    <h3 data-i18n="cat_home">Hogar y decoración</h3>
+                    <span class="piece-count" data-i18n="cat_home_qty">21 PIEZAS</span>
                 </div>
                 <span class="arrow-circle">&rarr;</span>
                 </div>
@@ -273,11 +276,11 @@
             <div class="featured-header">
             <div class="subtitle-wrapper centered">
                 <span class="subtitle-line"></span>
-                <span class="section-subtitle">LOS MÁS QUERIDOS</span>
+                <span class="section-subtitle" data-i18n="feat_subtitle">LOS MÁS QUERIDOS</span>
                 <span class="subtitle-line"></span>
             </div>
-            <h2 class="section-title">Pequeños tesoros artesanales</h2>
-            <p class="featured-description">Piezas elegidas por nuestra comunidad, creadas en series muy limiteds.</p>
+            <h2 class="section-title" data-i18n="feat_title">Pequeños tesoros artesanales</h2>
+            <p class="featured-description" data-i18n="feat_desc">Piezas elegidas por nuestra comunidad, creadas en series muy limiteds.</p>
             </div>
 
             <!-- Productos -->
@@ -292,14 +295,14 @@
                     data-img="../src/assets/img/producto-conejita.jpg">
                 <div class="product-image-wrapper">
                 <img src="src/assets/img/producto-conejita.jpg" alt="Conejita Margarita">
-                <span class="badge-product">MÁS VENDIDO</span>
+                <span class="badge-product" data-i18n="badge_bestseller">MÁS VENDIDO</span>
                 <button class="btn-add-cart" aria-label="Añadir a la cesta">
-                    Añadir a la cesta
+                    <span data-i18n="btn_add_cart">Añadir a la cesta</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                 </button>
                 </div>
                 <div class="product-info">
-                <span class="product-category">AMIGURUMIS</span>
+                <span class="product-category" data-i18n="cat_upper_amigurumis">AMIGURUMIS</span>
                 <h3 class="product-name"><a href="pages/detalle.html">Conejita Margarita</a></h3>
                 <div class="product-meta">
                     <span class="product-price">38,000 COP</span>
@@ -318,12 +321,12 @@
                 <div class="product-image-wrapper">
                 <img src="src/assets/img/producto-osito.jpg" alt="Osito Canel">
                 <button class="btn-add-cart" aria-label="Añadir a la cesta">
-                    Añadir a la cesta
+                    <span data-i18n="btn_add_cart">Añadir a la cesta</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                 </button>
                 </div>
                 <div class="product-info">
-                <span class="product-category">AMIGURUMIS</span>
+                <span class="product-category" data-i18n="cat_upper_amigurumis">AMIGURUMIS</span>
                 <h3 class="product-name"><a href="pages/detalle.html">Osito Canela</a></h3>
                 <div class="product-meta">
                     <span class="product-price">42,000 COP</span>
@@ -342,12 +345,12 @@
                 <div class="product-image-wrapper">
                 <img src="src/assets/img/producto-manta.jpg" alt="Manta Nube">
                 <button class="btn-add-cart" aria-label="Añadir a la cesta">
-                    Añadir a la cesta
+                    <span data-i18n="btn_add_cart">Añadir a la cesta</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                 </button>
                 </div>
                 <div class="product-info">
-                <span class="product-category">DECORACIÓN</span>
+                <span class="product-category" data-i18n="cat_upper_deco">DECORACIÓN</span>
                 <h3 class="product-name"><a href="pages/detalle.html">Corazón Floral</a></h3>
                 <div class="product-meta">
                     <span class="product-price">68,000 COP</span>
@@ -365,14 +368,14 @@
                     data-img="../src/assets/img/producto-kit.jpg">
                 <div class="product-image-wrapper">
                 <img src="src/assets/img/producto-kit.jpg" alt="Kit Pastel">
-                <span class="badge-product">EDICIÓN LIMITADA</span>
+                <span class="badge-product" data-i18n="badge_limited">EDICIÓN LIMITADA</span>
                 <button class="btn-add-cart" aria-label="Añadir a la cesta">
-                    Añadir a la cesta
+                    <span data-i18n="btn_add_cart">Añadir a la cesta</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                 </button>
                 </div>
                 <div class="product-info">
-                <span class="product-category">ACCESORIOS</span>
+                <span class="product-category" data-i18n="cat_upper_acc">ACCESORIOS</span>
                 <h3 class="product-name"><a href="pages/detalle.html">Kit Pastel</a></h3>
                 <div class="product-meta">
                     <span class="product-price">29,000 COP</span>
@@ -386,7 +389,7 @@
             <!-- Botón Ver Todo -->
             <div class="featured-footer-action">
             <a href="pages/catalogo.html" class="btn-outline-catalog">
-                Ver todo el catálogo <span>&rarr;</span>
+                <span data-i18n="feat_link">Ver todo el catálogo</span> <span>&rarr;</span>
             </a>
             </div>
 
@@ -407,24 +410,24 @@
             <div class="manifest-content">
             <div class="subtitle-wrapper">
                 <span class="subtitle-line"></span>
-                <span class="section-subtitle">NUESTRA FORMA DE HACER</span>
+                <span class="section-subtitle" data-i18n="man_subtitle">NUESTRA FORMA DE HACER</span>
             </div>
 
-            <h2 class="manifest-title">
+            <h2 class="manifest-title" data-i18n="man_title">
                 Menos prisa. <br>
                 <em class="highlight">Más significado.</em>
             </h2>
 
-            <p class="manifest-paragraph">
+            <p class="manifest-paragraph" data-i18n="man_p1">
                 En Más que hilos creemos en los objetos que cuentan historias. Cada pieza nace en nuestro pequeño taller, entre ovillos, bocetos y muchas tazas de té.
             </p>
 
-            <p class="manifest-paragraph">
+            <p class="manifest-paragraph" data-i18n="man_p2">
                 Elegimos materiales amables y trabajamos a un ritmo consciente. Así creamos algo que no solo es bonito: es único, duradero y guarda un pedacito de quien lo hizo.
             </p>
 
             <a href="pages/nosotros.html" class="manifest-link">
-                Descubre quién está detrás <span>&rarr;</span>
+                <span data-i18n="man_link">Descubre quién está detrás</span> <span>&rarr;</span>
             </a>
             </div>
 
@@ -439,9 +442,9 @@
             <div class="features-header">
             <div class="subtitle-wrapper">
                 <span class="subtitle-line"></span>
-                <span class="section-subtitle">NUESTRA FORMA DE HACER</span>
+                <span class="section-subtitle" data-i18n="man_subtitle">NUESTRA FORMA DE HACER</span>
             </div>
-            <h2 class="section-title">Cuidamos las pequeñas cosas</h2>
+            <h2 class="section-title" data-i18n="feat2_title">Cuidamos las pequeñas cosas</h2>
             </div>
 
             <!-- 4 Tarjetas de Valores -->
@@ -450,21 +453,19 @@
             <!-- Tarjeta 1 -->
             <div class="feature-card">
                 <div class="feature-icon-circle">
-                <!-- Ícono de Manos con Corazón -->
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                 </svg>
                 </div>
                 <div class="feature-content">
-                <h3>100% hecho a mano</h3>
-                <p>Tejemos cada pieza despacio, una a una, como si fuera para casa.</p>
+                <h3 data-i18n="f1_title">100% hecho a mano</h3>
+                <p data-i18n="f1_desc">Tejemos cada pieza despacio, una a una, como si fuera para casa.</p>
                 </div>
             </div>
 
             <!-- Tarjeta 2 -->
             <div class="feature-card">
                 <div class="feature-icon-circle">
-                <!-- Ícono de Envío/Camión -->
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="1" y="3" width="15" height="13" rx="2"/>
                     <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
@@ -473,37 +474,35 @@
                 </svg>
                 </div>
                 <div class="feature-content">
-                <h3>Viaja bien cuidada</h3>
-                <p>La envolvemos con cuidado para que llegue bonita y lista para regalar.</p>
+                <h3 data-i18n="f2_title">Viaja bien cuidada</h3>
+                <p data-i18n="f2_desc">La envolvemos con cuidado para que llegue bonita y lista para regalar.</p>
                 </div>
             </div>
 
             <!-- Tarjeta 3 -->
             <div class="feature-card">
                 <div class="feature-icon-circle">
-                <!-- Ícono de Hoja/Fibras Naturales -->
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M11 20A9 9 0 0 1 2 11 9 9 0 0 1 11 2a9 9 0 0 1 9 9 9 9 0 0 1-9 9z"/>
                     <path d="M2 21c5-5 9-10 9-19"/>
                 </svg>
                 </div>
                 <div class="feature-content">
-                <h3>Hilos que apetece tocar</h3>
-                <p>Escogemos fibras suaves y agradables, pensando en el uso de cada pieza.</p>
+                <h3 data-i18n="f3_title">Hilos que apetece tocar</h3>
+                <p data-i18n="f3_desc">Escogemos fibras suaves y agradables, pensando en el uso de cada pieza.</p>
                 </div>
             </div>
 
             <!-- Tarjeta 4 -->
             <div class="feature-card">
                 <div class="feature-icon-circle">
-                <!-- Ícono de Destellos/Personalización -->
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 3l1.912 5.813a2 2 0 001.275 1.275L21 12l-5.813 1.912a2 2 0 00-1.275 1.275L12 21l-1.912-5.813a2 2 0 00-1.275-1.275L3 12l5.813-1.912a2 2 0 001.275-1.275L12 3z"/>
                 </svg>
                 </div>
                 <div class="feature-content">
-                <h3>Lo hacemos muy tuyo</h3>
-                <p>Si imaginas otro color o detalle, lo hablamos y buscamos juntas.</p>
+                <h3 data-i18n="f4_title">Lo hacemos muy tuyo</h3>
+                <p data-i18n="f4_desc">Si imaginas otro color o detalle, lo hablamos y buscamos juntas.</p>
                 </div>
             </div>
 
@@ -518,23 +517,23 @@
             <!-- Subtítulo y Título -->
             <div class="subtitle-wrapper centered">
             <span class="subtitle-line"></span>
-            <span class="section-subtitle">CARTAS DESDE EL TALLER</span>
+            <span class="section-subtitle" data-i18n="news_subtitle">CARTAS DESDE EL TALLER</span>
             <span class="subtitle-line"></span>
             </div>
 
-            <h2 class="newsletter-title">Un poquito de calma en tu bandeja de entrada</h2>
+            <h2 class="newsletter-title" data-i18n="news_title">Un poquito de calma en tu bandeja de entrada</h2>
 
-            <p class="newsletter-lead">Novedades, inspiración y un 10% de descuento en tu primera pieza.</p>
+            <p class="newsletter-lead" data-i18n="news_lead">Novedades, inspiración y un 10% de descuento en tu primera pieza.</p>
 
             <!-- Formulario de Suscripción -->
             <form class="newsletter-form" onsubmit="event.preventDefault();">
             <div class="input-pill-wrapper">
-                <input type="email" placeholder="Tu correo electrónico" required class="newsletter-input">
-                <button type="submit" class="btn-newsletter-submit">Quiero unirme <span>&rarr;</span></button>
+                <input type="email" data-i18n="news_placeholder" placeholder="Tu correo electrónico" required class="newsletter-input">
+                <button type="submit" class="btn-newsletter-submit"><span data-i18n="news_btn">Quiero unirme</span> <span>&rarr;</span></button>
             </div>
             </form>
 
-            <p class="newsletter-disclaimer">Sin ruido ni spam. Solo cosas bonitas, de vez en cuando.</p>
+            <p class="newsletter-disclaimer" data-i18n="news_disclaimer">Sin ruido ni spam. Solo cosas bonitas, de vez en cuando.</p>
 
         </div>
         </section>
@@ -549,31 +548,31 @@
             <div class="logo-icon">m</div>
             <div class="logo-text">
                 <span class="brand-name">Más que hilos</span>
-                <span class="brand-subtitle">ESTUDIO DE CROCHET</span>
+                <span class="brand-subtitle" data-i18n="brand_subtitle">ESTUDIO DE CROCHET</span>
             </div>
             </a>
-            <p class="footer-slogan">
+            <p class="footer-slogan" data-i18n="foot_slogan">
             Piezas hechas a mano para acompañarte, regalar y guardar para siempre.
             </p>
         </div>
 
         <!-- Atencion y Cuidados (Centro) -->
         <div class="footer-col center-col">
-            <span class="footer-subtitle">ATENCIÓN Y CUIDADOS</span>
-            <h3 class="footer-title">Te ayudamos</h3>
+            <span class="footer-subtitle" data-i18n="foot_col1_sub">ATENCIÓN Y CUIDADOS</span>
+            <h3 class="footer-title" data-i18n="foot_col1_title">Te ayudamos</h3>
             
             <div class="footer-links-grid">
-            <a href="#" class="footer-link">Envíos y devoluciones</a>
-            <a href="#" class="footer-link">Cuidados de la pieza</a>
-            <a href="#" class="footer-link">Pedidos personalizados</a>
-            <a href="#" class="footer-link">Preguntas frecuentes</a>
+            <a href="#" class="footer-link" data-i18n="foot_link1">Envíos y devoluciones</a>
+            <a href="#" class="footer-link" data-i18n="foot_link2">Cuidados de la pieza</a>
+            <a href="#" class="footer-link" data-i18n="foot_link3">Pedidos personalizados</a>
+            <a href="#" class="footer-link" data-i18n="foot_link4">Preguntas frecuentes</a>
             </div>
         </div>
 
         <!-- Contacto Directo (Derecha) -->
         <div class="footer-col contact-col">
-            <span class="footer-subtitle">CONTACTO DIRECTO</span>
-            <h3 class="footer-title">¿Hablamos?</h3>
+            <span class="footer-subtitle" data-i18n="foot_col2_sub">CONTACTO DIRECTO</span>
+            <h3 class="footer-title" data-i18n="foot_col2_title">¿Hablamos?</h3>
 
             <div class="contact-item">
             <span class="contact-label">WHATSAPP</span>
@@ -581,7 +580,7 @@
             </div>
 
             <div class="contact-item">
-            <span class="contact-label">CORREO</span>
+            <span class="contact-label" data-i18n="foot_email">CORREO</span>
             <a href="mailto:hola@masquehilos.es" class="contact-value">hola@masquehilos.es</a>
             </div>
 
@@ -601,11 +600,11 @@
         <!-- Parte Inferior -->
         <div class="footer-bottom-wrapper">
         <div class="footer-bottom-container">
-            <p class="copyright">&copy; 2026 Más que hilos. Hecho con calma en Colombia.</p>
+            <p class="copyright" data-i18n="foot_copy">&copy; 2026 Más que hilos. Hecho con calma en Colombia.</p>
             <div class="footer-legal-links">
-            <a href="#">Privacidad</a>
-            <a href="#">Cookies</a>
-            <a href="#">Legal</a>
+            <a href="#" data-i18n="foot_legal1">Privacidad</a>
+            <a href="#" data-i18n="foot_legal2">Cookies</a>
+            <a href="#" data-i18n="foot_legal3">Legal</a>
             </div>
         </div>
         </div>
@@ -618,22 +617,19 @@
         <!-- Encabezado del modal -->
         <div class="favorites-modal-header">
         <div class="header-titles">
-            <span class="sub-caption">— TU SELECCIÓN</span>
-            <h2 class="modal-title">Mis favoritos</h2>
+            <span class="sub-caption" data-i18n="modal_selection">— TU SELECCIÓN</span>
+            <h2 class="modal-title" data-i18n="modal_fav_title">Mis favoritos</h2>
         </div>
         <button type="button" id="close-favorites-btn" class="close-modal-btn" aria-label="Cerrar favoritos">&times;</button>
         </div>
 
-        <!-- Contenedor dinámico (Vacío intencionalmente para llenarlo con JavaScript) -->
+        <!-- Contenedor dinámico -->
         <div id="favorites-list-container" class="favorites-list-container">
-        <p class="empty-favorites-msg">No tienes productos en tus favoritos.</p>
+        <p class="empty-favorites-msg" data-i18n="modal_fav_empty">No tienes productos en tus favoritos.</p>
         </div>
 
     </div>
     </div>
-
-
-
 
     <!-- Off-canvas / Panel Lateral del Carrito -->
     <div id="cart-drawer-overlay" class="cart-drawer-overlay">
@@ -642,33 +638,33 @@
         <!-- Encabezado del Carrito -->
         <div class="cart-drawer-header">
         <div class="header-titles">
-            <span class="sub-caption">— TU SELECCIÓN</span>
-            <h2 class="cart-title" id="cart-title-text">Tu Carrito (0 ítems)</h2>
+            <span class="sub-caption" data-i18n="modal_selection">— TU SELECCIÓN</span>
+            <h2 class="cart-title" id="cart-title-text" data-i18n="modal_cart_title">Tu Carrito</h2>
         </div>
         <button type="button" id="close-cart-btn" class="close-modal-btn" aria-label="Cerrar carrito">&times;</button>
         </div>
 
-        <!-- Lista Dinámica de Productos en el Carrito (Con Scroll bar) -->
+        <!-- Lista Dinámica de Productos en el Carrito -->
         <div id="cart-list-container" class="cart-list-container">
-        <p class="empty-cart-msg">Tu carrito está vacío.</p>
+        <p class="empty-cart-msg" data-i18n="modal_cart_empty">Tu carrito está vacío.</p>
         </div>
 
         <!-- Pie del Carrito: Totales y Botón de Checkout -->
         <div class="cart-drawer-footer">
         <div class="cart-summary-row">
-            <span class="summary-label">Subtotal</span>
+            <span class="summary-label" data-i18n="modal_subtotal">Subtotal</span>
             <span class="summary-value" id="cart-subtotal-price">0,00 COP</span>
         </div>
         
         <div class="cart-summary-row shipping-row">
-            <span class="summary-label">Envío estimado</span>
-            <span class="summary-value highlight-shipping">Gratis</span>
+            <span class="summary-label" data-i18n="modal_shipping">Envío estimado</span>
+            <span class="summary-value highlight-shipping" data-i18n="modal_free">Gratis</span>
         </div>
 
-        <p class="cart-tax-note">Los impuestos están incluidos. El envío se confirma al finalizar.</p>
+        <p class="cart-tax-note" data-i18n="modal_tax">Los impuestos están incluidos. El envío se confirma al finalizar.</p>
 
         <button type="button" class="btn-checkout">
-            Finalizar compra <span>&rarr;</span>
+            <span data-i18n="modal_checkout">Finalizar compra</span> <span>&rarr;</span>
         </button>
         </div>
 
@@ -676,8 +672,7 @@
     </div>
 
     <script src="src/js/app.js" type="module"></script>
-
+    <script src="src/js/i18n.js"></script>
 
 </body>
 </html>
-
