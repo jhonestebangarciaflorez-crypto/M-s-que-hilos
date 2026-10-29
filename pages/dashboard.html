@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil — Más que hilos</title>
+
+    <!-- Hojas de estilos del proyecto -->
+    <link rel="stylesheet" href="../src/css/base/reset.css">
+    <link rel="stylesheet" href="../src/css/base/variables.css">
+    <link rel="stylesheet" href="../src/css/components/buttons.css">
+    <link rel="stylesheet" href="../src/css/layout/cuenta.css">
+    <link rel="stylesheet" href="../src/css/layout/header.css">
+    <link rel="stylesheet" href="../src/css/components/user-dropdown.css">
+    <link rel="stylesheet" href="../src/css/layout/grid.css">
+    <link rel="stylesheet" href="../src/css/components/cards.css">
+    <link rel="stylesheet" href="../src/css/layout/footer.css">
+    <link rel="stylesheet" href="../src/css/components/favorites-modal.css">
+    <link rel="stylesheet" href="../src/css/components/cart-drawer.css">
+    <link rel="stylesheet" href="../src/css/layout/dashboard.css">
+    </head>
+<body class="account-body">
+    <!-- Encabezado / Navegación Principal -->
+    <header class="main-header">
+        <div class="header-container">
+        
+        <!-- Logo con ícono -->
+        <a href="../index.html" class="logo">
+            <div class="logo-icon">m</div>
+            <div class="logo-text">
+            <span class="brand-name">Más que hilos</span>
+            <span class="brand-subtitle">ESTUDIO DE CROCHET</span>
+            </div>
+        </a>
+
+        <!-- Navegacion -->
+        <nav class="main-nav">
+            <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="nosotros.html">Sobre nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- Acciones de Usuario -->
+        <div class="header-actions">
+            <button class="action-btn" title="Buscar"  id="search-toggle-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </button>
+        <!-- Caja desplegable del buscador -->
+            <div id="search-overlay" class="search-overlay">
+            <div class="search-input-wrapper">
+                <!-- Icono interno de lupa -->
+                <svg class="search-input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+
+                <input type="text" id="search-input" placeholder="Buscar piezas, colecciones..." />
+
+                <button type="submit" class="search-submit-btn">Buscar</button>
+
+                <!-- Botón para cerrar -->
+                <button type="button" id="search-close-btn" class="close-btn" aria-label="Cerrar búsqueda">
+                &times;
+                </button>
+            </div>
+            </div>
+            
+            <button class="action-btn" title="Favoritos" id="favorites-toggle-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span id="favorites-badge" class="badge">0</span>
+            </button>
+
+            <button class="action-btn" title="Carrito" id="cart-toggle-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span id="cart-badge" class="badge">0</span>
+            </button>
+
+            <button type="button" class="action-btn" title="Mi Cuenta" id="user-toggle-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </button>
+        </div>
+
+        </div>
+        <!-- Menú Desplegable de Espacio Personal -->
+        <div id="user-dropdown-menu" class="user-dropdown-card">
+        
+        <!-- Encabezado del usuario -->
+        <div class="user-dropdown-header">
+            <div class="user-avatar-circle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="user-header-text">
+            <h3 class="user-title" id="user-greeting-title">Tu espacio personal</h3>
+            <p class="user-subtitle" id="user-greeting-subtitle">Todo lo tuyo, en un solo lugar</p>
+            </div>
+        </div>
+
+        <hr class="user-dropdown-divider">
+
+        <!-- Lista de Opciones (Cambiable dinámicamente con JS) -->
+        <nav class="user-dropdown-nav">
+            <ul id="user-menu-options">
+            <!-- Opción Destacada: Iniciar Sesión / Registrarse -->
+            <li>
+                <a href="../pages/cuenta.html" class="user-menu-link highlight-link">
+                <span>Iniciar Sesión / Registrarse</span>
+                <span class="arrow">&rarr;</span>
+                </a>
+            </li>
+
+            <!-- Opciones Estándar -->
+            <li>
+                <a href="../pages/cuenta.html?tab=pedidos" class="user-menu-link">
+                <span>Mis Pedidos</span>
+                <span class="chevron">&rsaquo;</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../pages/cuenta.html?tab=direcciones" class="user-menu-link">
+                <span>Direcciones de Envío</span>
+                <span class="chevron">&rsaquo;</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="../pages/cuenta.html?tab=configuracion" class="user-menu-link">
+                <span>Configuración de Cuenta</span>
+                <span class="chevron">&rsaquo;</span>
+                </a>
+            </li>
+            </ul>
+        </nav>
+
+        </div>
+
+    </header>
+
+
+    <main class="dashboard-main-container">
+    <div class="dashboard-grid-layout">
+        
+        <!-- COLUMNA IZQUIERDA: TARJETA SIDEBAR -->
+        <aside class="dashboard-sidebar-card">
+        <div class="sidebar-user-header">
+            <div class="sidebar-avatar">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="sidebar-user-info">
+            <h3 class="sidebar-user-name" id="dash-user-name">Hola, Cliente</h3>
+            <p class="sidebar-user-sub" id="dash-user-subtitle">Cliente desde 2026</p>
+            </div>
+        </div>
+
+        <hr class="sidebar-divider">
+
+        <nav class="sidebar-nav">
+            <ul>
+            <li>
+                <button type="button" class="sidebar-link dash-tab-btn active" data-tab="perfil">
+                <div class="link-content">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span>Mi Perfil</span>
+                </div>
+                <span class="chevron">&rsaquo;</span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="sidebar-link dash-tab-btn" data-tab="pedidos">
+                <div class="link-content">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    <span>Mis Pedidos</span>
+                </div>
+                <span class="chevron">&rsaquo;</span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="sidebar-link dash-tab-btn" data-tab="direcciones">
+                <div class="link-content">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 6v14l6-3 6 3 6-3v-14l-6 3-6-3-6 3z"/><path d="M7 3v14"/><path d="M13 6v14"/></svg>
+                    <span>Direcciones de Envío</span>
+                </div>
+                <span class="chevron">&rsaquo;</span>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="sidebar-link dash-tab-btn" data-tab="configuracion">
+                <div class="link-content">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    <span>Configuración de Cuenta</span>
+                </div>
+                <span class="chevron">&rsaquo;</span>
+                </button>
+            </li>
+            <hr class="sidebar-divider">
+            <li>
+                <button type="button" id="dash-logout-btn" class="sidebar-link logout-link">
+                <div class="link-content">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                    <span>Cerrar Sesión</span>
+                </div>
+                </button>
+            </li>
+            </ul>
+        </nav>
+        </aside>
+
+        <!-- COLUMNA DERECHA: CONTENIDO DEL DASHBOARD -->
+        <section class="dashboard-content-area" id="dash-content-area">
+        <!-- Inyección dinámica mediante JS -->
+        </section>
+
+    </div>
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+        
+        <!-- Logo y Eslogan -->
+        <div class="footer-col brand-col">
+            <a href="index.html" class="logo logo-light">
+            <div class="logo-icon">m</div>
+            <div class="logo-text">
+                <span class="brand-name">Más que hilos</span>
+                <span class="brand-subtitle">ESTUDIO DE CROCHET</span>
+            </div>
+            </a>
+            <p class="footer-slogan">
+            Piezas hechas a mano para acompañarte, regalar y guardar para siempre.
+            </p>
+        </div>
+
+        <!-- Atencion y Cuidados (Centro) -->
+        <div class="footer-col center-col">
+            <span class="footer-subtitle">ATENCIÓN Y CUIDADOS</span>
+            <h3 class="footer-title">Te ayudamos</h3>
+            
+            <div class="footer-links-grid">
+            <a href="#" class="footer-link">Envíos y devoluciones</a>
+            <a href="#" class="footer-link">Cuidados de la pieza</a>
+            <a href="#" class="footer-link">Pedidos personalizados</a>
+            <a href="#" class="footer-link">Preguntas frecuentes</a>
+            </div>
+        </div>
+
+        <!-- Contacto Directo (Derecha) -->
+        <div class="footer-col contact-col">
+            <span class="footer-subtitle">CONTACTO DIRECTO</span>
+            <h3 class="footer-title">¿Hablamos?</h3>
+
+            <div class="contact-item">
+            <span class="contact-label">WHATSAPP</span>
+            <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="contact-value">+34 910 000 000</a>
+            </div>
+
+            <div class="contact-item">
+            <span class="contact-label">CORREO</span>
+            <a href="mailto:hola@masquehilos.es" class="contact-value">hola@masquehilos.es</a>
+            </div>
+
+            <!-- Redes sociales en círculos -->
+            <div class="footer-socials">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle" title="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-circle" title="TikTok">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+            </a>
+            </div>
+        </div>
+
+        </div>
+
+        <!-- Parte Inferior -->
+        <div class="footer-bottom-wrapper">
+        <div class="footer-bottom-container">
+            <p class="copyright">&copy; 2026 Más que hilos. Hecho con calma en Colombia.</p>
+            <div class="footer-legal-links">
+            <a href="#">Privacidad</a>
+            <a href="#">Cookies</a>
+            <a href="#">Legal</a>
+            </div>
+        </div>
+        </div>
+    </footer>
+    
+    <!-- Modal de Mis Favoritos -->
+    <div id="favorites-modal" class="favorites-modal-overlay">
+    <div class="favorites-modal-card">
+        
+        <!-- Encabezado del modal -->
+        <div class="favorites-modal-header">
+        <div class="header-titles">
+            <span class="sub-caption">— TU SELECCIÓN</span>
+            <h2 class="modal-title">Mis favoritos</h2>
+        </div>
+        <button type="button" id="close-favorites-btn" class="close-modal-btn" aria-label="Cerrar favoritos">&times;</button>
+        </div>
+
+        <!-- Contenedor dinámico (Vacío intencionalmente para llenarlo con JavaScript) -->
+        <div id="favorites-list-container" class="favorites-list-container">
+        <p class="empty-favorites-msg">No tienes productos en tus favoritos.</p>
+        </div>
+
+    </div>
+    </div>
+
+
+    <!-- Off-canvas / Panel Lateral del Carrito -->
+    <div id="cart-drawer-overlay" class="cart-drawer-overlay">
+    <div class="cart-drawer-card">
+        
+        <!-- Encabezado del Carrito -->
+        <div class="cart-drawer-header">
+        <div class="header-titles">
+            <span class="sub-caption">— TU SELECCIÓN</span>
+            <h2 class="cart-title" id="cart-title-text">Tu Carrito (0 ítems)</h2>
+        </div>
+        <button type="button" id="close-cart-btn" class="close-modal-btn" aria-label="Cerrar carrito">&times;</button>
+        </div>
+
+        <!-- Lista Dinámica de Productos en el Carrito (Con Scroll bar) -->
+        <div id="cart-list-container" class="cart-list-container">
+        <p class="empty-cart-msg">Tu carrito está vacío.</p>
+        </div>
+
+        <!-- Pie del Carrito: Totales y Botón de Checkout -->
+        <div class="cart-drawer-footer">
+        <div class="cart-summary-row">
+            <span class="summary-label">Subtotal</span>
+            <span class="summary-value" id="cart-subtotal-price">0,00 COP</span>
+        </div>
+        
+        <div class="cart-summary-row shipping-row">
+            <span class="summary-label">Envío estimado</span>
+            <span class="summary-value highlight-shipping">Gratis</span>
+        </div>
+
+        <p class="cart-tax-note">Los impuestos están incluidos. El envío se confirma al finalizar.</p>
+
+        <button type="button" class="btn-checkout">
+            Finalizar compra <span>&rarr;</span>
+        </button>
+        </div>
+
+    </div>
+    </div>
+
+    <script src="../src/js/app.js" type="module"></script>
+
+
+    <script src="../src/js/dashboard.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,851 @@
+/* ==========================================
+   PANEL DE USUARIO / DASHBOARD (FIGMA DESIGN)
+   ========================================== */
+
+.dashboard-main-container {
+  background-color: #faf7f2;
+  padding: 3rem 5%;
+  min-height: calc(100vh - 160px);
+}
+
+.dashboard-grid-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* SIDEBAR CARD */
+.dashboard-sidebar-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f0eae1;
+}
+
+.sidebar-user-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sidebar-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f2ebd9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a87b68;
+}
+
+.sidebar-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-user-name {
+  font-family: serif;
+  font-size: 1.2rem;
+  color: #2c2b29;
+  margin: 0;
+}
+
+.sidebar-user-sub {
+  font-size: 0.75rem;
+  color: #888888;
+  margin-top: 0.2rem;
+}
+
+.sidebar-divider {
+  border: none;
+  border-top: 1px solid #ede8e0;
+  margin: 1.2rem 0;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.sidebar-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0.8rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: #4a4a4a;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link .link-content {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.sidebar-link .link-content svg {
+  color: #a87b68;
+}
+
+.sidebar-link:hover {
+  background-color: #f8f4ed;
+  color: #2c2b29;
+}
+
+.sidebar-link.active {
+  background-color: #ede2db;
+  color: #a87b68;
+  font-weight: 600;
+}
+
+.sidebar-link.logout-link {
+  color: #a87b68;
+}
+
+.sidebar-link.logout-link:hover {
+  background-color: #fceee9;
+}
+
+/* ÁREA DE CONTENIDO DERECHO */
+.dashboard-content-area {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dash-header-section {
+  margin-bottom: 0.5rem;
+}
+
+.dash-sub-caption {
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  color: #a87b68;
+  font-weight: 600;
+}
+
+.dash-title {
+  font-family: serif;
+  font-size: 2.5rem;
+  color: #2c2b29;
+  margin: 0.3rem 0;
+}
+
+.dash-description {
+  color: #666666;
+  font-size: 0.95rem;
+}
+
+/* TARJETAS RESUMEN (PEDIDO Y DIRECCIÓN) */
+.dash-cards-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.dash-summary-card {
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dash-card-sand {
+  background-color: #ebdcd0;
+}
+
+.dash-card-lavender {
+  background-color: #e8e4ee;
+}
+
+.dash-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a87b68;
+}
+
+.dash-card-label {
+  font-size: 0.7rem;
+  letter-spacing: 1.2px;
+  color: #777777;
+  font-weight: 600;
+}
+
+.dash-card-value {
+  font-family: serif;
+  font-size: 1.5rem;
+  color: #2c2b29;
+  margin: 0.2rem 0;
+}
+
+.dash-card-link {
+  font-size: 0.85rem;
+  color: #2c2b29;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: fit-content;
+  border-bottom: 1px solid #2c2b29;
+  padding-bottom: 2px;
+}
+
+/* BANNER "PARA TI" DE FIGMA */
+.dash-banner-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f0eae1;
+}
+
+.dash-banner-content {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dash-banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .dashboard-grid-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .dash-cards-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dash-banner-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================
+   ESTILOS DE LA PESTAÑA MIS PEDIDOS (FIGMA)
+   ========================================== */
+
+.orders-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* TARJETA DE PEDIDO */
+.order-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 1.8rem 2.2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  border: 1px solid #f0eae1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ENCABEZADO DE LA TARJETA */
+.order-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #f2ebd9;
+}
+
+.order-meta-group {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.order-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.order-label {
+  font-size: 0.68rem;
+  letter-spacing: 1.2px;
+  color: #888888;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.order-value {
+  font-size: 0.95rem;
+  color: #2c2b29;
+  font-weight: 500;
+}
+
+.order-value.font-serif {
+  font-family: serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* ETIQUETAS DE ESTADO */
+.order-status-badge {
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+/* Colores de estado exactos de Figma */
+.badge-on-way {
+  background-color: #f3e5d8;
+  color: #8c5d49;
+}
+
+.badge-delivered {
+  background-color: #e8e4ee;
+  color: #5d546b;
+}
+
+.badge-preparing {
+  background-color: #f7e9e3;
+  color: #9e6451;
+}
+
+/* CUERPO DE LA TARJETA */
+.order-card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order-thumbnails {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.order-thumb-img {
+  width: 68px;
+  height: 68px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid #f0eae1;
+}
+
+/* ACCIONES Y PRECIO */
+.order-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.order-total-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+.order-price {
+  font-family: serif;
+  font-size: 1.1rem;
+  color: #2c2b29;
+  font-weight: 600;
+}
+
+/* BOTÓN DE ACCIÓN */
+.btn-order-action {
+  background-color: transparent;
+  border: 1px solid #2c2b29;
+  color: #2c2b29;
+  padding: 0.65rem 1.4rem;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-order-action:hover {
+  background-color: #2c2b29;
+  color: #ffffff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .order-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .order-meta-group {
+    gap: 2rem;
+  }
+
+  .order-card-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .order-actions-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .order-total-box {
+    align-items: flex-start;
+  }
+}
+
+
+/* ==========================================
+   ESTILOS DE LA PESTAÑA DIRECCIONES (FIGMA)
+   ========================================== */
+
+.dash-header-with-action {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* BOTÓN AGREGAR DIRECCIÓN */
+.btn-add-address {
+  background-color: #63473d; /* Tono terracota oscuro de Figma */
+  color: #ffffff;
+  border: none;
+  padding: 0.95rem 1.8rem;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.btn-add-address:hover {
+  background-color: #4e372f;
+  transform: translateY(-1px);
+}
+
+/* GRID DE DIRECCIONES */
+.addresses-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+  margin-top: 1.5rem;
+}
+
+/* TARJETA INDIVIDUAL */
+.address-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  border: 1px solid #f0eae1;
+  display: flex;
+  flex-direction: column;
+}
+
+.address-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.address-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #e8e4ee; /* Tono lila rosado suave de Figma */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6a5d7b;
+  flex-shrink: 0;
+}
+
+.address-title-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.address-alias {
+  font-family: serif;
+  font-size: 1.35rem;
+  color: #2c2b29;
+  margin: 0;
+}
+
+.address-badge-default {
+  font-size: 0.68rem;
+  color: #a87b68;
+  font-weight: 600;
+  margin-top: 0.15rem;
+}
+
+/* DATOS DE DIRECCIÓN */
+.address-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  color: #555555;
+  margin-bottom: 1.2rem;
+}
+
+.address-recipient {
+  font-weight: 600;
+  color: #2c2b29;
+}
+
+.address-text {
+  line-height: 1.4;
+}
+
+.address-phone {
+  color: #777777;
+}
+
+.address-divider {
+  border: none;
+  border-top: 1px solid #f2ebd9;
+  margin: 0 0 1rem 0;
+}
+
+/* ENLACES DE ACCIÓN (EDITAR / ELIMINAR) */
+.address-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: auto;
+}
+
+.address-action-btn {
+  background: none;
+  border: none;
+  font-size: 0.82rem;
+  color: #2c2b29;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.address-action-btn:hover {
+  color: #a87b68;
+  text-decoration: underline;
+}
+
+.address-action-btn.delete-btn {
+  color: #a87b68;
+}
+
+.address-action-btn.delete-btn:hover {
+  color: #8c5d49;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .dash-header-with-action {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .addresses-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ==========================================
+   ESTILOS DE CONFIGURACIÓN DE CUENTA (FIGMA)
+   ========================================== */
+
+.settings-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  border: 1px solid #f0eae1;
+}
+
+.settings-section {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.settings-section.align-center {
+  align-items: center;
+}
+
+.settings-section-title {
+  font-family: serif;
+  font-size: 1.5rem;
+  color: #2c2b29;
+  margin: 0;
+}
+
+.settings-section-sub {
+  font-size: 0.82rem;
+  color: #777777;
+  margin-top: 0.4rem;
+  line-height: 1.4;
+}
+
+/* CAMPOS DE FORMULARIO */
+.settings-fields-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group-dash {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.dash-field-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #2c2b29;
+}
+
+.dash-field-input {
+  width: 100%;
+  background-color: #faf7f2; /* Fondo beige suave de Figma */
+  border: 1px solid #ede8e0;
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  font-size: 0.92rem;
+  color: #2c2b29;
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.dash-field-input:focus {
+  border-color: #a87b68;
+  background-color: #ffffff;
+}
+
+.settings-divider {
+  border: none;
+  border-top: 1px solid #f2ebd9;
+  margin: 2rem 0;
+}
+
+/* BOTÓN CAMBIAR CONTRASEÑA */
+.btn-change-pwd {
+  background-color: #ffffff;
+  border: 1px solid #ede8e0;
+  color: #2c2b29;
+  padding: 0.8rem 1.4rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  justify-self: end;
+  transition: all 0.2s ease;
+}
+
+.btn-change-pwd:hover {
+  background-color: #faf7f2;
+  border-color: #a87b68;
+  color: #a87b68;
+}
+
+/* ACCIONES (GUARDAR / CANCELAR) */
+.settings-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.btn-dash-cancel {
+  background-color: #ffffff;
+  border: 1px solid #2c2b29;
+  color: #2c2b29;
+  padding: 0.85rem 2rem;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-dash-cancel:hover {
+  background-color: #f8f4ed;
+}
+
+.btn-dash-save {
+  background-color: #63473d; /* Terracota oscuro de Figma */
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem 2.2rem;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-dash-save:hover {
+  background-color: #4e372f;
+  transform: translateY(-1px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .settings-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .btn-change-pwd {
+    justify-self: start;
+  }
+}
+
+/* ==========================================
+   ESTILOS DE ESTADO VACÍO (EMPTY STATE)
+   ========================================== */
+
+.empty-state-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 3.5rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  border: 1px solid #f0eae1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 1.5rem auto 0 auto;
+}
+
+.empty-state-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #faf7f2;
+  border: 1px solid #f2ebd9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a87b68;
+}
+
+.empty-state-title {
+  font-family: serif;
+  font-size: 1.6rem;
+  color: #2c2b29;
+  margin: 0;
+}
+
+.empty-state-description {
+  color: #666666;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 440px;
+}
+
+/* ==========================================
+   AJUSTE DE SCROLL Y ALTURA PARA MODALES
+   ========================================== */
+
+/* Asegurar centrado flex y scroll si el viewport es pequeño */
+.favorites-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+  
+  /* Transición de visibilidad */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.favorites-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Tarjeta del modal con altura máxima y scroll interno */
+.favorites-modal-card {
+  background-color: #fdfbf7;
+  border-radius: 20px;
+  padding: 2.2rem;
+  width: 100%;
+  max-width: 480px;
+  max-height: 88vh; /* Controla que no se salga de la pantalla */
+  overflow-y: auto; /* Permite desplazarse internamente si el contenido es alto */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid #f0eae1;
+}
+
+/* Personalización de la barra de scroll suave dentro del modal */
+.favorites-modal-card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.favorites-modal-card::-webkit-scrollbar-track {
+  background: #f2ebd9;
+  border-radius: 10px;
+}
+
+.favorites-modal-card::-webkit-scrollbar-thumb {
+  background: #a87b68;
+  border-radius: 10px;
+}

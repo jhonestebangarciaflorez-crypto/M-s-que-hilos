@@ -127,3 +127,32 @@
   font-size: 1rem;
   font-weight: 300;
 }
+
+
+/* Contenido del enlace alineado con ícono */
+.menu-link-content {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.menu-link-content svg {
+  color: #a87b68; /* Tono terracota de Figma */
+  flex-shrink: 0;
+}
+
+/* Enlace/Botón de Cerrar Sesión */
+.user-menu-link.logout-link {
+  width: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  color: #a87b68;
+  font-weight: 500;
+  padding: 0.65rem 0.4rem;
+}
+
+.user-menu-link.logout-link:hover {
+  background-color: #fceee9;
+}

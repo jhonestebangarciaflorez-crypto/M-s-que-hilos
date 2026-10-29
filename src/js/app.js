@@ -347,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Helper para convertir el texto del precio (ej: "38,00 €") a número
   function parsePrice(priceString) {
     if (typeof priceString === 'number') return priceString;
-    const cleanStr = priceString.replace('€', '').replace(',', '.').trim();
+    const cleanStr = priceString.replace('COP', '').replace(',', '.').trim();
     return parseFloat(cleanStr) || 0;
   }
 
@@ -432,7 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 0);
 
     if (cartSubtotalPrice) {
-      cartSubtotalPrice.textContent = `${subtotal.toFixed(2).replace('.', ',')} €`;
+      cartSubtotalPrice.textContent = `${subtotal.toFixed(2).replace('.', ',')} COP`;
     }
   }
 
@@ -504,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
           category = card.querySelector('.product-category')?.textContent.trim() || 'CROCHET';
         }
         if (!price) {
-          price = card.querySelector('.product-price, .price')?.textContent.trim() || '0,00 €';
+          price = card.querySelector('.product-price, .price')?.textContent.trim() || '0,00 COP';
         }
         if (!img) {
           img = card.querySelector('img')?.getAttribute('src') || '';
@@ -564,50 +564,73 @@ if (userToggleBtn && userDropdownMenu) {
 
 // 2. Función para actualizar la vista según el estado de la sesión
 function updateProfileMenuUI() {
-  // Comprobar si hay un usuario en localStorage
   const activeUser = JSON.parse(localStorage.getItem('user_session_crochet'));
+  const userGreetingTitle = document.getElementById('user-greeting-title');
+  const userGreetingSubtitle = document.getElementById('user-greeting-subtitle');
+  const userMenuOptions = document.getElementById('user-menu-options');
 
   if (activeUser && activeUser.isLoggedIn) {
-    // ESTADO: USUARIO LOGUEADO
-    if (userGreetingTitle) userGreetingTitle.textContent = `¡Hola, ${activeUser.name}!`;
-    if (userGreetingSubtitle) userGreetingSubtitle.textContent = activeUser.email;
-
     const isInPages = window.location.pathname.includes('/pages/');
     const basePath = isInPages ? '' : 'pages/';
 
+    // 1. Saludo y subtítulo exactos de Figma
+    if (userGreetingTitle) userGreetingTitle.textContent = `Hola, ${activeUser.name || 'Cliente'}`;
+    if (userGreetingSubtitle) userGreetingSubtitle.textContent = `Cliente desde ${activeUser.createdYear || '2026'}`;
+
+    // 2. Lista de opciones con íconos vectoriales
     if (userMenuOptions) {
       userMenuOptions.innerHTML = `
         <li>
-          <a href="${basePath}cuenta.html?tab=pedidos" class="user-menu-link">
-            <span>Mis Pedidos</span>
+          <a href="${basePath}dashboard.html?tab=perfil" class="user-menu-link highlight-link">
+            <div class="menu-link-content">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>Mi Perfil</span>
+            </div>
             <span class="chevron">&rsaquo;</span>
           </a>
         </li>
         <li>
-          <a href="${basePath}cuenta.html?tab=direcciones" class="user-menu-link">
-            <span>Direcciones de Envío</span>
+          <a href="${basePath}dashboard.html?tab=pedidos" class="user-menu-link">
+            <div class="menu-link-content">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              <span>Mis Pedidos</span>
+            </div>
             <span class="chevron">&rsaquo;</span>
           </a>
         </li>
         <li>
-          <a href="${basePath}cuenta.html?tab=configuracion" class="user-menu-link">
-            <span>Configuración de Cuenta</span>
+          <a href="${basePath}dashboard.html?tab=direcciones" class="user-menu-link">
+            <div class="menu-link-content">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6v14l6-3 6 3 6-3v-14l-6 3-6-3-6 3z"/><path d="M7 3v14"/><path d="M13 6v14"/></svg>
+              <span>Direcciones de Envío</span>
+            </div>
+            <span class="chevron">&rsaquo;</span>
+          </a>
+        </li>
+        <li>
+          <a href="${basePath}dashboard.html?tab=configuracion" class="user-menu-link">
+            <div class="menu-link-content">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              <span>Configuración de Cuenta</span>
+            </div>
             <span class="chevron">&rsaquo;</span>
           </a>
         </li>
         <hr class="user-dropdown-divider">
         <li>
-          <button type="button" id="logout-btn" class="user-menu-link highlight-link" style="width:100%; border:none; background:none; cursor:pointer; text-align:left;">
-            <span>Cerrar Sesión</span>
-            <span class="arrow">&rarr;</span>
+          <button type="button" id="logout-btn" class="user-menu-link logout-link">
+            <div class="menu-link-content">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+              <span>Cerrar Sesión</span>
+            </div>
           </button>
         </li>
       `;
 
-      // Evento para cerrar sesión
+      // Cierre de sesión
       document.getElementById('logout-btn')?.addEventListener('click', () => {
         localStorage.removeItem('user_session_crochet');
-        updateProfileMenuUI();
+        window.location.reload();
       });
     }
   } else {
