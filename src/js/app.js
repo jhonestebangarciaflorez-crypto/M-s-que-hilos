@@ -432,7 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 0);
 
     if (cartSubtotalPrice) {
-      cartSubtotalPrice.textContent = `${subtotal.toFixed(2).replace('.', ',')} COP`;
+      cartSubtotalPrice.textContent = `${subtotal.toFixed(3).replace('.', ',')} COP`;
     }
   }
 
@@ -504,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
           category = card.querySelector('.product-category')?.textContent.trim() || 'CROCHET';
         }
         if (!price) {
-          price = card.querySelector('.product-price, .price')?.textContent.trim() || '0,00 COP';
+          price = card.querySelector('.product-price, .price')?.textContent.trim() || '0,000 COP';
         }
         if (!img) {
           img = card.querySelector('img')?.getAttribute('src') || '';
