@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Cuenta — Más que hilos</title>
+    <title data-i18n="account_page_title">Mi Cuenta — Más que hilos</title>
     <link rel="icon" type="image/png" href="../src/assets/img/logo-gustavo.png">
 
     <!-- Hojas de estilos del proyecto -->
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../src/css/layout/cuenta.css">
     <link rel="stylesheet" href="../src/css/layout/header.css">
 </head>
-    <body class="account-body">
+<body class="account-body">
 
     <main class="account-container">
         
@@ -26,18 +26,18 @@
             </div>
             <div class="logo-text">
                 <span class="brand-name">Más que hilos</span>
-                <span class="brand-subtitle">ESTUDIO DE CROCHET</span>
+                <span class="brand-subtitle" data-i18n="brand_subtitle">ESTUDIO DE CROCHET</span>
             </div>
         </a>
 
 
         <!-- Contenido de texto superpuesto en la imagen -->
         <div class="hero-side-content">
-            <span class="sub-caption-light">— TU RINCÓN PERSONAL</span>
-            <h1 class="hero-side-title">
+            <span class="sub-caption-light" data-i18n="acc_hero_sub">— TU RINCÓN PERSONAL</span>
+            <h1 class="hero-side-title" data-i18n="acc_hero_title">
             Todo lo que eliges, <em class="highlight-side">siempre a mano.</em>
             </h1>
-            <p class="hero-side-description">
+            <p class="hero-side-description" data-i18n="acc_hero_desc">
             Guarda tus favoritos, sigue tus pedidos y recupera tus direcciones cuando vuelvas.
             </p>
         </div>
@@ -46,6 +46,12 @@
         <!-- COLUMNA DERECHA: FORMULARIO Y PESTAÑAS -->
         <div class="account-form-side">
         
+        <!-- Contenedor para botones de idioma integrado en la esquina -->
+        <div style="position: absolute; top: 1.5rem; right: 4rem; display: flex; gap: 0.5rem; z-index: 10;">
+            <button onclick="cambiarIdioma('es')" title="Español" style="background: none; border: none; font-size: 0.85rem; font-weight: bold; cursor: pointer; color: var(--color-text);">ES</button>
+            <button onclick="cambiarIdioma('en')" title="English" style="background: none; border: none; font-size: 0.85rem; font-weight: bold; cursor: pointer; color: var(--color-text);">EN</button>
+        </div>
+
         <!-- Botón de cerrar (X) para regresar al Inicio -->
         <a href="../index.html" class="close-screen-btn" aria-label="Cerrar y volver al inicio">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -57,75 +63,77 @@
         <div class="form-wrapper">
             <!-- Encabezado del Formulario -->
             <div class="form-header">
-            <span class="sub-caption">— QUÉ ALEGRÍA VERTE</span>
-            <h2 class="form-title">Bienvenida de nuevo</h2>
-            <p class="form-subtitle">Entra para continuar donde lo dejaste.</p>
+            <span class="sub-caption" data-i18n="acc_form_sub">— QUÉ ALEGRÍA VERTE</span>
+            <h2 class="form-title" data-i18n="acc_form_title">Bienvenida de nuevo</h2>
+            <p class="form-subtitle" data-i18n="acc_form_desc">Entra para continuar donde lo dejaste.</p>
             </div>
 
             <!-- Pestañas para alternar entre Iniciar Sesión y Registrarse -->
             <div class="auth-tabs">
-            <button type="button" class="tab-btn active" id="tab-login-btn">Iniciar sesión</button>
-            <button type="button" class="tab-btn" id="tab-register-btn">Registrarme</button>
+            <button type="button" class="tab-btn active" id="tab-login-btn" data-i18n="acc_tab_login">Iniciar sesión</button>
+            <button type="button" class="tab-btn" id="tab-register-btn" data-i18n="acc_tab_register">Registrarme</button>
             </div>
 
             <!-- Formulario de Iniciar Sesión -->
             <form id="login-form" class="auth-form">
             
             <div class="form-group">
-                <label for="login-email" class="form-label">Correo electrónico</label>
+                <label for="login-email" class="form-label" data-i18n="form_lbl_email">Correo electrónico</label>
                 <input 
                 type="email" 
                 id="login-email" 
                 class="form-input" 
+                data-i18n="form_ph_email"
                 placeholder="nombre@correo.com" 
                 required
                 >
             </div>
 
             <div class="form-group">
-                <label for="login-password" class="form-label">Contraseña</label>
+                <label for="login-password" class="form-label" data-i18n="acc_lbl_pass">Contraseña</label>
                 <input 
                 type="password" 
                 id="login-password" 
                 class="form-input" 
+                data-i18n="acc_ph_pass"
                 placeholder="Mínimo 6 caracteres" 
                 required
                 >
                 <div class="forgot-password-wrapper">
-                <a href="#" class="forgot-password-link">He olvidado mi contraseña</a>
+                <a href="#" class="forgot-password-link" data-i18n="acc_forgot_pass">He olvidado mi contraseña</a>
                 </div>
             </div>
 
             <button type="submit" class="btn-account-primary">
-                Entrar a mi cuenta <span>&rarr;</span>
+                <span data-i18n="acc_btn_login">Entrar a mi cuenta</span> <span>&rarr;</span>
             </button>
 
             </form>
 
-                <!-- Formulario de Registro (Nuevo) -->
+            <!-- Formulario de Registro (Nuevo) -->
             <form id="register-form" class="auth-form hidden-form">
                 <div class="form-group">
-                    <label for="register-name" class="form-label">Nombre completo</label>
-                    <input type="text" id="register-name" class="form-input" placeholder="Tu nombre y apellido" required>
+                    <label for="register-name" class="form-label" data-i18n="acc_lbl_name">Nombre completo</label>
+                    <input type="text" id="register-name" class="form-input" data-i18n="acc_ph_name" placeholder="Tu nombre y apellido" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="register-email" class="form-label">Correo electrónico</label>
-                    <input type="email" id="register-email" class="form-input" placeholder="nombre@correo.com" required>
+                    <label for="register-email" class="form-label" data-i18n="form_lbl_email">Correo electrónico</label>
+                    <input type="email" id="register-email" class="form-input" data-i18n="form_ph_email" placeholder="nombre@correo.com" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="register-password" class="form-label">Contraseña</label>
-                    <input type="password" id="register-password" class="form-input" placeholder="Mínimo 6 caracteres" required>
+                    <label for="register-password" class="form-label" data-i18n="acc_lbl_pass">Contraseña</label>
+                    <input type="password" id="register-password" class="form-input" data-i18n="acc_ph_pass" placeholder="Mínimo 6 caracteres" required>
                 </div>
 
                 <button type="submit" class="btn-account-primary">
-                    Crear mi cuenta <span>&rarr;</span>
+                    <span data-i18n="acc_btn_register">Crear mi cuenta</span> <span>&rarr;</span>
                 </button>
             </form>
 
             <!-- Leyenda legal al final -->
-            <p class="legal-disclaimer">
+            <p class="legal-disclaimer" data-i18n="acc_legal">
             Al continuar aceptas nuestra política de privacidad y condiciones de uso.
             </p>
 
@@ -136,5 +144,6 @@
 
     <script src="../src/js/app.js" type="module"></script>
     <script src="../src/js/auth.js" type="module"></script>
+    <script src="../src/js/i18n.js"></script>
 </body>
 </html>

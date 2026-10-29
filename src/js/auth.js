@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
         isLoggedIn: true,
         name: nameFormatted,
         email: emailInput,
-        createdYear: savedSession?.createdYear || '2024'
+        createdYear: savedSession?.createdYear || '2026'
       };
 
       localStorage.setItem('user_session_crochet', JSON.stringify(activeSession));

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo — Más que hilos</title>
+    <title data-i18n="cat_page_title">Catálogo — Más que hilos</title>
     <link rel="icon" type="image/png" href="../src/assets/img/logo-gustavo.png">
     
     <!-- enlace de estilos del proyecto -->
@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="../src/css/components/favorites-modal.css">
     <link rel="stylesheet" href="../src/css/components/cart-drawer.css">
     <link rel="stylesheet" href="../src/css/components/user-dropdown.css">
-    </head>
-    <body>
+</head>
+<body>
 
     <!-- Encabezado / Navegación Principal -->
     <header class="main-header">
@@ -31,22 +31,26 @@
             </div>
             <div class="logo-text">
                 <span class="brand-name">Más que hilos</span>
-                <span class="brand-subtitle">ESTUDIO DE CROCHET</span>
+                <span class="brand-subtitle" data-i18n="brand_subtitle">ESTUDIO DE CROCHET</span>
             </div>
         </a>
 
         <!-- Navegacion -->
         <nav class="main-nav">
             <ul>
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="catalogo.html" class="active">Catálogo</a></li>
-            <li><a href="nosotros.html">Sobre nosotros</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="../index.html" data-i18n="nav_home">Inicio</a></li>
+            <li><a href="catalogo.html" class="active" data-i18n="nav_catalog">Catálogo</a></li>
+            <li><a href="nosotros.html" data-i18n="nav_about">Sobre nosotros</a></li>
+            <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
             </ul>
         </nav>
 
         <!-- Acciones de Usuario -->
         <div class="header-actions">
+            <!-- Botones de cambiar el idioma -->
+            <button class="action-btn" onclick="cambiarIdioma('es')" title="Español" style="font-size: 0.85rem; font-weight: bold;">ES</button>
+            <button class="action-btn" onclick="cambiarIdioma('en')" title="English" style="font-size: 0.85rem; font-weight: bold;">EN</button>
+            
             <button class="action-btn" title="Buscar"  id="search-toggle-btn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </button>
@@ -59,9 +63,9 @@
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
 
-                <input type="text" id="search-input" placeholder="Buscar piezas, colecciones..." />
+                <input type="text" id="search-input" data-i18n="search_placeholder" placeholder="Buscar piezas, colecciones..." />
 
-                <button type="submit" class="search-submit-btn">Buscar</button>
+                <button type="submit" class="search-submit-btn" data-i18n="search_btn">Buscar</button>
 
                 <!-- Botón para cerrar -->
                 <button type="button" id="search-close-btn" class="close-btn" aria-label="Cerrar búsqueda">
@@ -95,42 +99,37 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             </div>
             <div class="user-header-text">
-            <h3 class="user-title" id="user-greeting-title">Tu espacio personal</h3>
-            <p class="user-subtitle" id="user-greeting-subtitle">Todo lo tuyo, en un solo lugar</p>
+            <h3 class="user-title" id="user-greeting-title" data-i18n="user_title">Tu espacio personal</h3>
+            <p class="user-subtitle" id="user-greeting-subtitle" data-i18n="user_subtitle">Todo lo tuyo, en un solo lugar</p>
             </div>
         </div>
 
         <hr class="user-dropdown-divider">
 
-        <!-- Lista de Opciones (Cambiable dinámicamente con JS) -->
+        <!-- Lista de Opciones -->
         <nav class="user-dropdown-nav">
             <ul id="user-menu-options">
-            <!-- Opción Destacada: Iniciar Sesión / Registrarse -->
             <li>
                 <a href="../pages/cuenta.html" class="user-menu-link highlight-link">
-                <span>Iniciar Sesión / Registrarse</span>
+                <span data-i18n="user_login">Iniciar Sesión / Registrarse</span>
                 <span class="arrow">&rarr;</span>
                 </a>
             </li>
-
-            <!-- Opciones Estándar -->
             <li>
                 <a href="../pages/cuenta.html?tab=pedidos" class="user-menu-link">
-                <span>Mis Pedidos</span>
+                <span data-i18n="user_orders">Mis Pedidos</span>
                 <span class="chevron">&rsaquo;</span>
                 </a>
             </li>
-
             <li>
                 <a href="../pages/cuenta.html?tab=direcciones" class="user-menu-link">
-                <span>Direcciones de Envío</span>
+                <span data-i18n="user_addresses">Direcciones de Envío</span>
                 <span class="chevron">&rsaquo;</span>
                 </a>
             </li>
-
             <li>
                 <a href="../pages/cuenta.html?tab=configuracion" class="user-menu-link">
-                <span>Configuración de Cuenta</span>
+                <span data-i18n="user_settings">Configuración de Cuenta</span>
                 <span class="chevron">&rsaquo;</span>
                 </a>
             </li>
@@ -152,14 +151,14 @@
             <div class="hero-text-content">
             <div class="hero-subtitle-wrapper">
                 <span class="subtitle-line"></span>
-                <span class="hero-subtitle">NUESTRO CATÁLOGO</span>
+                <span class="hero-subtitle" data-i18n="cat_hero_sub">NUESTRO CATÁLOGO</span>
             </div>
 
-            <h1 class="hero-title">
+            <h1 class="hero-title" data-i18n="cat_hero_title">
                 Encuentra esa pieza que <em class="highlight">habla de ti.</em>
             </h1>
 
-            <p class="hero-description">
+            <p class="hero-description" data-i18n="cat_hero_desc">
                 Series pequeñas, materiales suaves y diseños pensados para acompañarte durante mucho tiempo.
             </p>
             </div>
@@ -181,10 +180,10 @@
             <div class="section-header">
             <div class="subtitle-wrapper">
                 <span class="subtitle-line"></span>
-                <span class="section-subtitle">SELECCIÓN ESENCIAL</span>
+                <span class="section-subtitle" data-i18n="cat_best_sub">SELECCIÓN ESENCIAL</span>
             </div>
-            <h2 class="section-title">Artículos más vendidos</h2>
-            <p class="section-description">
+            <h2 class="section-title" data-i18n="cat_best_title">Artículos más vendidos</h2>
+            <p class="section-description" data-i18n="cat_best_desc">
                 Los favoritos que vuelven una y otra vez, tejidos en pequeñas cantidades.
             </p>
             </div>
@@ -198,7 +197,7 @@
                 <img src="../src/assets/img/producto-conejita.jpg" alt="Conejita Margarita">
                 </div>
                 <div class="product-info-compact">
-                <span class="product-category">AMIGURUMIS</span>
+                <span class="product-category" data-i18n="cat_upper_amigurumis">AMIGURUMIS</span>
                 <div class="product-title-row">
                     <h3 class="product-name"><a href="detalle.html">Conejita Margarita</a></h3>
                     <span class="product-price">38,000 COP</span>
@@ -212,7 +211,7 @@
                 <img src="../src/assets/img/producto-osito.jpg" alt="Osito Canela">
                 </div>
                 <div class="product-info-compact">
-                <span class="product-category">AMIGURUMIS</span>
+                <span class="product-category" data-i18n="cat_upper_amigurumis">AMIGURUMIS</span>
                 <div class="product-title-row">
                     <h3 class="product-name"><a href="detalle.html">Osito Canela</a></h3>
                     <span class="product-price">42,000 COP</span>
@@ -226,7 +225,7 @@
                 <img src="../src/assets/img/producto-top.jpg" alt="Top Azahar">
                 </div>
                 <div class="product-info-compact">
-                <span class="product-category">ROPA / TOPS</span>
+                <span class="product-category" data-i18n="cat_upper_clothes">ROPA / TOPS</span>
                 <div class="product-title-row">
                     <h3 class="product-name"><a href="detalle.html">Top Azahar</a></h3>
                     <span class="product-price">58,000 COP</span>
@@ -246,19 +245,20 @@
             <div class="catalog-header">
             <div class="subtitle-wrapper">
                 <span class="subtitle-line"></span>
-                <span class="section-subtitle">COMPRAR POR COLECCIÓN</span>
+                <span class="section-subtitle" data-i18n="cat_grid_sub">COMPRAR POR COLECCIÓN</span>
             </div>
-            <h2 class="section-title">Todo el catálogo</h2>
+            <h2 class="section-title" data-i18n="cat_grid_title">Todo el catálogo</h2>
 
             <div class="catalog-toolbar">
                 <div class="filter-buttons">
-                <button class="filter-btn active" onclick="filterCatalog(this)">TODOS</button>
-                <button class="filter-btn" onclick="filterCatalog(this)">AMIGURUMIS</button>
-                <button class="filter-btn" onclick="filterCatalog(this)">ROPA / TOPS</button>
-                <button class="filter-btn" onclick="filterCatalog(this)">ACCESORIOS</button>
-                <button class="filter-btn" onclick="filterCatalog(this)">DECORACIÓN</button>
+                <!-- Se añadió data-filter para el JS y data-i18n para los idiomas -->
+                <button class="filter-btn active" data-filter="todos" data-i18n="filter_all" onclick="filterCatalog(this)">TODOS</button>
+                <button class="filter-btn" data-filter="amigurumis" data-i18n="filter_ami" onclick="filterCatalog(this)">AMIGURUMIS</button>
+                <button class="filter-btn" data-filter="ropa / tops" data-i18n="filter_clothes" onclick="filterCatalog(this)">ROPA / TOPS</button>
+                <button class="filter-btn" data-filter="accesorios" data-i18n="filter_acc" onclick="filterCatalog(this)">ACCESORIOS</button>
+                <button class="filter-btn" data-filter="decoración" data-i18n="filter_deco" onclick="filterCatalog(this)">DECORACIÓN</button>
                 </div>
-                <span class="item-count">8 piezas</span>
+                <span class="item-count" id="item-count-display">8 piezas</span>
             </div>
             </div>
 
@@ -275,21 +275,20 @@
                     data-price="38,000 COP" 
                     data-img="../src/assets/img/producto-conejita.jpg">
             <div class="product-image-wrapper">
-                <span class="product-badge">MÁS VENDIDO</span>
+                <span class="product-badge" data-i18n="badge_bestseller">MÁS VENDIDO</span>
                 
-                <!-- Botón de corazón de la tarjeta -->
                 <button class="wishlist-btn" title="Añadir a favoritos">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                 </button>
                 <img src="../src/assets/img/producto-conejita.jpg" alt="Conejita Margarita">
                 
                 <button class="add-to-cart-overlay">
-                Añadir a la cesta
+                <span data-i18n="btn_add_cart">Añadir a la cesta</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                 </button>
             </div>
             <div class="product-meta">
-                <span class="product-category">AMIGURUMIS</span>
+                <span class="product-category" data-i18n="cat_upper_amigurumis">AMIGURUMIS</span>
                 <h3 class="product-name"><a href="#">Conejita Margarita</a></h3>
                 <div class="product-price-row">
                 <span class="price">38,000 COP</span>
@@ -297,8 +296,6 @@
                 </div>
             </div>
             </article>
-
-
 
             <!-- Producto 2 -->
             <article class="product-card" 
@@ -308,18 +305,18 @@
                     data-price="42,000 COP" 
                     data-img="../src/assets/img/producto-osito.jpg">
                 <div class="product-image-wrapper">
-                <span class="product-badge">NUEVO</span>
+                <span class="product-badge" data-i18n="badge_new">NUEVO</span>
                 <button class="wishlist-btn" title="Añadir a favoritos">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                 </button>
                 <img src="../src/assets/img/producto-osito.jpg" alt="Osito Canela">
                 <button class="add-to-cart-overlay">
-                    Añadir a la cesta
+                    <span data-i18n="btn_add_cart">Añadir a la cesta</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                 </button>
                 </div>
                 <div class="product-meta">
-                <span class="product-category">AMIGURUMIS</span>
+                <span class="product-category" data-i18n="cat_upper_amigurumis">AMIGURUMIS</span>
                 <h3 class="product-name"><a href="#">Osito Canela</a></h3>
                 <div class="product-price-row">
                     <span class="price">42,000 COP</span>
@@ -341,12 +338,12 @@
                 </button>
                 <img src="../src/assets/img/producto-manta.jpg" alt="Manta Nube">
                 <button class="add-to-cart-overlay">
-                    Añadir a la cesta
+                    <span data-i18n="btn_add_cart">Añadir a la cesta</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                 </button>
                 </div>
                 <div class="product-meta">
-                <span class="product-category">DECORACIÓN</span>
+                <span class="product-category" data-i18n="cat_upper_deco">DECORACIÓN</span>
                 <h3 class="product-name"><a href="#">Corazón Floral</a></h3>
                 <div class="product-price-row">
                     <span class="price">68,000 COP</span>
@@ -363,18 +360,18 @@
                     data-price="29,000 COP" 
                     data-img="../src/assets/img/kit-pastel.jpg">
                 <div class="product-image-wrapper">
-                <span class="product-badge">EDICIÓN LIMITADA</span>
+                <span class="product-badge" data-i18n="badge_limited">EDICIÓN LIMITADA</span>
                 <button class="wishlist-btn" title="Añadir a favoritos">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                 </button>
                 <img src="../src/assets/img/kit-pastel.jpg" alt="Kit Pastel">
                 <button class="add-to-cart-overlay">
-                    Añadir a la cesta
+                    <span data-i18n="btn_add_cart">Añadir a la cesta</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                 </button>
                 </div>
                 <div class="product-meta">
-                <span class="product-category">ACCESORIOS</span>
+                <span class="product-category" data-i18n="cat_upper_acc">ACCESORIOS</span>
                 <h3 class="product-name"><a href="#">Kit Pastel</a></h3>
                 <div class="product-price-row">
                     <span class="price">29,000 COP</span>
@@ -391,18 +388,18 @@
                     data-price="24,000 COP" 
                     data-img="../src/assets/img/flores-silvestres.jpg">
                 <div class="product-image-wrapper">
-                <span class="product-badge">NUEVO</span>
+                <span class="product-badge" data-i18n="badge_new">NUEVO</span>
                 <button class="wishlist-btn" title="Añadir a favoritos">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                 </button>
                 <img src="../src/assets/img/flores-silvestres.jpg" alt="Set Flores Silvestres">
                 <button class="add-to-cart-overlay">
-                    Añadir a la cesta
+                    <span data-i18n="btn_add_cart">Añadir a la cesta</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                 </button>
                 </div>
                 <div class="product-meta">
-                <span class="product-category">DECORACIÓN</span>
+                <span class="product-category" data-i18n="cat_upper_deco">DECORACIÓN</span>
                 <h3 class="product-name"><a href="#">Set Flores Silvestres</a></h3>
                 <div class="product-price-row">
                     <span class="price">24,000 COP</span>
@@ -424,12 +421,12 @@
                 </button>
                 <img src="../src/assets/img/familia-bosque.jpg" alt="Familia del Bosque">
                 <button class="add-to-cart-overlay">
-                    Añadir a la cesta
+                    <span data-i18n="btn_add_cart">Añadir a la cesta</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                 </button>
                 </div>
                 <div class="product-meta">
-                <span class="product-category">AMIGURUMIS</span>
+                <span class="product-category" data-i18n="cat_upper_amigurumis">AMIGURUMIS</span>
                 <h3 class="product-name"><a href="#">Familia del Bosque</a></h3>
                 <div class="product-price-row">
                     <span class="price">54,000 COP</span>
@@ -446,18 +443,18 @@
                     data-price="58,000 COP" 
                     data-img="../src/assets/img/producto-top.jpg">
                 <div class="product-image-wrapper">
-                <span class="product-badge">NUEVO</span>
+                <span class="product-badge" data-i18n="badge_new">NUEVO</span>
                 <button class="wishlist-btn" title="Añadir a favoritos">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                 </button>
                 <img src="../src/assets/img/producto-top.jpg" alt="Top Azahar">
                 <button class="add-to-cart-overlay">
-                    Añadir a la cesta
+                    <span data-i18n="btn_add_cart">Añadir a la cesta</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                 </button>
                 </div>
                 <div class="product-meta">
-                <span class="product-category">ROPA / TOPS</span>
+                <span class="product-category" data-i18n="cat_upper_clothes">ROPA / TOPS</span>
                 <h3 class="product-name"><a href="#">Top Azahar</a></h3>
                 <div class="product-price-row">
                     <span class="price">58,000 COP</span>
@@ -474,18 +471,18 @@
                     data-price="38,000 COP" 
                     data-img="../src/assets/img/hello-kitty.jpg">
                 <div class="product-image-wrapper">
-                <span class="product-badge">FAVORITO</span>
+                <span class="product-badge" data-i18n="badge_fav">FAVORITO</span>
                 <button class="wishlist-btn" title="Añadir a favoritos">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                 </button>
                 <img src="../src/assets/img/hello-kitty.jpg" alt="Conejito Nube">
                 <button class="add-to-cart-overlay">
-                    Añadir a la cesta
+                    <span data-i18n="btn_add_cart">Añadir a la cesta</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                 </button>
                 </div>
                 <div class="product-meta">
-                <span class="product-category">AMIGURUMIS</span>
+                <span class="product-category" data-i18n="cat_upper_amigurumis">AMIGURUMIS</span>
                 <h3 class="product-name"><a href="#">Hello kitty</a></h3>
                 <div class="product-price-row">
                     <span class="price">38,000 COP</span>
@@ -499,25 +496,22 @@
         </div>
         </section>
 
-        <!-- Script para interacción de botones de filtro -->
+        <!-- Script para interacción de botones de filtro actualizado -->
         <script>
             function filterCatalog(selectedBtn) {
-                // 1. Cambiar la clase activa entre los botones
                 const buttons = document.querySelectorAll('.filter-btn');
                 buttons.forEach(btn => btn.classList.remove('active'));
                 selectedBtn.classList.add('active');
 
-                // 2. Obtener el nombre de la categoría seleccionada en minúsculas
-                const category = selectedBtn.textContent.trim().toLowerCase();
+                // Cambio clave: ahora lee data-filter en lugar de textContent para que no se rompa al traducir
+                const category = selectedBtn.getAttribute('data-filter').toLowerCase();
                 
-                // 3. Seleccionar todas las tarjetas de productos
                 const products = document.querySelectorAll('.product-card');
                 let visibleCount = 0;
 
                 products.forEach(product => {
                 const productCategory = product.getAttribute('data-category').toLowerCase();
 
-                // Si se selecciona "TODOS" o coincide la categoría, se muestra
                 if (category === 'todos' || productCategory === category) {
                     product.style.display = 'flex';
                     visibleCount++;
@@ -526,10 +520,12 @@
                 }
                 });
 
-                // 4. Actualizar el contador dinámico ("8 piezas")
-                const itemCountText = document.querySelector('.item-count');
+                const itemCountText = document.getElementById('item-count-display');
                 if (itemCountText) {
-                itemCountText.textContent = `${visibleCount} ${visibleCount === 1 ? 'pieza' : 'piezas'}`;
+                    // Lógica sencilla para cambiar el texto de las piezas según el idioma guardado globalmente
+                    const isEnglish = document.documentElement.lang === 'en';
+                    const textPiece = visibleCount === 1 ? (isEnglish ? 'piece' : 'pieza') : (isEnglish ? 'pieces' : 'piezas');
+                    itemCountText.textContent = `${visibleCount} ${textPiece}`;
                 }
             }
         </script>
@@ -545,31 +541,31 @@
             <div class="logo-icon">m</div>
             <div class="logo-text">
                 <span class="brand-name">Más que hilos</span>
-                <span class="brand-subtitle">ESTUDIO DE CROCHET</span>
+                <span class="brand-subtitle" data-i18n="brand_subtitle">ESTUDIO DE CROCHET</span>
             </div>
             </a>
-            <p class="footer-slogan">
+            <p class="footer-slogan" data-i18n="foot_slogan">
             Piezas hechas a mano para acompañarte, regalar y guardar para siempre.
             </p>
         </div>
 
         <!-- Atencion y Cuidados (Centro) -->
         <div class="footer-col center-col">
-            <span class="footer-subtitle">ATENCIÓN Y CUIDADOS</span>
-            <h3 class="footer-title">Te ayudamos</h3>
+            <span class="footer-subtitle" data-i18n="foot_col1_sub">ATENCIÓN Y CUIDADOS</span>
+            <h3 class="footer-title" data-i18n="foot_col1_title">Te ayudamos</h3>
             
             <div class="footer-links-grid">
-            <a href="#" class="footer-link">Envíos y devoluciones</a>
-            <a href="#" class="footer-link">Cuidados de la pieza</a>
-            <a href="#" class="footer-link">Pedidos personalizados</a>
-            <a href="#" class="footer-link">Preguntas frecuentes</a>
+            <a href="#" class="footer-link" data-i18n="foot_link1">Envíos y devoluciones</a>
+            <a href="#" class="footer-link" data-i18n="foot_link2">Cuidados de la pieza</a>
+            <a href="#" class="footer-link" data-i18n="foot_link3">Pedidos personalizados</a>
+            <a href="#" class="footer-link" data-i18n="foot_link4">Preguntas frecuentes</a>
             </div>
         </div>
 
         <!-- Contacto Directo (Derecha) -->
         <div class="footer-col contact-col">
-            <span class="footer-subtitle">CONTACTO DIRECTO</span>
-            <h3 class="footer-title">¿Hablamos?</h3>
+            <span class="footer-subtitle" data-i18n="foot_col2_sub">CONTACTO DIRECTO</span>
+            <h3 class="footer-title" data-i18n="foot_col2_title">¿Hablamos?</h3>
 
             <div class="contact-item">
             <span class="contact-label">WHATSAPP</span>
@@ -577,7 +573,7 @@
             </div>
 
             <div class="contact-item">
-            <span class="contact-label">CORREO</span>
+            <span class="contact-label" data-i18n="foot_email">CORREO</span>
             <a href="mailto:hola@masquehilos.es" class="contact-value">hola@masquehilos.es</a>
             </div>
 
@@ -597,11 +593,11 @@
         <!-- Parte Inferior -->
         <div class="footer-bottom-wrapper">
         <div class="footer-bottom-container">
-            <p class="copyright">&copy; 2026 Más que hilos. Hecho con calma en Colombia.</p>
+            <p class="copyright" data-i18n="foot_copy">&copy; 2026 Más que hilos. Hecho con calma en Colombia.</p>
             <div class="footer-legal-links">
-            <a href="#">Privacidad</a>
-            <a href="#">Cookies</a>
-            <a href="#">Legal</a>
+            <a href="#" data-i18n="foot_legal1">Privacidad</a>
+            <a href="#" data-i18n="foot_legal2">Cookies</a>
+            <a href="#" data-i18n="foot_legal3">Legal</a>
             </div>
         </div>
         </div>
@@ -614,15 +610,15 @@
         <!-- Encabezado del modal -->
         <div class="favorites-modal-header">
         <div class="header-titles">
-            <span class="sub-caption">— TU SELECCIÓN</span>
-            <h2 class="modal-title">Mis favoritos</h2>
+            <span class="sub-caption" data-i18n="modal_selection">— TU SELECCIÓN</span>
+            <h2 class="modal-title" data-i18n="modal_fav_title">Mis favoritos</h2>
         </div>
         <button type="button" id="close-favorites-btn" class="close-modal-btn" aria-label="Cerrar favoritos">&times;</button>
         </div>
 
-        <!-- Contenedor dinámico (Vacío intencionalmente para llenarlo con JavaScript) -->
+        <!-- Contenedor dinámico -->
         <div id="favorites-list-container" class="favorites-list-container">
-        <p class="empty-favorites-msg">No tienes productos en tus favoritos.</p>
+        <p class="empty-favorites-msg" data-i18n="modal_fav_empty">No tienes productos en tus favoritos.</p>
         </div>
 
     </div>
@@ -636,39 +632,41 @@
         <!-- Encabezado del Carrito -->
         <div class="cart-drawer-header">
         <div class="header-titles">
-            <span class="sub-caption">— TU SELECCIÓN</span>
-            <h2 class="cart-title" id="cart-title-text">Tu Carrito (0 ítems)</h2>
+            <span class="sub-caption" data-i18n="modal_selection">— TU SELECCIÓN</span>
+            <h2 class="cart-title" id="cart-title-text" data-i18n="modal_cart_title">Tu Carrito</h2>
         </div>
         <button type="button" id="close-cart-btn" class="close-modal-btn" aria-label="Cerrar carrito">&times;</button>
         </div>
 
-        <!-- Lista Dinámica de Productos en el Carrito (Con Scroll bar) -->
+        <!-- Lista Dinámica de Productos en el Carrito -->
         <div id="cart-list-container" class="cart-list-container">
-        <p class="empty-cart-msg">Tu carrito está vacío.</p>
+        <p class="empty-cart-msg" data-i18n="modal_cart_empty">Tu carrito está vacío.</p>
         </div>
 
         <!-- Pie del Carrito: Totales y Botón de Checkout -->
         <div class="cart-drawer-footer">
         <div class="cart-summary-row">
-            <span class="summary-label">Subtotal</span>
+            <span class="summary-label" data-i18n="modal_subtotal">Subtotal</span>
             <span class="summary-value" id="cart-subtotal-price">0,00 COP</span>
         </div>
         
         <div class="cart-summary-row shipping-row">
-            <span class="summary-label">Envío estimado</span>
-            <span class="summary-value highlight-shipping">Gratis</span>
+            <span class="summary-label" data-i18n="modal_shipping">Envío estimado</span>
+            <span class="summary-value highlight-shipping" data-i18n="modal_free">Gratis</span>
         </div>
 
-        <p class="cart-tax-note">Los impuestos están incluidos. El envío se confirma al finalizar.</p>
+        <p class="cart-tax-note" data-i18n="modal_tax">Los impuestos están incluidos. El envío se confirma al finalizar.</p>
 
         <button type="button" class="btn-checkout">
-            Finalizar compra <span>&rarr;</span>
+            <span data-i18n="modal_checkout">Finalizar compra</span> <span>&rarr;</span>
         </button>
         </div>
 
     </div>
     </div>
 
+
     <script src="../src/js/app.js" type="module"></script>
+    <script src="../src/js/i18n.js"></script>
 </body>
 </html>
