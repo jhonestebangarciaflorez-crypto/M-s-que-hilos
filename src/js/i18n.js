@@ -472,6 +472,8 @@ const traducciones = {
     search_ph: "Search pieces, collections..."
   }
 };
+
+
 // 2. FUNCIÓN PRINCIPAL PARA CAMBIAR Y GUARDAR EL IDIOMA
 window.cambiarIdioma = function(idioma) {
   // Guardar la preferencia en el navegador del usuario
@@ -525,3 +527,6 @@ window.traducirTexto = function(clave) {
   // Si no encuentra la traducción, devuelve la clave por defecto
   return clave;
 };
+
+
+
