@@ -1,6 +1,4 @@
-/* ==========================================
-   MENÚ DESPLEGABLE DE USUARIO (DROPDOWN)
-   ========================================== */
+/* MENÚ DESPLEGABLE DE USUARIO (DROPDOWN)*/
 
 /* Asegura que el contenedor de acciones en el header sirva de ancla */
 .header-actions {
@@ -46,7 +44,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: #f2ebd9; /* Tono beige rosado de la imagen */
+  background-color: #f2ebd9;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,7 +107,7 @@
 
 /* Enlace destacado de Iniciar Sesión / Registrarse */
 .user-menu-link.highlight-link {
-  color: #a87b68; /* Tono terracota destacado */
+  color: #a87b68;
   font-weight: 600;
 }
 
@@ -128,7 +126,6 @@
   font-weight: 300;
 }
 
-
 /* Contenido del enlace alineado con ícono */
 .menu-link-content {
   display: flex;
@@ -137,7 +134,7 @@
 }
 
 .menu-link-content svg {
-  color: #a87b68; /* Tono terracota de Figma */
+  color: #a87b68;
   flex-shrink: 0;
 }
 
@@ -156,3 +153,18 @@
 .user-menu-link.logout-link:hover {
   background-color: #fceee9;
 }
+
+/* ADAPTACIÓN MÓVIL (RESPONSIVE)*/
+@media (max-width: 576px) {
+  .user-dropdown-card {
+    position: fixed;
+    top: 75px; 
+    left: 5%;
+    right: auto;
+    width: 90%; 
+    padding: 1.5rem;
+  }
+}
+
+
+

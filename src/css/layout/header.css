@@ -1,3 +1,4 @@
+
 .main-header {
   background-color: var(--cream);
   border-bottom: 1px solid var(--line);
@@ -35,6 +36,13 @@
   font-size: 1.4rem;
   font-weight: 600;
   font-style: italic;
+  overflow: hidden;
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
 }
 
 .logo-text {
@@ -155,7 +163,7 @@
   border-radius: 12px;
   padding: 8px 16px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  width: 480px; /* Ajusta según la medida de tu diseño */
+  width: 480px; 
   max-width: 90vw;
 }
 
@@ -171,7 +179,7 @@
 
 /* Botón "Buscar" */
 .search-submit-btn {
-  background-color: #725348; /* Color café del diseño */
+  background-color: #725348; 
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -200,35 +208,30 @@
   color: #333333;
 }
 
-/* ==========================================
-   1. OVERLAY Y VENTANA MODAL (MIS FAVORITOS)
-   ========================================== */
+/* OVERLAY Y VENTANA MODAL (MIS FAVORITOS)*/
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4); /* Oscurece el fondo */
+  background-color: rgba(0, 0, 0, 0.4); 
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  
-  /* Oculto por defecto */
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Clase activa que JavaScript añadirá para mostrar el modal */
 .modal-overlay.active {
   opacity: 1;
   visibility: visible;
 }
 
 .modal-card {
-  background-color: #FAF8F5; /* Tono beige/crema claro de la imagen */
+  background-color: #FAF8F5; 
   width: 90%;
   max-width: 680px;
   max-height: 85vh;
@@ -256,33 +259,13 @@
 }
 
 .modal-title {
-  font-family: serif; /* O la tipografía Serif de tu proyecto */
+  font-family: serif; 
   font-size: 1.8rem;
   color: #2b2b2b;
   margin-top: 0.2rem;
 }
 
-.close-btn {
-  background: #f0eae1;
-  border: none;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s;
-}
-
-.close-btn:hover {
-  background: #e2d7c7;
-}
-
-/* ==========================================
-   2. LISTA DE PRODUCTOS FAVORITOS
-   ========================================== */
+/* LISTA DE PRODUCTOS FAVORITOS*/
 .wishlist-items-container {
   overflow-y: auto;
   padding-right: 0.5rem;
@@ -369,7 +352,6 @@
   color: #d9534f;
 }
 
-/* Mensaje cuando la lista está vacía */
 .empty-wishlist-msg {
   text-align: center;
   color: #777;
@@ -377,27 +359,95 @@
   font-size: 0.95rem;
 }
 
-/* ==========================================
-   3. ESTADO DEL BOTÓN CORAZÓN (CATÁLOGO)
-   ========================================== */
+/* ESTADO DEL BOTÓN CORAZÓN (CATÁLOGO)*/
 .favorite-toggle-btn.active svg {
   fill: #d9534f;
   stroke: #d9534f;
 }
 
+/* ADAPTACIÓN MÓVIL (RESPONSIVE)*/
+@media (max-width: 900px) {
+  /* En tablets, reducimos márgenes para dar espacio */
+  .header-container {
+    padding: 1rem 1.5rem;
+  }
+  
+  .main-nav ul {
+    gap: 1.25rem;
+  }
+}
 
+@media (max-width: 600px) {
+  /* En móviles, la prioridad es el logo y los íconos de acción */
+  .header-container {
+    padding: 1rem;
+  }
 
-.logo-icon {
-    /* Mantiene las dimensiones de tu círculo actual */
-    overflow: hidden; /* Corta cualquier parte de la imagen que sobresalga del círculo */
+/* Mostrar el botón hamburguesa en celulares */
+  .mobile-menu-btn {
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
+  }
 
-.logo-img {
+  /* Transformar la navegación en un panel desplegable */
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* O 'contain' si quieres que la imagen se vea completa dentro del círculo */
+    background-color: var(--cream);
+    border-bottom: 1px solid var(--line);
+    padding: 1.5rem 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    z-index: 99;
+  }
+
+  /* Clase activa que encenderemos con JavaScript */
+  .main-nav.active {
+    display: flex;
+    animation: slideDown 0.3s ease;
+  }
+
+  .main-nav ul {
+    flex-direction: column; 
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .main-nav a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1.15rem; 
+    padding: 0.5rem 0;
+  }
+
+  /* Animación suave al abrir */
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Reducimos ligeramente el tamaño del logo para móviles */
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+
+  .brand-name {
+    font-size: 1.1rem;
+  }
+
+  /* Ajustamos el buscador flotante para que no se salga de la pantalla */
+  .search-input-wrapper {
+    width: 90vw;
+    right: 5vw; 
+  }
 }
 
+
+/* Ocultar el botón hamburguesa en escritorio */
+.mobile-menu-btn {
+  display: none;
+}

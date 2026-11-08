@@ -231,7 +231,7 @@
 /* Botón Finalizar Compra */
 .btn-checkout {
   width: 100%;
-  background-color: #6e5246; /* Color café arcilla de Figma */
+  background-color: #6e5246; 
   color: #ffffff;
   border: none;
   padding: 0.9rem;
@@ -272,5 +272,18 @@
   padding: 2px;
   line-height: 1;
   display: none;
+}
+
+/* ADAPTACIÓN MÓVIL (RESPONSIVE)*/
+@media (max-width: 576px) {
+  .cart-drawer-card {
+    max-width: 100%;
+  }
+
+  .cart-drawer-header,
+  .cart-list-container,
+  .cart-drawer-footer {
+    padding: 1.2rem 1.2rem;
+  }
 }
 

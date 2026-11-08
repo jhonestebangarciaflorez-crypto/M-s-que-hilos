@@ -134,31 +134,12 @@
   object-fit: cover;
 }
 
-/* Adaptación Responsiva para Pantallas Pequeñas */
-@media (max-width: 992px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
 
-  .hero-title {
-    font-size: 2.75rem;
-  }
-
-  .hero-image-card {
-    max-width: 100%;
-    height: 380px;
-  }
-}
-
-
-/* ==========================================
-   SECCIÓN: MANIFIESTO / NUESTRA FORMA DE HACER
-========================================== */
+/* SECCIÓN: MANIFIESTO / NUESTRA FORMA DE HACER*/
 .manifest-section {
-  background-color: var(--sand); /* Cambio de tono de fondo */
+  background-color: var(--sand); 
   padding: 6rem 2rem;
-  margin-top: 2rem; /* Separación con la sección anterior */
+  margin-top: 2rem;
 }
 
 .manifest-container {
@@ -180,7 +161,7 @@
   width: 100%;
   max-width: 480px;
   height: 500px;
-  border-radius: 240px 240px 24px 24px; /* Forma exacta de arco/domo */
+  border-radius: 240px 240px 24px 24px;
   overflow: hidden;
   box-shadow: var(--shadow);
   background-color: var(--oat);
@@ -242,33 +223,13 @@
   border-color: var(--terracotta);
 }
 
-/* Adaptación Responsiva */
-@media (max-width: 992px) {
-  .manifest-container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-
-  .manifest-title {
-    font-size: 2.5rem;
-  }
-
-  .manifest-image-card {
-    max-width: 100%;
-    height: 380px;
-  }
-}
-
 /* Banner principal de Catálogo */
 .catalog-hero {
-  background-color: var(--sand); /* o var(--rose) según el tono exacto de tu paleta */
+  background-color: var(--sand); 
 }
 
 
-
-/* ==========================================
-   SECCIÓN: SOBRE NOSOTROS (HERO)
-========================================== */
+/* SECCIÓN: SOBRE NOSOTROS (HERO)*/
 .about-hero {
   padding: 4rem 2rem 5rem 2rem;
   background-color: var(--cream);
@@ -286,15 +247,15 @@
 .about-hero-header {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra horizontalmente todo el contenido */
-  text-align: center; /* Centra el texto */
+  align-items: center; 
+  text-align: center;
   gap: 1.5rem;
 }
 
 .about-hero-titles {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra la línea con el subtítulo y el título */
+  align-items: center; 
   max-width: 800px;
 }
 
@@ -330,7 +291,7 @@
 
 .about-hero-description {
   max-width: 620px;
-  margin: 0 auto; /* Centra el bloque del párrafo */
+  margin: 0 auto;
 }
 
 .about-hero-description p {
@@ -347,21 +308,15 @@
   justify-content: center;
 }
 
-
 .about-hero-image-card {
-  width: 93%; /* Reducción del 7% en el ancho */
-  margin: 0 auto; /* Centra la tarjeta en el contenedor */
+  width: 93%;
+  margin: 0 auto;
   height: 640px;
-  border-radius: 210px 210px 24px 24px; /* Un poco más arqueada (10%+ respecto a 120px) */
+  border-radius: 210px 210px 24px 24px; 
   overflow: hidden;
   background-color: var(--sand);
   box-shadow: var(--shadow);
 }
-
-
-
-
-
 
 .about-hero-image-card img {
   width: 100%;
@@ -369,34 +324,10 @@
   object-fit: cover;
 }
 
-/* Responsivo */
-@media (max-width: 992px) {
-  .about-hero-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-  }
 
-  .about-title {
-    font-size: 2.75rem;
-  }
-
-  .about-hero-image-card {
-    width: 100%; /* En móviles vuelve al 100% para aprovechar el espacio */
-    height: 440px;
-    border-radius: 70px 70px 16px 16px;
-  }
-}
-
-
-
-
-
-/* ==========================================
-   SECCIÓN: NUESTRO PROCESO
-========================================== */
+/* SECCIÓN: NUESTRO PROCESO*/
 .process-section {
-  background-color: var(--sand); /* Color de fondo cálido de las variables */
+  background-color: var(--sand); 
   padding: 6rem 2rem 7rem 2rem;
 }
 
@@ -485,46 +416,8 @@
   max-width: 260px;
 }
 
-/* Responsivo */
-@media (max-width: 992px) {
-  .process-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem 0;
-  }
 
-  .process-step {
-    border-right: none;
-    padding-left: 0 !important;
-    padding-right: 1.5rem;
-  }
-
-  .process-title {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .process-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .process-step {
-    padding-right: 0;
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 2rem;
-  }
-
-  .process-step:last-child {
-    border-bottom: none;
-  }
-}
-
-
-
-
-/* ==========================================
-   SECCIÓN: LO QUE NOS MUEVE / VALORES
-========================================== */
+/* SECCIÓN: LO QUE NOS MUEVE / VALORES*/
 .values-section {
   background-color: var(--cream);
   padding: 6rem 2rem 7rem 2rem;
@@ -550,7 +443,7 @@
   width: 100%;
   max-width: 520px;
   height: 580px;
-  border-radius: 260px 260px 24px 24px; /* Forma de arco / domo */
+  border-radius: 260px 260px 24px 24px; 
   overflow: hidden;
   background-color: var(--sand);
   box-shadow: var(--shadow);
@@ -619,31 +512,10 @@
   box-shadow: 0 6px 20px rgba(51, 45, 42, 0.25);
 }
 
-/* Responsivo */
-@media (max-width: 992px) {
-  .values-container {
-    grid-template-columns: 1fr;
-    gap: 3.5rem;
-  }
 
-  .values-title {
-    font-size: 2.75rem;
-  }
-
-  .values-image-card {
-    max-width: 100%;
-    height: 420px;
-    border-radius: 180px 180px 20px 20px;
-  }
-}
-
-
-
-/* ==========================================
-   SECCIÓN: PÁGINA DE CONTACTO
-========================================== */
+/* SECCIÓN: PÁGINA DE CONTACTO*/
 .contact-section {
-  background-color: var(--sand); /* Tono beige cálido */
+  background-color: var(--sand); 
   padding: 5rem 2rem 6rem 2rem;
 }
 
@@ -714,7 +586,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: var(--rose); /* Tono rosado suave */
+  background-color: var(--rose); 
   color: var(--cocoa);
   display: flex;
   align-items: center;
@@ -752,7 +624,7 @@
 
 /* Columna Derecha: Tarjeta del Formulario */
 .contact-form-card {
-  background-color: var(--paper); /* Fondo blanco hueso */
+  background-color: var(--paper); 
   border-radius: 28px;
   padding: 3rem 3rem 2.5rem 3rem;
   box-shadow: 0 15px 40px rgba(51, 45, 42, 0.05);
@@ -802,7 +674,7 @@
 .form-group textarea,
 .custom-select-wrapper select {
   width: 100%;
-  background-color: #f7f3ee; /* Tono de fondo suave para los campos */
+  background-color: #f7f3ee; 
   border: 1px solid transparent;
   border-radius: 12px;
   padding: 0.95rem 1.25rem;
@@ -886,47 +758,28 @@
   transform: translateY(-2px);
 }
 
-/* Responsivo */
-@media (max-width: 992px) {
-  .contact-container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
 
-  .contact-title {
-    font-size: 3rem;
-  }
-
-  .contact-form-card {
-    padding: 2rem;
-  }
-}
-
-
-/* ==========================================
-   SECCIÓN: PREGUNTAS FRECUENTES (FAQ)
-========================================== */
+/* SECCIÓN: PREGUNTAS FRECUENTES (FAQ)*/
 .faq-section {
-  background-color: var(--cream); /* Tono claro de fondo */
+  background-color: var(--cream); 
   padding: 6rem 2rem 7rem 2rem;
 }
 
 .faq-container {
-  max-width: 1280px; /* Mismo ancho contenedor que el resto del sitio */
+  max-width: 1280px; 
   margin: 0 auto;
 }
 
-/* Limitamos el ancho interno para que la lista de preguntas 
-   no se estire demasiado y mantenga la proporción de Figma */
+
 .faq-accordion {
   display: flex;
   flex-direction: column;
-  max-width: 820px; /* Ancho cómodo para lectura alineado a la izquierda */
+  max-width: 820px; 
 }
 
 @media (max-width: 1200px) {
   .faq-container {
-    margin: 0 auto; /* Se centra en pantallas medianas y pequeñas */
+    margin: 0 auto;
   }
 }
 
@@ -951,8 +804,6 @@
   font-weight: 600;
   margin-top: 0.75rem;
 }
-
-
 
 .faq-item {
   border-top: 1px solid var(--line);
@@ -1016,10 +867,76 @@
 
 /* Estado Activo (Desplegado) */
 .faq-item.active .faq-icon {
-  transform: rotate(45deg); /* Gira el '+' para convertirlo en una '×' */
+  transform: rotate(45deg); 
 }
 
-/* Responsivo */
+/* ADAPTACIÓN GLOBAL RESPONSIVA*/
+
+/* Tablets (hasta 992px) */
+@media (max-width: 992px) {
+  .hero-container,
+  .manifest-container,
+  .values-container,
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-title { font-size: 2.75rem; }
+  .manifest-title { font-size: 2.5rem; }
+  .about-title { font-size: 2.75rem; }
+  .process-title { font-size: 2.5rem; }
+  .values-title { font-size: 2.75rem; }
+  .contact-title { font-size: 3rem; }
+
+  /* Ajustes de imagen */
+  .hero-image-card {
+    max-width: 100%;
+    height: 380px;
+  }
+  
+  .manifest-image-card {
+    max-width: 100%;
+    height: 380px;
+  }
+  
+  .about-hero-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .about-hero-image-card {
+    width: 100%;
+    height: 440px;
+    border-radius: 70px 70px 16px 16px;
+  }
+  
+  .values-image-card {
+    max-width: 100%;
+    height: 420px;
+    border-radius: 180px 180px 20px 20px;
+  }
+  
+  /* Ajuste de formulario en tablet */
+  .contact-form-card {
+    padding: 2rem;
+  }
+  
+  /* Grid de proceso */
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 0;
+  }
+
+  .process-step {
+    border-right: none;
+    padding-left: 0 !important;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Móviles y Tablets Pequeñas (hasta 768px) */
 @media (max-width: 768px) {
   .faq-title {
     font-size: 2.5rem;
@@ -1027,5 +944,81 @@
 
   .faq-question {
     font-size: 1.15rem;
+  }
+}
+
+/* Móviles puros (hasta 600px) */
+@media (max-width: 600px) {
+
+  .hero, 
+  .manifest-section, 
+  .about-hero, 
+  .process-section, 
+  .values-section, 
+  .contact-section, 
+  .faq-section {
+    padding: 3.5rem 1.5rem 4rem 1.5rem;
+  }
+  
+  /* Achicar más los títulos gigantes */
+  .hero-title,
+  .manifest-title,
+  .about-title,
+  .process-title,
+  .values-title,
+  .contact-title,
+  .faq-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  /* Ajustar los arcos de imagen para que no queden muy altos */
+  .hero-image-card,
+  .manifest-image-card,
+  .values-image-card {
+    height: 320px;
+  }
+  
+  .about-hero-image-card {
+    height: 280px;
+    border-radius: 40px 40px 12px 12px;
+  }
+
+  /* Si los botones están en fila, apilarlos */
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  
+  .btn-hero-primary,
+  .btn-values-primary {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Ajuste específico para la grilla de "Proceso" en móvil */
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-step {
+    padding-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2rem;
+  }
+
+  .process-step:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  /* Ajuste de formulario de contacto */
+  .contact-form-card {
+    padding: 1.5rem;
+  }
+  
+  .form-title {
+    font-size: 1.5rem;
   }
 }

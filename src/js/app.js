@@ -695,3 +695,18 @@ if (tabLoginBtn && tabRegisterBtn && loginForm && registerForm) {
     loginForm.classList.remove('hidden-form');
   });
 }
+
+
+// ==========================================
+// MENÚ HAMBURGUESA PARA MÓVILES
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mainNav = document.querySelector('.main-nav');
+
+  if (mobileMenuBtn && mainNav) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+    });
+  }
+});
