@@ -1,6 +1,4 @@
-/* ==========================================
-   PANEL DE USUARIO / DASHBOARD (FIGMA DESIGN)
-   ========================================== */
+/* PANEL DE USUARIO / DASHBOARD (FIGMA DESIGN)*/
 
 .dashboard-main-container {
   background-color: #faf7f2;
@@ -236,24 +234,7 @@
   display: block;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .dashboard-grid-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .dash-cards-row {
-    grid-template-columns: 1fr;
-  }
-
-  .dash-banner-card {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ==========================================
-   ESTILOS DE LA PESTAÑA MIS PEDIDOS (FIGMA)
-   ========================================== */
+/* ESTILOS DE LA PESTAÑA MIS PEDIDOS (FIGMA)*/
 
 .orders-list-wrapper {
   display: flex;
@@ -402,38 +383,7 @@
   color: #ffffff;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .order-card-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .order-meta-group {
-    gap: 2rem;
-  }
-
-  .order-card-body {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-  }
-
-  .order-actions-group {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .order-total-box {
-    align-items: flex-start;
-  }
-}
-
-
-/* ==========================================
-   ESTILOS DE LA PESTAÑA DIRECCIONES (FIGMA)
-   ========================================== */
+/* ESTILOS DE LA PESTAÑA DIRECCIONES (FIGMA)*/
 
 .dash-header-with-action {
   display: flex;
@@ -444,7 +394,7 @@
 
 /* BOTÓN AGREGAR DIRECCIÓN */
 .btn-add-address {
-  background-color: #63473d; /* Tono terracota oscuro de Figma */
+  background-color: #63473d; 
   color: #ffffff;
   border: none;
   padding: 0.95rem 1.8rem;
@@ -491,7 +441,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: #e8e4ee; /* Tono lila rosado suave de Figma */
+  background-color: #e8e4ee;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -579,22 +529,7 @@
   color: #8c5d49;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .dash-header-with-action {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .addresses-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-/* ==========================================
-   ESTILOS DE CONFIGURACIÓN DE CUENTA (FIGMA)
-   ========================================== */
+/* ESTILOS DE CONFIGURACIÓN DE CUENTA (FIGMA)*/
 
 .settings-card {
   background-color: #ffffff;
@@ -650,7 +585,7 @@
 
 .dash-field-input {
   width: 100%;
-  background-color: #faf7f2; /* Fondo beige suave de Figma */
+  background-color: #faf7f2;
   border: 1px solid #ede8e0;
   border-radius: 12px;
   padding: 0.85rem 1.1rem;
@@ -719,7 +654,7 @@
 }
 
 .btn-dash-save {
-  background-color: #63473d; /* Terracota oscuro de Figma */
+  background-color: #63473d; 
   color: #ffffff;
   border: none;
   padding: 0.85rem 2.2rem;
@@ -735,21 +670,7 @@
   transform: translateY(-1px);
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .settings-section {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .btn-change-pwd {
-    justify-self: start;
-  }
-}
-
-/* ==========================================
-   ESTILOS DE ESTADO VACÍO (EMPTY STATE)
-   ========================================== */
+/* ESTILOS DE ESTADO VACÍO (EMPTY STATE)*/
 
 .empty-state-card {
   background-color: #ffffff;
@@ -793,9 +714,7 @@
   max-width: 440px;
 }
 
-/* ==========================================
-   AJUSTE DE SCROLL Y ALTURA PARA MODALES
-   ========================================== */
+/* AJUSTE DE SCROLL Y ALTURA PARA MODALES*/
 
 /* Asegurar centrado flex y scroll si el viewport es pequeño */
 .favorites-modal-overlay {
@@ -829,8 +748,8 @@
   padding: 2.2rem;
   width: 100%;
   max-width: 480px;
-  max-height: 88vh; /* Controla que no se salga de la pantalla */
-  overflow-y: auto; /* Permite desplazarse internamente si el contenido es alto */
+  max-height: 88vh; 
+  overflow-y: auto;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   border: 1px solid #f0eae1;
 }
@@ -849,3 +768,122 @@
   background: #a87b68;
   border-radius: 10px;
 }
+
+/* ADAPTACIÓN MÓVIL Y PANTALLAS MEDIANAS (RESPONSIVE)
+    (Reglas consolidadas al final para sobrescribir)*/
+
+@media (max-width: 900px) {
+  .dashboard-grid-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .dash-cards-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dash-banner-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .dash-header-with-action {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .addresses-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .settings-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .btn-change-pwd {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 768px) {
+  .order-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .order-meta-group {
+    gap: 2rem;
+  }
+
+  .order-card-body {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .order-actions-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .order-total-box {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-main-container {
+    padding: 1.5rem;
+  }
+
+  .dash-title {
+    font-size: 2rem;
+  }
+  
+  .dash-banner-content {
+    padding: 2rem;
+  }
+
+
+  .order-meta-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  
+  .order-actions-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .order-total-box {
+    align-items: flex-start;
+  }
+
+  .btn-order-action {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .settings-card {
+    padding: 1.5rem;
+  }
+  
+  .settings-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn-dash-cancel, 
+  .btn-dash-save {
+    width: 100%;
+  }
+
+  .btn-add-address {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+

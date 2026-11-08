@@ -1,6 +1,4 @@
-/* ==========================================
-   MODAL DE FAVORITOS (OVERLAY Y TARJETA)
-   ========================================== */
+/* MODAL DE FAVORITOS (OVERLAY Y TARJETA)*/
 
 /* Capa de fondo oscuro borroso */
 .favorites-modal-overlay {
@@ -30,7 +28,7 @@
 
 /* Ventana blanca/crema central */
 .favorites-modal-card {
-  background-color: #fdfbf7; /* Tono beige/crema suave de la marca */
+  background-color: #fdfbf7; 
   width: 90%;
   max-width: 620px;
   max-height: 85vh;
@@ -99,9 +97,7 @@
   padding-right: 0.5rem;
 }
 
-/* ==========================================
-   ESTILOS DE CADA ITEM DENTRO DE FAVORITOS
-   ========================================== */
+/* ESTILOS DE CADA ITEM DENTRO DE FAVORITOS*/
 
 .favorite-item {
   display: flex;
@@ -213,7 +209,7 @@
   position: absolute;
   top: -4px;
   right: -6px;
-  background-color: #c48b71; /* Tono terracota/rosado del diseño de Figma */
+  background-color: #c48b71; 
   color: #ffffff;
   font-size: 0.65rem;
   font-weight: 700;
@@ -230,11 +226,61 @@
   display: none; 
 }
 
-/* ==========================================
-   ESTADO ACTIVO DEL CORAZÓN EN EL CATÁLOGO
-   ========================================== */
+/* ESTADO ACTIVO DEL CORAZÓN EN EL CATÁLOGO*/
 
 .wishlist-btn.active svg {
   fill: #d9534f;
   stroke: #d9534f;
 }
+
+
+/* ADAPTACIÓN MÓVIL (RESPONSIVE)*/
+@media (max-width: 576px) {
+  /* La tarjeta ocupa casi toda la pantalla */
+  .favorites-modal-card {
+    width: 95%;
+    padding: 1.5rem;
+    max-height: 90vh;
+  }
+
+  .favorites-modal-header {
+    margin-bottom: 1.2rem;
+  }
+
+  .modal-title {
+    font-size: 1.4rem;
+  }
+
+
+  .favorite-item {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .favorite-item-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .favorite-item-info {
+    min-width: 150px;
+  }
+
+  /* Los botones pasan a una fila nueva ocupando todo el ancho */
+  .favorite-item-actions {
+    width: 100%;
+    justify-content: space-between; 
+    padding-top: 0.5rem;
+    border-top: 1px dashed #f0eae1;
+  }
+
+  .btn-add-cart-modal {
+    flex-grow: 1; 
+    text-align: center;
+    padding: 0.6rem;
+  }
+}
+
+
+
+

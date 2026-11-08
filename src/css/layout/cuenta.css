@@ -1,6 +1,4 @@
-/* ==========================================
-   PÁGINA DE CUENTA (INICIAR SESIÓN / REGISTRO)
-   ========================================== */
+/* PÁGINA DE CUENTA (INICIAR SESIÓN / REGISTRO)*/
 
 /* Fondo general de la página */
 .account-body {
@@ -19,9 +17,7 @@
   overflow-x: hidden;
 }
 
-/* ==========================================
-   1. COLUMNA IZQUIERDA: HERO CON IMAGEN
-   ========================================== */
+/* COLUMNA IZQUIERDA: HERO CON IMAGEN*/
 .account-hero-side {
   flex: 1;
   position: relative;
@@ -30,7 +26,7 @@
       rgba(0, 0, 0, 0.25),
       rgba(0, 0, 0, 0.55)
     ),
-    url('../../../src/assets/img/inicio-registro.jpg'); /* O la imagen de lana/tejidos que prefieras */
+    url('../../../src/assets/img/inicio-registro.jpg'); 
   background-size: cover;
   background-position: center;
   padding: 3rem;
@@ -54,14 +50,12 @@
   margin-bottom: 2rem;
 }
 
-/* ==========================================
-   CORRECCIÓN DE TAMAÑOS DE TÍTULOS
-   ========================================== */
+/* CORRECCIÓN DE TAMAÑOS DE TÍTULOS*/
 
 /* 1. Título sobre la imagen (Columna Izquierda) */
 .hero-side-title {
   font-family: serif;
-  font-size: 3.5rem; /* Aumentado para mayor impacto visual */
+  font-size: 3.5rem; 
   color: #ffffff;
   line-height: 1.1;
   font-weight: 400;
@@ -72,14 +66,14 @@
 /* Estilo para el texto en cursiva/destacado */
 .highlight-side {
   font-style: italic;
-  color: #e5b39b; /* Tono melocotón cálido de Figma */
+  color: #e5b39b; 
   font-weight: 400;
 }
 
 /* 2. Título principal del Formulario (Columna Derecha) */
 .form-title {
   font-family: serif;
-  font-size: 3.5rem; /* Tamaño proporcional para "Bienvenida de nuevo" */
+  font-size: 3.5rem; 
   color: #2c2b29;
   margin: 0.5rem 0 0.5rem 0;
   font-weight: 500;
@@ -87,26 +81,13 @@
   letter-spacing: -0.5px;
 }
 
-/* Ajuste responsive para pantallas medianas/móviles */
-@media (max-width: 1200px) {
-  .hero-side-title {
-    font-size: 2.8rem;
-  }
-  .form-title {
-    font-size: 2.5rem;
-  }
-}
-
-
 .hero-side-description {
   color: #e0ded9;
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
-/* ==========================================
-   2. COLUMNA DERECHA: FORMULARIO Y PESTAÑAS
-   ========================================== */
+/* COLUMNA DERECHA: FORMULARIO Y PESTAÑAS*/
 .account-form-side {
   flex: 1;
   background-color: #fdfbf7;
@@ -123,12 +104,12 @@
   position: absolute;
   top: 2rem;
   right: 2.5rem;
-  background-color: #f3ebd9; /* Beige cálido suave de Figma */
+  background-color: #f3ebd9; 
   border: none;
-  width: 44px; /* Mayor área para simular la proporción visual */
+  width: 44px; 
   height: 44px;
   border-radius: 50%;
-  color: #6e5246; /* Tono café arcilla del ícono original */
+  color: #6e5246; 
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -140,9 +121,9 @@
 
 /* Efectos al pasar el cursor */
 .close-screen-btn:hover {
-  background-color: #e5dac4; /* Transición natural a un beige más tierra */
-  color: #433129; /* Oscurece el trazo del ícono */
-  transform: scale(1.05); /* Lenta respuesta elástica */
+  background-color: #e5dac4; 
+  color: #433129; 
+  transform: scale(1.05); 
 }
 
 /* Ajustes internos para que el SVG sea perfectamente fino */
@@ -150,7 +131,7 @@
   width: 14px;
   height: 14px;
   stroke: currentColor;
-  stroke-width: 2.2px; /* Grosor refinado para el trazo de la cruz */
+  stroke-width: 2.2px;
 }
 
 /* Wrapper del formulario centralizado */
@@ -162,8 +143,6 @@
 .form-header {
   margin-bottom: 2rem;
 }
-
-
 
 .form-subtitle {
   font-size: 0.85rem;
@@ -204,7 +183,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #a87b68; /* Tono terracota */
+  background-color: #a87b68;
 }
 
 /* CAMPOS Y INPUTS */
@@ -227,7 +206,7 @@
 }
 
 .form-input {
-  background-color: #f7f3eb; /* Fondo cremoso de las cajas en Figma */
+  background-color: #f7f3eb; 
   border: 1px solid transparent;
   padding: 0.85rem 1rem;
   border-radius: 10px;
@@ -266,7 +245,7 @@
 
 /* BOTÓN PRINCIPAL DE ACCESO */
 .btn-account-primary {
-  background-color: #6e5246; /* Color café arcilla de Figma */
+  background-color: #6e5246;
   color: #ffffff;
   border: none;
   padding: 0.95rem;
@@ -295,24 +274,7 @@
   line-height: 1.4;
 }
 
-/* Responsividad para pantallas pequeñas/móviles */
-@media (max-width: 900px) {
-  .account-container {
-    flex-direction: column;
-  }
-  .account-hero-side {
-    min-height: 300px;
-    padding: 2rem;
-  }
-  .account-form-side {
-    padding: 2.5rem 1.5rem;
-  }
-}
-
-
-/* ==========================================
-   AJUSTES Y CORRECCIONES PARA CUENTA.HTML
-   ========================================== */
+/* AJUSTES Y CORRECCIONES PARA CUENTA.HTML*/
 
 /* 1. ESTILOS DEL LOGO SOBRE IMAGEN */
 .account-hero-side .logo-white {
@@ -368,44 +330,80 @@
 }
 
 .sub-caption {
-  color: #a87b68; /* Tono terracota/rosa de Figma */
+  color: #a87b68; 
 }
 
 .sub-caption-light {
   color: #e2d7c7;
 }
 
-/* 3. TÍTULOS Y FUENTES */
-
-
-/* 4. BOTÓN DE CIERRE (X) */
-.close-screen-btn {
-  position: absolute;
-  top: 2rem;
-  right: 2.5rem;
-  background-color: #f2ebd9;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  color: #4a4a4a;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  padding-bottom: 2px;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.close-screen-btn:hover {
-  background-color: #e5dac4;
-  transform: scale(1.05);
-}
-
-
 /* Ocultar formulario inactivo */
 .auth-form.hidden-form {
   display: none;
+}
+
+/* ADAPTACIÓN MÓVIL Y PANTALLAS MEDIANAS (RESPONSIVE)*/
+
+@media (max-width: 1200px) {
+  .hero-side-title {
+    font-size: 2.8rem;
+  }
+  .form-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .account-container {
+    flex-direction: column;
+  }
+  .account-hero-side {
+    min-height: 250px;
+    flex: none; 
+    padding: 2rem;
+  }
+  
+  .account-form-side {
+    padding: 2.5rem 1.5rem;
+    flex: 1; 
+  }
+  
+
+  .hero-side-title {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .account-hero-side {
+    padding: 1.5rem;
+    min-height: 200px;
+    justify-content: flex-end; 
+  }
+  
+  .hero-side-title {
+    font-size: 1.8rem;
+  }
+  
+  .account-form-side {
+    padding: 2rem 1.2rem;
+  }
+
+  .close-screen-btn {
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .account-form-side > div[style*="right: 4rem"] {
+    top: 1.2rem !important;
+    right: auto !important;
+    left: 1rem !important;
+  }
 }

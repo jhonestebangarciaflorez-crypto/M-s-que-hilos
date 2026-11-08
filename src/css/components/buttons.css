@@ -30,3 +30,15 @@
 .btn-secondary:hover {
   background-color: var(--oat);
 }
+
+
+@media (max-width: 576px) {
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.9rem 1.5rem;
+  }
+}
